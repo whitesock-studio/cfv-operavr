@@ -23,35 +23,37 @@ namespace OperaVR
 
 	public class SubtitleManager : MonoBehaviour
 	{
-		[SerializeField] AudioSource audioSource;
-		[SerializeField] TextAsset subtitleFile; // Inserisci qui il file .srt come TextAsset
+		[SerializeField] AudioSource _audioSource;
+		[SerializeField] TextAsset _subtitleFile; // Inserisci qui il file .srt come TextAsset
 		public SubtitleEvent OnSubtitleChanged = new SubtitleEvent();
 
-		[SerializeField] List<SubtitleEntry> subtitles = new List<SubtitleEntry>();
-		private int currentIndex = 0;
-		private string lastSubtitle = "";
+		private List<SubtitleEntry> _subtitles = new List<SubtitleEntry>();
+		private int _currentIndex = 0;
+		private string _lastSubtitle = "";
 
 		public void Awake()
 		{
 			OnSubtitleChanged.AddListener(DebugEntry);
-			if (audioSource == null || subtitleFile == null)
+			if (_audioSource == null || _subtitleFile == null)
 			{
 				Debug.LogError("SubtitleManager: AudioSource o SubtitleFile mancante.");
 				return;
 			}
 
-			ParseSRT(subtitleFile.text);
+			ParseSRT(_subtitleFile.text);
 		}
 
 		public void Play()
 		{
-			audioSource.Play();
+			_currentIndex = 0;
+			_lastSubtitle = "";
+			_audioSource.Play();
 			StartCoroutine(SubtitleCoroutine());
 		}
 
 		public void Stop()
 		{
-			audioSource.Stop();
+			_audioSource.Stop();
 		}
 
 		private void DebugEntry(string entry)
@@ -61,24 +63,24 @@ namespace OperaVR
 
 		private IEnumerator SubtitleCoroutine()
 		{
-			while (audioSource.isPlaying)
+			while (_audioSource.isPlaying)
 			{
-				float currentTime = audioSource.time;
-				if (currentIndex < subtitles.Count)
+				float currentTime = _audioSource.time;
+				if (_currentIndex < _subtitles.Count)
 				{
-					SubtitleEntry current = subtitles[currentIndex];
+					SubtitleEntry current = _subtitles[_currentIndex];
 					if (currentTime >= current.startTime && currentTime <= current.endTime)
 					{
-						if (current.text != lastSubtitle)
+						if (current.text != _lastSubtitle)
 						{
-							lastSubtitle = current.text;
+							_lastSubtitle = current.text;
 							OnSubtitleChanged.Invoke(current.text);
 						}
 					}
 					else if (currentTime > current.endTime)
 					{
-						currentIndex++;
-						lastSubtitle = "";
+						_currentIndex++;
+						_lastSubtitle = "";
 						OnSubtitleChanged.Invoke(""); // Pulisce i sottotitoli
 					}
 				}
@@ -92,7 +94,7 @@ namespace OperaVR
 
 		private void ParseSRT(string srt)
 		{
-			subtitles.Clear();
+			_subtitles.Clear();
 			string[] entries = Regex.Split(srt.Trim(), @"\r\n\r\n|\n\n");
 
 			foreach (string entry in entries)
@@ -108,7 +110,7 @@ namespace OperaVR
 
 					string text = string.Join("\n", lines, 2, lines.Length - 2);
 
-					subtitles.Add(new SubtitleEntry { startTime = start, endTime = end, text = text });
+					_subtitles.Add(new SubtitleEntry { startTime = start, endTime = end, text = text });
 				}
 			}
 		}
