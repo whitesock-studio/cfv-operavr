@@ -1,7 +1,5 @@
 namespace OperaVR
 {
-    using System.Collections;
-    using System.Collections.Generic;
     using UnityEngine;
     using SpatialSys.UnitySDK;
 
