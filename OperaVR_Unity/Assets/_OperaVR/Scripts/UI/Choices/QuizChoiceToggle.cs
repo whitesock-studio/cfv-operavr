@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace OperaVR
@@ -25,6 +26,9 @@ namespace OperaVR
 
         private QuizChoice _loadedChoice;
         public QuizChoice LoadedChoice => _loadedChoice;
+        
+        [NonSerialized]
+        public bool IsSingleChoice;
 
         public override bool IsOn
         {
@@ -69,6 +73,7 @@ namespace OperaVR
         {
             Reset();
             _loadedChoice = quizChoice;
+            IsSingleChoice = isSingleChoice;
             ToggleView.gameObject.SetActive(isSingleChoice);
             AlternativeToggleView.gameObject.SetActive(!isSingleChoice);
             _quizContentView.LoadContent(_loadedChoice.Content);
