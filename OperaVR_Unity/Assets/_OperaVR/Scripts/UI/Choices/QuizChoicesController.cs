@@ -9,6 +9,9 @@ namespace OperaVR
         public Action OnTogglesChanged;
 
         [SerializeField]
+        private QuizChoiceToggle _outcomeToggle;
+
+        [SerializeField]
         private OperaToggleGroup _toggleGroup;
 
         private QuizChoiceToggle[] _pool;
@@ -26,6 +29,8 @@ namespace OperaVR
 
         public void LoadChoices(QuizChoice[] quizChoices, int maxChoices)
         {
+            _outcomeToggle.gameObject.SetActive(false);
+
             _toggleGroup.AlwaysOneOn = false;
             _toggleGroup.MaxTogglesOn = maxChoices;
             _toggleGroup.SwitchAtMax = maxChoices == 1;
@@ -52,15 +57,18 @@ namespace OperaVR
 
         public void DisplaySelectedChoicesOutcome()
         {
+            //We assume that this happens only in linear quiz
             foreach (var toggle in _pool)
             {
-                if (!toggle.IsOn)
+                toggle.gameObject.SetActive(false);
+                if (toggle.IsOn)
                 {
-                    toggle.gameObject.SetActive(false);
+                    _outcomeToggle.gameObject.SetActive(true);
+                    _outcomeToggle.LoadChoice(toggle.LoadedChoice, toggle.IsSingleChoice);
+                    _outcomeToggle.SetInteractable(false);
+                    _outcomeToggle.DisplayCorrectState(toggle.LoadedChoice.IsCorrect);
                     continue;
                 }
-                toggle.SetInteractable(false, false);
-                toggle.DisplayCorrectState(toggle.LoadedChoice.IsCorrect);
             }
         }
     }

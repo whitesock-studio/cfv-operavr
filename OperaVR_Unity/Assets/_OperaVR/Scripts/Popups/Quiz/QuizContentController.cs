@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +13,9 @@ namespace OperaVR
         private LayoutElement _choicesLayoutElement;
 
         [SerializeField]
+        private LayoutGroup _questionsAndChoicesLayoutGroup;
+
+        [SerializeField]
         private QuizContentView _questionContentView;
 
         [SerializeField]
@@ -22,10 +23,11 @@ namespace OperaVR
 
         [SerializeField]
         private GameObject _imageContainer;
-        
+
         [SerializeField]
         private TMP_Text _outcomeComment;
 
+        [Header("Controls")]
         [SerializeField]
         private Button _confirmButton;
 
@@ -69,6 +71,7 @@ namespace OperaVR
             _displayedPage = pageIndex;
 
             _choicesLayoutElement.flexibleHeight = 1;
+            _questionsAndChoicesLayoutGroup.childAlignment = TextAnchor.UpperLeft;
 
             CheckControlButtonsInteractability(_choicesController.TogglesOn);
 
@@ -111,6 +114,8 @@ namespace OperaVR
 
         private void Confirm()
         {
+            _confirmButton.onClick.RemoveListener(Confirm);
+
             if (_quizPopupData.Type == QuizType.LinearQuiz)
             {
                 DisplayChoiceOutcome();
@@ -121,9 +126,12 @@ namespace OperaVR
 
         private void DisplayChoiceOutcome()
         {
+            _confirmButton.onClick.AddListener(Progress);
+
             _choicesController.DisplaySelectedChoicesOutcome();
 
             _choicesLayoutElement.flexibleHeight = 0;
+            _questionsAndChoicesLayoutGroup.childAlignment = TextAnchor.MiddleLeft;
 
             var isCorrectChoice = true;
             foreach (var toggle in _choicesController.TogglesOn)
@@ -133,6 +141,11 @@ namespace OperaVR
                     isCorrectChoice = false;
                 }
             }
+
+            //TODO: LOCALIZE
+            var confirmButtonText = isCorrectChoice ? "Prossima domanda" : "Ricomincia Quiz";
+            _confirmButtonText.TextDisplayer.text = confirmButtonText;
+
             //TODO: LOCALIZE
             var outcomeText = isCorrectChoice ? _currentQuestion.CorrectChoiceDescription : "Risposta errata, ricomincia";
             _outcomeComment.text = outcomeText;
@@ -141,11 +154,15 @@ namespace OperaVR
 
         private void Progress()
         {
+            _confirmButton.onClick.RemoveListener(Progress);
+
             if (_quizPopupData.Questions.Length <= _displayedPage + 1)
             {
                 QuizCompleted();
                 return;
             }
+            
+            _confirmButton.onClick.AddListener(Confirm);
             LoadQuestionPage(_displayedPage + 1);
         }
 
