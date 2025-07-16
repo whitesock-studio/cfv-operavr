@@ -2,12 +2,12 @@ namespace OperaVR
 {
     public enum PopupType
     {
-        QuizText,
-        QuizAudio,
-        QuizImage,
-        DragAndDrop,
-        QuestSelection,
-        Research,
-        Multitrack
+        ProfilingQuizText = 0,
+        LinearQuizText = 10,
+        LinearQuizImage = 11,
+        DragNDropQuizAudio = 12,
+        QuestSelection = 20,
+        Research = 30,
+        Multitrack = 40
     }
 }

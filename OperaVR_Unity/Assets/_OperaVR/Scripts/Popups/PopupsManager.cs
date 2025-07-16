@@ -1,4 +1,3 @@
-using SpatialSys.UnitySDK;
 using System.Collections.Generic;
 using UnityEngine;
 namespace OperaVR
@@ -99,7 +98,12 @@ namespace OperaVR
 
         private void SetCharacterMovementsEnabled(bool value)
         {
-            var localAvatar = SpatialBridge.actorService.localActor.avatar;
+            if (value)
+            {
+                InputsManager.Instance.RestoreInputs();
+                return;
+            }
+            InputsManager.Instance.BlockInputs();
         }
 
         private bool TryGetFreePopupInPool(PopupType type, out APopup popup)

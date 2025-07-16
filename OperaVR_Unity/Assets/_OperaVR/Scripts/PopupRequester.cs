@@ -7,8 +7,19 @@ namespace OperaVR
         [SerializeField]
         private APopupData _data;
 
+        [SerializeField]
+        private bool _openAtStart;
+
         private APopup _openedPopup;
         public APopup OpenedPopup => _openedPopup;
+
+        private void Start()
+        {
+            if (_openAtStart)
+            {
+                Open();
+            }
+        }
 
         public void Open()
         {

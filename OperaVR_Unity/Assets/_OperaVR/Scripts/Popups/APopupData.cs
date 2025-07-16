@@ -7,5 +7,8 @@ namespace OperaVR
         public PopupType PopupType;
 
         public bool InterruptsMovement = true;
+
+        public string Title = "Title";
+        public string SubTitle = "This is the subtitle";
     }
 }

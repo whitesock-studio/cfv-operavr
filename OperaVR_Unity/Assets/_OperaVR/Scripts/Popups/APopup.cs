@@ -1,5 +1,6 @@
 using SpatialSys.UnitySDK;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace OperaVR
@@ -11,7 +12,7 @@ namespace OperaVR
 
         [Header("Open close animation")]
         [SerializeField]
-        protected GameObject _hideableObject;
+        protected CanvasGroup _hideableCanvas;
 
         [SerializeField]
         protected Transform _animatedObject;
@@ -26,6 +27,13 @@ namespace OperaVR
         private float _openTime = 1f;
 
         private Coroutine _animationCoroutine;
+
+        [Header("Components")]
+        [SerializeField]
+        protected TMP_Text _title;
+
+        [SerializeField]
+        protected TMP_Text _subTitle;
 
         public virtual void Open(APopupData data)
         {
@@ -50,7 +58,11 @@ namespace OperaVR
 
         protected virtual void Reset() { }
 
-        protected virtual void OnPreOpened() { }
+        protected virtual void OnPreOpened() 
+        {
+            _title.text = Data.Title;
+            _subTitle.text = Data.SubTitle;
+        }
 
         protected virtual void OnPostOpened() { }
 
@@ -60,7 +72,7 @@ namespace OperaVR
 
         private IEnumerator OpenCloseCoroutine(bool isClosing)
         {
-            _hideableObject.SetActive(false);
+            _hideableCanvas.alpha = 0f;
 
             var t = 0f;
             while (t < _openTime)
@@ -74,7 +86,17 @@ namespace OperaVR
                 yield return null;
             }
 
-            _hideableObject.SetActive(!isClosing);
+            t = 0f;
+            var fadeTime = .3f;
+            var targetAlpha = isClosing ? 0f : 1f;
+            while (t < fadeTime)
+            {
+                t = Mathf.Clamp(t + Time.deltaTime, 0, fadeTime);
+                var a = t / _openTime;
+                _hideableCanvas.alpha = Mathf.Lerp(0f, targetAlpha, a);
+                yield return null;
+            }
+            _hideableCanvas.alpha = targetAlpha;
 
             if (isClosing)
             {
