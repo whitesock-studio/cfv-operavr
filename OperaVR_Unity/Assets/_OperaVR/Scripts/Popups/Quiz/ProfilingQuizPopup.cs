@@ -8,10 +8,17 @@ namespace OperaVR
         [SerializeField]
         private ProfileView _profileView;
 
+        protected override void Awake()
+        {
+            base.Awake();
+            _profileView.OnClose += OnProfileViewClosed;
+        }
+
         protected override void OnPreOpened()
         {
             base.OnPreOpened();
             _profileView.gameObject.SetActive(false);
+            ContentController.gameObject.SetActive(true);
         }
 
         protected override void OnQuizCompleted()
@@ -38,8 +45,14 @@ namespace OperaVR
 
         private void LoadProfileData(ProfileData data)
         {
+            ContentController.gameObject.SetActive(false);
             _profileView.gameObject.SetActive(true);
             _profileView.LoadProfile(data);
+        }
+
+        private void OnProfileViewClosed()
+        {
+            PopupsManager.Instance.ClosePopup(this);
         }
     }
 }

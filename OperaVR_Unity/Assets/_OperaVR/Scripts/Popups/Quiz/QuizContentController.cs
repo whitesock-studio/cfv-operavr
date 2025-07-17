@@ -39,6 +39,7 @@ namespace OperaVR
 
         [SerializeField]
         private TextView _confirmButtonText;
+        protected TextView ConfirmButtonText => _confirmButtonText;
 
         [SerializeField]
         private Button _backButton;
@@ -78,7 +79,7 @@ namespace OperaVR
             LoadQuestionPage(0);
         }
 
-        private void LoadQuestionPage(int pageIndex)
+        protected virtual void LoadQuestionPage(int pageIndex)
         {
             if (_quizPopupData.Questions.Length <= pageIndex)
             {
@@ -95,10 +96,10 @@ namespace OperaVR
             _confirmButton.gameObject.SetActive(true);
 
             //TODO: LOCALIZE
-            _confirmButtonText.TextDisplayer.text = 
-                _quizPopupData.Questions.Length == pageIndex + 1 ? "Vedi risultati" : "Avanti"; ;
+            _confirmButtonText.TextDisplayer.text = _quizPopupData.Type == QuizType.LinearQuiz ? "Avanti" :
+                _quizPopupData.Questions.Length == pageIndex + 1 ? "Vedi risultati" : "Avanti"; 
             _confirmOutcomeButtonText.TextDisplayer.text = 
-                _quizPopupData.Questions.Length == pageIndex + 1 ? "Vedi risultati" : "Prossima domanda";
+                _quizPopupData.Questions.Length == pageIndex + 1 ? "Chiudi" : "Prossima domanda";
 
             CheckControlButtonsInteractability(_choicesController.TogglesOn);
 
@@ -155,11 +156,6 @@ namespace OperaVR
 
         private void DisplayChoiceOutcome()
         {
-            _choicesController.DisplaySelectedChoicesOutcome();
-
-            _choicesLayoutElement.flexibleHeight = 0;
-            _questionsAndChoicesLayoutGroup.childAlignment = TextAnchor.MiddleLeft;
-
             var isCorrectChoice = true;
             foreach (var toggle in _choicesController.TogglesOn)
             {
@@ -168,6 +164,11 @@ namespace OperaVR
                     isCorrectChoice = false;
                 }
             }
+
+            _choicesController.DisplaySelectedChoicesOutcome();
+
+            _choicesLayoutElement.flexibleHeight = 0;
+            _questionsAndChoicesLayoutGroup.childAlignment = TextAnchor.MiddleLeft;
 
             _confirmButton.gameObject.SetActive(false);
             _confirmOutcomeButton.gameObject.SetActive(isCorrectChoice);

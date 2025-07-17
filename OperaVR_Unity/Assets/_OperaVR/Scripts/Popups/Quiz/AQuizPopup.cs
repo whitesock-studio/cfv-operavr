@@ -12,7 +12,7 @@ namespace OperaVR
 
         protected List<List<QuizChoice>> ChoicesSelected = new();
 
-        private void Awake()
+        protected virtual void Awake()
         {
             ContentController.OnComplete += OnQuizCompleted;
             ContentController.OnRestart += OnContentRestart;
