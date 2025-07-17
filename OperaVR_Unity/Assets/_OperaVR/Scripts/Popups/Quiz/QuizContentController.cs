@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +8,10 @@ namespace OperaVR
 {
     public class QuizContentController : MonoBehaviour
     {
+        public Action OnComplete;
+        public Action OnRestart;
+        public Action<List<QuizChoice>> OnChoicesSelected;
+
         [SerializeField]
         private QuizChoicesController _choicesController;
 
@@ -132,6 +138,13 @@ namespace OperaVR
 
         private void Confirm()
         {
+            var choicesSelected = new List<QuizChoice>();
+            foreach (var toggle in _choicesController.TogglesOn)
+            {
+                choicesSelected.Add(toggle.LoadedChoice);
+            }
+            OnChoicesSelected?.Invoke(choicesSelected);
+
             if (_quizPopupData.Type == QuizType.LinearQuiz)
             {
                 DisplayChoiceOutcome();
@@ -185,11 +198,12 @@ namespace OperaVR
         private void Restart()
         {
             LoadQuestionPage(0);
+            OnRestart?.Invoke();
         }
 
         private void QuizCompleted()
         {
-
+            OnComplete?.Invoke();
         }
     }
 }

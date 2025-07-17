@@ -8,6 +8,9 @@ namespace OperaVR
     {
         [Header("Quiz Popup")]
         public QuizType Type;
+
+        [Tooltip("Only used if Type is ProfilingQuiz")]
+        public ProfilingData ProfilingData;
         public bool CanGoBack => Type == QuizType.ProfilingQuiz;
         public QuizQuestion[] Questions = Array.Empty<QuizQuestion>();
     }
