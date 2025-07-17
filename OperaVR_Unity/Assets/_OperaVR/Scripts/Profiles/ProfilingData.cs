@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace OperaVR
 {
-    [CreateAssetMenu(menuName = "Quiz/Profiling/Profiling Data", fileName = "Profiling_")]
+    [CreateAssetMenu(menuName = "Profiling/Profiling Data", fileName = "Profiling_")]
     public class ProfilingData : ScriptableObject
     {
         public ProfilingRange[] Ranges = Array.Empty<ProfilingRange>();

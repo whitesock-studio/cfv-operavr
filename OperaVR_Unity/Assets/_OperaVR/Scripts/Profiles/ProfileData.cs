@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace OperaVR
 {
-    [CreateAssetMenu(menuName = "Quiz/Profiling/Profile Data", fileName = "Profile_")]
-    public class ProfileData : MonoBehaviour
+    [CreateAssetMenu(menuName = "Profiling/Profile Data", fileName = "Profile_")]
+    public class ProfileData : ScriptableObject
     {
         public Sprite Image;
     }
