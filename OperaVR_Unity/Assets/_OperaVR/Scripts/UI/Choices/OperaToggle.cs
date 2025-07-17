@@ -121,6 +121,11 @@ namespace OperaVR
             }
         }
 
+        public void SetRawInteractable(bool value)
+        {
+            m_isInteractable = value;
+        }
+
         public void OnPointerDown(PointerEventData eventData)
         {
             if (!IsInteractable)
