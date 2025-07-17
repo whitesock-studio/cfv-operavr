@@ -41,6 +41,15 @@ namespace OperaVR
         private TextView _backButtonText;
 
         [SerializeField]
+        private Button _restartButton;
+
+        [SerializeField]
+        private Button _confirmOutcomeButton;
+
+        [SerializeField]
+        private TextView _confirmOutcomeButtonText;
+
+        [SerializeField]
         private APagesTracker _pagesTracker;
 
         private int _displayedPage = 0;
@@ -51,13 +60,15 @@ namespace OperaVR
         {
             _choicesController.OnTogglesChanged += OnTogglesSelectionChanged;
             _confirmButton.onClick.AddListener(Confirm);
+            _confirmOutcomeButton.onClick.AddListener(Progress);
+            _restartButton.onClick.AddListener(Restart);
             _backButton.onClick.AddListener(Back);
         }
 
         public void LoadData(QuizPopupData data)
         {
             _quizPopupData = data;
-            _backButton.transform.parent.gameObject.SetActive(_quizPopupData.CanGoBack);
+            _backButton.transform.gameObject.SetActive(_quizPopupData.CanGoBack);
             LoadQuestionPage(0);
         }
 
@@ -73,6 +84,16 @@ namespace OperaVR
             _choicesLayoutElement.flexibleHeight = 1;
             _questionsAndChoicesLayoutGroup.childAlignment = TextAnchor.UpperLeft;
 
+            _confirmOutcomeButton.gameObject.SetActive(false);
+            _restartButton.gameObject.SetActive(false);
+            _confirmButton.gameObject.SetActive(true);
+
+            //TODO: LOCALIZE
+            _confirmButtonText.TextDisplayer.text = 
+                _quizPopupData.Questions.Length == pageIndex + 1 ? "Vedi risultati" : "Avanti"; ;
+            _confirmOutcomeButtonText.TextDisplayer.text = 
+                _quizPopupData.Questions.Length == pageIndex + 1 ? "Vedi risultati" : "Prossima domanda";
+
             CheckControlButtonsInteractability(_choicesController.TogglesOn);
 
             _outcomeComment.gameObject.SetActive(false);
@@ -83,9 +104,6 @@ namespace OperaVR
 
             _image.sprite = _currentQuestion.Image;
             _imageContainer.SetActive(_currentQuestion.Image != null);
-
-            _confirmButtonText.TextDisplayer.text =
-                _quizPopupData.Questions.Length == pageIndex + 1 ? "Vedi risultati" : "Avanti"; //TODO: LOCALIZE
 
             _choicesController.LoadChoices(_currentQuestion.Choices, _currentQuestion.MaxChoices);
 
@@ -114,8 +132,6 @@ namespace OperaVR
 
         private void Confirm()
         {
-            _confirmButton.onClick.RemoveListener(Confirm);
-
             if (_quizPopupData.Type == QuizType.LinearQuiz)
             {
                 DisplayChoiceOutcome();
@@ -126,8 +142,6 @@ namespace OperaVR
 
         private void DisplayChoiceOutcome()
         {
-            _confirmButton.onClick.AddListener(Progress);
-
             _choicesController.DisplaySelectedChoicesOutcome();
 
             _choicesLayoutElement.flexibleHeight = 0;
@@ -142,9 +156,9 @@ namespace OperaVR
                 }
             }
 
-            //TODO: LOCALIZE
-            var confirmButtonText = isCorrectChoice ? "Prossima domanda" : "Ricomincia Quiz";
-            _confirmButtonText.TextDisplayer.text = confirmButtonText;
+            _confirmButton.gameObject.SetActive(false);
+            _confirmOutcomeButton.gameObject.SetActive(isCorrectChoice);
+            _restartButton.gameObject.SetActive(!isCorrectChoice);
 
             //TODO: LOCALIZE
             var outcomeText = isCorrectChoice ? _currentQuestion.CorrectChoiceDescription : "Risposta errata, ricomincia";
@@ -154,21 +168,23 @@ namespace OperaVR
 
         private void Progress()
         {
-            _confirmButton.onClick.RemoveListener(Progress);
-
             if (_quizPopupData.Questions.Length <= _displayedPage + 1)
             {
                 QuizCompleted();
                 return;
             }
             
-            _confirmButton.onClick.AddListener(Confirm);
             LoadQuestionPage(_displayedPage + 1);
         }
 
         private void Back()
         {
             LoadQuestionPage(_displayedPage - 1);
+        }
+
+        private void Restart()
+        {
+            LoadQuestionPage(0);
         }
 
         private void QuizCompleted()

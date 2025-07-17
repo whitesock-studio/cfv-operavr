@@ -65,7 +65,8 @@ namespace OperaVR
                 {
                     _outcomeToggle.gameObject.SetActive(true);
                     _outcomeToggle.LoadChoice(toggle.LoadedChoice, toggle.IsSingleChoice);
-                    _outcomeToggle.SetInteractable(false);
+                    _outcomeToggle.SetValue(true);
+                    _outcomeToggle.SetRawInteractable(false);
                     _outcomeToggle.DisplayCorrectState(toggle.LoadedChoice.IsCorrect);
                     continue;
                 }
