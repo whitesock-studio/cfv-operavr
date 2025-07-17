@@ -12,6 +12,9 @@ namespace OperaVR
         public Action OnRestart;
         public Action<List<QuizChoice>> OnChoicesSelected;
 
+        [NonSerialized]
+        public List<List<QuizChoice>> ChoicesSelected = new();
+
         [SerializeField]
         private QuizChoicesController _choicesController;
 
@@ -80,7 +83,7 @@ namespace OperaVR
         }
 
         protected virtual void LoadQuestionPage(int pageIndex)
-        {
+        { 
             if (_quizPopupData.Questions.Length <= pageIndex)
             {
                 Debug.LogError("Page index exceed Questions number");
@@ -112,7 +115,9 @@ namespace OperaVR
             _image.sprite = _currentQuestion.Image;
             _imageContainer.SetActive(_currentQuestion.Image != null);
 
-            _choicesController.LoadChoices(_currentQuestion.Choices, _currentQuestion.MaxChoices);
+            var previouslySelectedChoices = ChoicesSelected.Count > _displayedPage ?
+                ChoicesSelected[_displayedPage] : new();
+            _choicesController.LoadChoices(_currentQuestion.Choices, _currentQuestion.MaxChoices, previouslySelectedChoices);
 
             SetPage(pageIndex);
         }
@@ -139,12 +144,7 @@ namespace OperaVR
 
         private void Confirm()
         {
-            var choicesSelected = new List<QuizChoice>();
-            foreach (var toggle in _choicesController.TogglesOn)
-            {
-                choicesSelected.Add(toggle.LoadedChoice);
-            }
-            OnChoicesSelected?.Invoke(choicesSelected);
+            ConfirmChoices();
 
             if (_quizPopupData.Type == QuizType.LinearQuiz)
             {
@@ -152,6 +152,24 @@ namespace OperaVR
                 return;
             }
             Progress();
+        }
+
+        private void ConfirmChoices()
+        {
+            var choicesSelected = new List<QuizChoice>();
+            foreach (var toggle in _choicesController.TogglesOn)
+            {
+                choicesSelected.Add(toggle.LoadedChoice);
+            }
+            if (ChoicesSelected.Count > _displayedPage)
+            {
+                ChoicesSelected[_displayedPage] = choicesSelected;
+            }
+            else
+            {
+                ChoicesSelected.Add(choicesSelected);
+            }
+            OnChoicesSelected?.Invoke(choicesSelected);
         }
 
         private void DisplayChoiceOutcome()

@@ -10,8 +10,6 @@ namespace OperaVR
 
         public QuizPopupData QuizData => Data as QuizPopupData;
 
-        protected List<List<QuizChoice>> ChoicesSelected = new();
-
         protected virtual void Awake()
         {
             ContentController.OnComplete += OnQuizCompleted;
@@ -29,12 +27,12 @@ namespace OperaVR
 
         private void OnContentRestart()
         {
-            ChoicesSelected = new();
+            ContentController.ChoicesSelected = new();
         }
 
         private void OnContentProgress(List<QuizChoice> choicesSelected)
         {
-            ChoicesSelected.Add(choicesSelected);
+            
         }
     }
 }
