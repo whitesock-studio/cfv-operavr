@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -27,7 +28,8 @@ namespace OperaVR
             }
         }
 
-        public void LoadChoices(QuizChoice[] quizChoices, int maxChoices)
+        public void LoadChoices(QuizChoice[] quizChoices, int maxChoices, 
+            List<QuizChoice> previouslySelectedChoices)
         {
             _outcomeToggle.gameObject.SetActive(false);
 
@@ -46,6 +48,7 @@ namespace OperaVR
                 var quizChoiceToggle = _pool[i];
                 quizChoiceToggle.gameObject.SetActive(true);
                 quizChoiceToggle.LoadChoice(quizChoices[i], maxChoices == 1);
+                quizChoiceToggle.SetValue(previouslySelectedChoices.Contains(quizChoices[i]));
                 current++;
             }
             for (var i = current; i < _pool.Length; i++)

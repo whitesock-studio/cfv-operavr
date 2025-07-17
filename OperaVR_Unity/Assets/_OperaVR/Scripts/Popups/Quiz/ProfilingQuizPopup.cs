@@ -26,7 +26,7 @@ namespace OperaVR
             base.OnQuizCompleted();
             
             var score = 0;
-            foreach(var quizChoicesSelected in ChoicesSelected)
+            foreach(var quizChoicesSelected in ContentController.ChoicesSelected)
             {
                 score += quizChoicesSelected.Sum(choice => choice.PointsGiven);
             }
