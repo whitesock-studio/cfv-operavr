@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -17,27 +18,74 @@ namespace OperaVR
         [SerializeField]
         private Color _hiddenColor;
 
+        [SerializeField]
+        private Color _correctColor;
+
+        [SerializeField]
+        private Color _wrongColor;
+
+        private Coroutine _coroutine;
+
         private void Awake()
         {
-            TextDisplayer.color = _normalColor;
+            UpdateView(_normalColor);
         }
 
         public void SetSelected(bool isSelected)
         {
             if (isSelected)
             {
-                TextDisplayer.color = _normalColor;
+                UpdateView(_normalColor);
             }
         }
 
         public void SetInteractable(bool isInteractable)
         {
-            TextDisplayer.color = isInteractable ? _normalColor : _notInteractableColor;
+            UpdateView(isInteractable ? _normalColor : _notInteractableColor);
         }
 
         public void SetHidden(bool isHidden)
         {
-            TextDisplayer.color = isHidden ? _hiddenColor : _normalColor;
+            UpdateView(isHidden ? _hiddenColor : _normalColor);
+        }
+
+        public void SetCorrect(bool isCorrect, bool isNormal)
+        {
+            if (isNormal)
+            {
+                TextDisplayer.color = _normalColor;
+                return;
+            }
+            UpdateView(isCorrect ? _correctColor : _wrongColor);
+        }
+
+        private void UpdateView(Color targetColor, float transitionTime = .2f)
+        {
+            if (!gameObject.activeInHierarchy)
+            {
+                TextDisplayer.color = targetColor;
+                return;
+            }
+            if (_coroutine != null)
+            {
+                StopCoroutine(_coroutine);
+            }
+            _coroutine = StartCoroutine(UpdateViewCor(targetColor, transitionTime));
+        }
+
+        private IEnumerator UpdateViewCor(Color targetColor, float transitionTime = .2f)
+        {
+            var startingColor = TextDisplayer.color;
+            var t = 0f;
+            while (t < transitionTime)
+            {
+                t += Time.deltaTime;
+                var a = t / transitionTime;
+                TextDisplayer.color = Color.Lerp(startingColor, targetColor, a);
+                yield return null;
+            }
+            TextDisplayer.color = targetColor;
+            _coroutine = null;
         }
     }
 }
