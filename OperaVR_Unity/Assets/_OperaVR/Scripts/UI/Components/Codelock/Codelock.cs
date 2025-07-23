@@ -10,6 +10,7 @@ namespace OperaVR
     public class Codelock : MonoBehaviour
     {
         public Action OnUnlock;
+        public Action OnError;
 
         [SerializeField]
         private TMP_InputField _inputField;
@@ -51,10 +52,13 @@ namespace OperaVR
                 StartCoroutine(Unlock());
                 return;
             }
+
+            //Wrong code => Error
             foreach (var slot in _slots)
             {
                 slot.PulseOutcome(false);
             }
+            OnError?.Invoke();
         }
 
         private void InputFieldSelect(string text)

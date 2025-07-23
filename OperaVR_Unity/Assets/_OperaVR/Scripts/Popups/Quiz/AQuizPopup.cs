@@ -13,6 +13,7 @@ namespace OperaVR
         {
             ContentController.OnComplete += OnQuizCompleted;
             ContentController.OnRestart += OnContentRestart;
+            ContentController.OnFail += () => OnFail?.Invoke(this);
         }
 
         protected override void OnPreOpened()
@@ -21,7 +22,10 @@ namespace OperaVR
             ContentController.LoadData(QuizData);
         }
 
-        protected virtual void OnQuizCompleted() { }
+        protected virtual void OnQuizCompleted() 
+        {
+            OnSuccess?.Invoke(this);
+        }
 
         private void OnContentRestart()
         {

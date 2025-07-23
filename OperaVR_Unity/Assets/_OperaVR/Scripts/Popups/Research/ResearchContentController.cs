@@ -15,6 +15,7 @@ namespace OperaVR
         }
 
         public Action OnComplete;
+        public Action OnFail;
 
         [Header("Link Page")]
         [SerializeField]
@@ -51,6 +52,7 @@ namespace OperaVR
         private void Awake()
         {
             _codelock.OnUnlock += () => SetPage(Page.End);
+            _codelock.OnError += () => OnFail?.Invoke();
             _linkButton.onClick.AddListener(() => SpatialBridge.spaceService.OpenURL(_researchPopupData.Link));
             _toCodelockButton.onClick.AddListener(() => SetPage(Page.Code));
             _backButton.onClick.AddListener(() => SetPage(Page.Link));

@@ -1,4 +1,4 @@
-using SpatialSys.UnitySDK;
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -7,7 +7,10 @@ namespace OperaVR
 {
     public abstract class APopup : MonoBehaviour
     {
-        [ReadOnly]
+        public Action<APopup> OnClose;
+        public Action<APopup> OnSuccess;
+        public Action<APopup> OnFail;
+
         public APopupData Data;
 
         [Header("Open close animation")]
@@ -54,6 +57,7 @@ namespace OperaVR
                 StopCoroutine(_animationCoroutine);
             }
             _animationCoroutine = StartCoroutine(OpenCloseCoroutine(true));
+            OnClose?.Invoke(this);
         }
 
         protected virtual void Reset() { }

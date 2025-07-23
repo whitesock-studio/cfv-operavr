@@ -10,6 +10,7 @@ namespace OperaVR
     {
         public Action OnComplete;
         public Action OnRestart;
+        public Action OnFail;
         public Action<List<QuizChoice>> OnChoicesSelected;
 
         [NonSerialized]
@@ -191,6 +192,11 @@ namespace OperaVR
             _confirmButton.gameObject.SetActive(false);
             _confirmOutcomeButton.gameObject.SetActive(isCorrectChoice);
             _restartButton.gameObject.SetActive(!isCorrectChoice);
+
+            if (!isCorrectChoice)
+            {
+                OnFail?.Invoke();
+            }
 
             //TODO: LOCALIZE
             var outcomeText = isCorrectChoice ? _currentQuestion.CorrectChoiceDescription : "Risposta errata, ricomincia";

@@ -13,6 +13,7 @@ namespace OperaVR
         private void Awake()
         {
             _researchContentController.OnComplete += OnContentCompleted;
+            _researchContentController.OnFail += () => OnFail?.Invoke(this);
         }
 
         protected override void OnPreOpened()
@@ -23,6 +24,7 @@ namespace OperaVR
 
         private void OnContentCompleted()
         {
+            OnSuccess?.Invoke(this);
             PopupsManager.Instance.ClosePopup(this);
         }
     }

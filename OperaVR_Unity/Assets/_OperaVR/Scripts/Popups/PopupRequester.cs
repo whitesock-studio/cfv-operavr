@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace OperaVR
 {
     public class PopupRequester : MonoBehaviour
     {
+        public UnityEvent OnPopupClosed;
+        public UnityEvent OnPopupSucceded;
+        public UnityEvent OnPopupFail;
+
         [SerializeField]
         private APopupData _data;
 
@@ -25,6 +30,9 @@ namespace OperaVR
         {
             Close();
             _openedPopup = PopupsManager.Instance.OpenPopup(_data);
+            _openedPopup.OnClose += PopupClosed;
+            _openedPopup.OnSuccess += PopupSucceded;
+            _openedPopup.OnFail += PopupFailed;
         }
 
         public void Close()
@@ -33,6 +41,27 @@ namespace OperaVR
             {
                 PopupsManager.Instance.ClosePopup(_openedPopup);
             }
+        }
+
+        private void PopupClosed(APopup popup)
+        {
+            popup.OnClose -= PopupClosed;
+            popup.OnSuccess -= PopupSucceded;
+            popup.OnFail -= PopupFailed;
+            OnPopupClosed?.Invoke();
+            Debug.Log(popup + " closed");
+        }
+
+        private void PopupSucceded(APopup popup)
+        {
+            OnPopupSucceded?.Invoke();
+            Debug.Log(popup + " succeded");
+        }
+
+        private void PopupFailed(APopup popup)
+        {
+            OnPopupFail?.Invoke();
+            Debug.Log(popup + " failed");
         }
     }
 }
