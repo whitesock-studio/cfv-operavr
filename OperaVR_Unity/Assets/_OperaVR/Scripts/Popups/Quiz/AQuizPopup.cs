@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace OperaVR
@@ -14,7 +13,6 @@ namespace OperaVR
         {
             ContentController.OnComplete += OnQuizCompleted;
             ContentController.OnRestart += OnContentRestart;
-            ContentController.OnChoicesSelected += OnContentProgress;
         }
 
         protected override void OnPreOpened()
@@ -28,11 +26,6 @@ namespace OperaVR
         private void OnContentRestart()
         {
             ContentController.ChoicesSelected = new();
-        }
-
-        private void OnContentProgress(List<QuizChoice> choicesSelected)
-        {
-            
         }
     }
 }

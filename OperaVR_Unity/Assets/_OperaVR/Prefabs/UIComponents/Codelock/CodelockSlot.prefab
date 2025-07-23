@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4545691620224257650}
   - component: {fileID: 6415391689201684322}
+  - component: {fileID: 206015280052768889}
   - component: {fileID: 6720855180865814477}
   - component: {fileID: 6710921044842189210}
   m_Layer: 0
@@ -38,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 50, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6415391689201684322
 CanvasRenderer:
@@ -48,6 +49,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036738220129839980}
   m_CullTransparentMesh: 1
+--- !u!114 &206015280052768889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036738220129839980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c7ae5b46e540048b812eb88ea580d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textView: {fileID: 6663869789651115781}
+  _background: {fileID: 6720855180865814477}
+  _normalColor: {r: 1, g: 1, b: 1, a: 0.05490196}
+  _editingColor: {r: 1, g: 1, b: 1, a: 0.10980392}
 --- !u!114 &6720855180865814477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +277,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8212140070223615427, guid: 535373836d25ef74c85c959bebc4679c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 535373836d25ef74c85c959bebc4679c, type: 3}
+--- !u!114 &6663869789651115781 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6576495668730574251, guid: 535373836d25ef74c85c959bebc4679c,
+    type: 3}
+  m_PrefabInstance: {fileID: 522054390715525806}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5700d32e5eba7af4ea96f8e1fdb6c53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8454188440619616601 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8245521559189496823, guid: 535373836d25ef74c85c959bebc4679c,
