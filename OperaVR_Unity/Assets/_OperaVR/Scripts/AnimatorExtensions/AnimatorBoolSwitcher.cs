@@ -21,6 +21,22 @@ namespace OperaVR
             StartCoroutine(DelayedSwitch(parameterKey));
         }
 
+        public void SetTrue(string parameterKey)
+        {
+            StartCoroutine(DelayedSet(parameterKey, true));
+        }
+
+        public void SetFalse(string parameterKey)
+        { 
+            StartCoroutine(DelayedSet(parameterKey, false));
+        }
+
+        private IEnumerator DelayedSet(string parameterKey, bool value)
+        {
+            yield return new WaitForSeconds(_delay);
+            _anim.SetBool(parameterKey, value);
+        }
+
         private IEnumerator DelayedSwitch(string parameterKey)
         {
             yield return new WaitForSeconds(_delay);
