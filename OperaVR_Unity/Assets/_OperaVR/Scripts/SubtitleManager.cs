@@ -1,15 +1,12 @@
 namespace OperaVR
 {
-
 	using System;
 	using System.Collections;
 	using System.Collections.Generic;
 	using System.Globalization;
-	using System.IO;
 	using System.Text.RegularExpressions;
 	using UnityEngine;
 	using UnityEngine.Events;
-	using static UnityEngine.EventSystems.EventTrigger;
 
 	[System.Serializable]
 	public class SubtitleEntry

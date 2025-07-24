@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2750553b975d35d4895ce7a0d64b4ae6, type: 3}
+  m_Name: QuizProfilingTextData_TEST
+  m_EditorClassIdentifier: 
+  PopupType: 0
+  InterruptsMovement: 1
+  Title: Profiling Text Quiz
+  SubTitle: Seleziona tutte le risposte corrette
+  Type: 1
+  ProfilingData: {fileID: 11400000, guid: 64feeeb1a574efd4e8560f582377c930, type: 2}
+  Questions:
+  - Image: {fileID: 21300000, guid: 4e4e7d69e20dd52418f85cd87eb39397, type: 3}
+    Content:
+      Type: 0
+      Text: This is the question
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 2
+    Choices:
+    - IsCorrect: 0
+      PointsGiven: 10
+      Content:
+        Type: 0
+        Text: +10
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 0
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: -5
+      Content:
+        Type: 0
+        Text: -5
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 21300000, guid: d90d49fcc94aae74f9d4bd8d94747f09, type: 3}
+    Content:
+      Type: 0
+      Text: 
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 3
+    Choices:
+    - IsCorrect: 0
+      PointsGiven: -5
+      Content:
+        Type: 0
+        Text: -5
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 5
+      Content:
+        Type: 0
+        Text: 5
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 0
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 2
+      Content:
+        Type: 0
+        Text: 2
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: -3
+      Content:
+        Type: 0
+        Text: -3
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 7
+      Content:
+        Type: 0
+        Text: 7
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}

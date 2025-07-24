@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 namespace OperaVR
 {
     public class PopupsManager : MonoBehaviour
