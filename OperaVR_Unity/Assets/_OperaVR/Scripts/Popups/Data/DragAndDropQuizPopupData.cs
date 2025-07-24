@@ -7,13 +7,22 @@ namespace OperaVR
     {
         public string QuestionText;
         public AudioClip AudioClip;
-        public GameObject DataPrefab;
-        public DraggableData DraggablesData;
+        public Sprite Image;
+        public DraggableSlotData[] DraggableSlotsData;
+        public DraggableData[] DraggablesData;
+
+        [System.Serializable]
+        public class DraggableSlotData
+        {
+            public Vector2 Position;
+        }
 
         [System.Serializable]
         public class DraggableData
         {
             public Sprite Sprite;
+
+            [Tooltip("Set -1 if is not correct")]
             public int CorrectSlot = -1;
         }
     }
