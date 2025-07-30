@@ -56,6 +56,7 @@ namespace OperaVR
                 _audioSource.UnPause();
                 return;
             }
+            _audioSource.time = 0;
             _audioSource.Play();
         }
     }

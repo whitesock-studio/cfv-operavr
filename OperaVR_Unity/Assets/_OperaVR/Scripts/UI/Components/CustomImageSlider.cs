@@ -14,11 +14,6 @@ namespace OperaVR
         [SerializeField]
         private RectTransform _maskTransform;
 
-        private void Update()
-        {
-            SetNormalizedValue(Time.time % 1);
-        }
-
         public void SetNormalizedValue(float normalizedValue)
         {
             _maskTransform.anchorMax = new Vector2(normalizedValue, 1);

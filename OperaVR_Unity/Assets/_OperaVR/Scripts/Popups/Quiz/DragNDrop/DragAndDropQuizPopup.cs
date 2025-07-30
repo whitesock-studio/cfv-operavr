@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace OperaVR
@@ -9,6 +10,7 @@ namespace OperaVR
 
         public DragAndDropQuizPopupData DragAndDropData => Data as DragAndDropQuizPopupData;
 
+        private Coroutine _completeCoroutine;
 
         private void Awake()
         {
@@ -24,8 +26,19 @@ namespace OperaVR
 
         private void OnContentCompleted()
         {
+            if (_completeCoroutine != null)
+            {
+                return;
+            }
+            _completeCoroutine = StartCoroutine(DelayedComplete());
+        }
+
+        private IEnumerator DelayedComplete()
+        {
+            yield return new WaitForSeconds(1f);
             OnSuccess?.Invoke(this);
             PopupsManager.Instance.ClosePopup(this);
+            _completeCoroutine = null;
         }
     }
 }

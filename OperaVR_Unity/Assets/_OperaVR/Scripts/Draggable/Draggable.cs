@@ -23,8 +23,20 @@ namespace OperaVR
         public bool IsDragging;
         public bool IsHovered;
 
+        public DraggableSlot StartingSlot;
+
         private Vector2 _startDragPosition;
         public Vector2 StartDragPosition => _startDragPosition;
+
+        private void Start()
+        {
+            if (StartingSlot == null)
+            {
+                return;
+            }
+            StartingSlot.LinkedDraggable = this;
+            transform.position = StartingSlot.Position;
+        }
 
         public virtual void HoverStart(PointerEventData eventData)
         {

@@ -7,14 +7,38 @@ namespace OperaVR
     /// <summary>
     /// This is used by a DraggableManager as landing slots for draggables
     /// </summary>
-    public class DraggableSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    [RequireComponent(typeof(RectTransform))]
+    public class DraggableSlot : MonoBehaviour
     {
-        public Action<DraggableSlot, PointerEventData> OnHoverEnterRequest;
-        public Action<DraggableSlot, PointerEventData> OnHoverExitRequest;
-
         public Vector2 Position => transform.position;
 
         public bool IsHovered;
+        
+        [NonSerialized]
+        public Draggable LinkedDraggable;
+
+        public bool IsOccupied => LinkedDraggable != null;
+
+        public bool AcceptsDraggables = true;
+
+        public ImageView ImageView;
+        public ImageView BorderView;
+
+        private RectTransform _rectTransform;
+
+        private void Awake()
+        {
+            _rectTransform = GetComponent<RectTransform>();
+        }
+
+        private void Update()
+        {
+            if (LinkedDraggable == null)
+            {
+                return;
+            }
+            LinkedDraggable.transform.position = Position;
+        }
 
         public virtual void HoverStart(PointerEventData eventData)
         {
@@ -26,14 +50,14 @@ namespace OperaVR
             IsHovered = false;
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public bool IsPointInsideRect(Vector2 screenPoint)
         {
-            OnHoverEnterRequest?.Invoke(this, eventData);
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            OnHoverExitRequest?.Invoke(this, eventData);
+            if (!isActiveAndEnabled)
+            {
+                return false;
+            }
+            var localPoint = screenPoint - Position;
+            return _rectTransform.rect.Contains(localPoint);
         }
     }
 }

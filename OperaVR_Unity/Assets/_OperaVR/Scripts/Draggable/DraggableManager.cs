@@ -1,21 +1,32 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static OperaVR.DragAndDropQuizPopupData;
 
 namespace OperaVR
 {
     public class DraggableManager : MonoBehaviour
     {
+        public Action<List<(int slotIndex, int draggableIndex)>> OnPairingsChanged;
+
+        public List<(int slotIndex, int draggableIndex)> Pairings;
+
         [SerializeField]
         private List<Draggable> _startingDraggables = new();
         private List<Draggable> _draggables = new();
 
         [SerializeField]
-        private List<DraggableSlot> _startingDraggableSlots = new();
-        private List<DraggableSlot> _draggableSlots = new();
+        private List<DraggableSlot> _startingInputDraggableSlots = new();
+        private List<DraggableSlot> _inputDraggableSlots = new();
+
+        [SerializeField]
+        private List<DraggableSlot> _startingOutputDraggableSlots = new();
+        private List<DraggableSlot> _outputDraggableSlots = new();
 
         public Draggable CurrentDraggable;
         public DraggableSlot CurrentHoveredDraggableSlot;
+        public DraggableSlot PreviousDraggableSlot;
 
         private void Awake()
         {
@@ -24,10 +35,86 @@ namespace OperaVR
                 RegisterDraggable(draggable);
             }
 
-            foreach (var draggableSlot in _startingDraggableSlots)
+            foreach (var draggableSlot in _startingInputDraggableSlots)
             {
-                RegisterDraggableSlot(draggableSlot);
+                RegisterDraggableSlot(draggableSlot, true);
             }
+
+            foreach (var draggableSlot in _startingOutputDraggableSlots)
+            {
+                RegisterDraggableSlot(draggableSlot, false);
+            }
+        }
+
+        private void Update()
+        {
+            CheckHoveredSlot();
+        }
+
+        public void LoadData(DraggableSlotData[] draggableSlotsData, DraggableData[] draggablesData)
+        {
+            for (var i = 0; i < _outputDraggableSlots.Count; i++)
+            {
+                var slot = _outputDraggableSlots[i];
+                slot.gameObject.SetActive(i < draggableSlotsData.Length);
+                if (i < draggableSlotsData.Length)
+                {
+                    slot.transform.localPosition = draggableSlotsData[i].Position;
+                    continue;
+                }
+            }
+
+            for (var i = 0; i < _inputDraggableSlots.Count; i++)
+            {
+                var slot = _inputDraggableSlots[i];
+                _inputDraggableSlots[i].gameObject.SetActive(i < draggablesData.Length);
+            }
+
+            for (var i = 0; i < _draggables.Count; i++)
+            {
+                var draggable = _draggables[i];
+                draggable.gameObject.SetActive(i < draggablesData.Length);
+                if (i < draggablesData.Length)
+                {
+                    draggable.transform.position = _inputDraggableSlots[i].Position;
+                    continue;
+                }
+            }
+        }
+
+        public void SetOutcomes(bool areGraphicsOn, bool isCorrect)
+        {
+            foreach (var outputSlot in _outputDraggableSlots)
+            {
+                if (!outputSlot.gameObject.activeSelf)
+                {
+                    continue;
+                }
+                outputSlot.BorderView.SetOutcome(areGraphicsOn, isCorrect);
+            }
+        }
+
+        private void CheckPairings()
+        {
+            Pairings = new List<(int, int)>();
+            for (var i = 0; i < _outputDraggableSlots.Count; i++)
+            {
+                var slot = _outputDraggableSlots[i];
+                if (!slot.gameObject.activeSelf)
+                {
+                    continue;
+                }
+                var linkedDraggableIndex = slot.LinkedDraggable == null ? -1 : 
+                    _draggables.IndexOf(slot.LinkedDraggable);
+                Pairings.Add((i, linkedDraggableIndex));
+            }
+            OnPairingsChanged?.Invoke(Pairings);
+        }
+
+        private void LinkDraggableToSlot(Draggable draggable, DraggableSlot slot)
+        {
+            draggable.transform.position = slot.Position;
+            slot.LinkedDraggable = draggable;
         }
 
         #region De/Registration Methods
@@ -60,26 +147,24 @@ namespace OperaVR
             draggable.OnHoverExitRequest -= DraggableHoverExitRequested;
         }
 
-        public void RegisterDraggableSlot(DraggableSlot draggableSlot)
+        public void RegisterDraggableSlot(DraggableSlot draggableSlot, bool asInput)
         {
-            if (_draggableSlots.Contains(draggableSlot))
+            var list = asInput ? _inputDraggableSlots : _outputDraggableSlots;
+            if (list.Contains(draggableSlot))
             {
                 return;
             }
-            _draggableSlots.Add(draggableSlot);
-            draggableSlot.OnHoverEnterRequest += DraggableSlotHoverEnterRequested;
-            draggableSlot.OnHoverExitRequest += DraggableSlotHoverExitRequested;
+            list.Add(draggableSlot);
         }
 
-        public void DeregisterDraggableSlot(DraggableSlot draggableSlot)
+        public void DeregisterDraggableSlot(DraggableSlot draggableSlot, bool asInput)
         {
-            if (!_draggableSlots.Contains(draggableSlot))
+            var list = asInput ? _inputDraggableSlots : _outputDraggableSlots;
+            if (!list.Contains(draggableSlot))
             {
                 return;
             }
-            _draggableSlots.Remove(draggableSlot);
-            draggableSlot.OnHoverEnterRequest -= DraggableSlotHoverEnterRequested;
-            draggableSlot.OnHoverExitRequest -= DraggableSlotHoverExitRequested;
+            list.Remove(draggableSlot);
         }
         
         #endregion
@@ -102,7 +187,14 @@ namespace OperaVR
                 return;
             }
             CurrentDraggable = draggable;
+            PreviousDraggableSlot = null;
+            if (CurrentHoveredDraggableSlot != null && CurrentHoveredDraggableSlot.LinkedDraggable == draggable)
+            {
+                PreviousDraggableSlot = CurrentHoveredDraggableSlot;
+                CurrentHoveredDraggableSlot.LinkedDraggable = null;
+            }
             draggable.StartDrag(eventData);
+            CheckPairings();
         }
 
         private void DraggableDragRequested(Draggable draggable, PointerEventData eventData)
@@ -122,15 +214,36 @@ namespace OperaVR
             }
             CurrentDraggable = null;
 
-            var targetPosition = draggable.StartDragPosition;
-            if (CurrentHoveredDraggableSlot != null)
+            if (CurrentHoveredDraggableSlot == null || 
+                (!CurrentHoveredDraggableSlot.AcceptsDraggables && 
+                draggable.StartingSlot != CurrentHoveredDraggableSlot))
             {
-                targetPosition = CurrentHoveredDraggableSlot.Position;
+                if (PreviousDraggableSlot != null)
+                {
+                    LinkDraggableToSlot(draggable, PreviousDraggableSlot);
+                    draggable.Release(eventData, PreviousDraggableSlot.Position);
+                    CheckPairings();
+                    return;
+                }
+                draggable.Release(eventData, draggable.StartDragPosition);
+                CheckPairings();
+                return;
             }
-            
-            draggable.Release(eventData, targetPosition);
+
+            if (CurrentHoveredDraggableSlot.IsOccupied)
+            {
+                var currentOccupyingDraggable = CurrentHoveredDraggableSlot.LinkedDraggable;
+                if (currentOccupyingDraggable.StartingSlot != null)
+                {
+                    LinkDraggableToSlot(currentOccupyingDraggable, currentOccupyingDraggable.StartingSlot);
+                }
+            }
+
+            LinkDraggableToSlot(draggable, CurrentHoveredDraggableSlot);
+            draggable.Release(eventData, CurrentHoveredDraggableSlot.Position);
+            CheckPairings();
         }
-        
+
         private void DraggableHoverExitRequested(Draggable draggable, PointerEventData eventData)
         {
             if (CurrentDraggable != null)
@@ -142,28 +255,41 @@ namespace OperaVR
 
         #endregion
 
-        #region Draggable Slot Events Callbacks
-
-        private void DraggableSlotHoverEnterRequested(DraggableSlot draggableSlot, PointerEventData eventData)
+        private void CheckHoveredSlot()
         {
-            if (CurrentHoveredDraggableSlot != null)
-            {
-                return;
-            }
-            CurrentHoveredDraggableSlot = draggableSlot;
-            draggableSlot.HoverStart(eventData);
-        }
-
-        private void DraggableSlotHoverExitRequested(DraggableSlot draggableSlot, PointerEventData eventData)
-        {
-            if (CurrentHoveredDraggableSlot == null)
-            {
-                return;
-            }
+            var mousePos = Input.mousePosition;
+            var prevHoveredSlot = CurrentHoveredDraggableSlot;
             CurrentHoveredDraggableSlot = null;
-            draggableSlot.HoverEnd(eventData);
+            foreach (var slot in _inputDraggableSlots)
+            {
+                if (slot.IsPointInsideRect(mousePos))
+                {
+                    CurrentHoveredDraggableSlot = slot;
+                    break;
+                }
+            }
+            foreach (var slot in _outputDraggableSlots)
+            {
+                if (slot.IsPointInsideRect(mousePos))
+                {
+                    CurrentHoveredDraggableSlot = slot;
+                    break;
+                }
+            }
+            if (prevHoveredSlot == CurrentHoveredDraggableSlot)
+            {
+                return;
+            }
+            if (CurrentHoveredDraggableSlot != null && prevHoveredSlot == null)
+            {
+                CurrentHoveredDraggableSlot.IsHovered = true;
+                return;
+            }
+            if (CurrentHoveredDraggableSlot == null && prevHoveredSlot != null)
+            {
+                prevHoveredSlot.IsHovered = false;
+                return;
+            }
         }
-
-        #endregion
     }
 }
