@@ -23,7 +23,7 @@ namespace OperaVR
         private void Awake()
         {
             _playPauseButton.onClick.AddListener(ButtonClicked);
-            _slider.OnNormalizedTimeRequest += ChangeTimeRequest;
+            _slider.OnNormalizedTimeRequest += SetTime;
         }
 
         private void Update()
@@ -39,7 +39,28 @@ namespace OperaVR
             _audioSource.Stop();
         }
 
-        private void ChangeTimeRequest(float normalizedTime)
+        public void Play()
+        {
+            _audioSource.time = 0;
+            _audioSource.Play();
+        }
+
+        public void Stop()
+        {
+            _audioSource.Stop();
+        }
+
+        public void Pause()
+        {
+            _audioSource.Pause();
+        }
+
+        public void Unpause()
+        {
+            _audioSource.UnPause();
+        }
+
+        public void SetTime(float normalizedTime)
         {
             _audioSource.time = normalizedTime * _audioSource.clip.length;
         }
@@ -48,16 +69,15 @@ namespace OperaVR
         {
             if (_audioSource.isPlaying)
             {
-                _audioSource.Pause();
+                Pause();
                 return;
             }
             if (_audioSource.time != 0)
             {
-                _audioSource.UnPause();
+                Unpause();
                 return;
             }
-            _audioSource.time = 0;
-            _audioSource.Play();
+            Play();
         }
     }
 }
