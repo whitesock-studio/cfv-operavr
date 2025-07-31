@@ -1,10 +1,9 @@
 using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace OperaVR
 {
-    public class OperaToggle : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
+    public class OperaToggle : UISelectableElement
     {
         public Action<OperaToggle, bool> OnValueChanged;
         public Action<OperaToggle, bool> OnInteractableChanged;
@@ -28,11 +27,9 @@ namespace OperaVR
             }
         }
 
-        [SerializeField]
-        private bool m_isInteractable = true;
-        public virtual bool IsInteractable
+        public override bool IsInteractable
         {
-            get => m_isInteractable;
+            get => base.IsInteractable;
             protected set
             {
                 if (m_isInteractable == value)
@@ -46,38 +43,34 @@ namespace OperaVR
             }
         }
 
-        [SerializeField]
-        private bool _isHidden = true;
-        public virtual bool IsHidden
+        public override bool IsHidden
         {
-            get => _isHidden;
+            get => m_isHidden;
             set
             {
-                if (_isHidden == value)
+                if (m_isHidden == value)
                 {
                     return;
                 }
-                _isHidden = value;
-                BackgroundView.SetHidden(_isHidden, IsOn);
-                BorderView.SetHidden(_isHidden, IsOn);
-                ToggleView?.SetHidden(_isHidden, IsOn);
+                m_isHidden = value;
+                BackgroundView.SetHidden(m_isHidden, IsOn);
+                BorderView.SetHidden(m_isHidden, IsOn);
+                ToggleView?.SetHidden(m_isHidden, IsOn);
             }
         }
 
-        [SerializeField]
-        private bool _isHovered;
-        public virtual bool IsHovered
+        public override bool IsHovered
         {
-            get => _isHovered;
+            get => m_isHovered;
             set
             {
-                if (_isHovered == value)
+                if (m_isHovered == value)
                 {
                     return;
                 }
-                _isHovered = value;
-                BackgroundView.SetHovered(_isHovered, IsOn);
-                BorderView.SetHovered(_isHovered, IsOn);
+                m_isHovered = value;
+                BackgroundView.SetHovered(m_isHovered, IsOn);
+                BorderView.SetHovered(m_isHovered, IsOn);
             }
         }
 
@@ -126,43 +119,21 @@ namespace OperaVR
             m_isInteractable = value;
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        protected override void OnPointerDown()
         {
-            if (!IsInteractable)
-            {
-                return;
-            }
             BackgroundView.SetHeld(true, IsOn);
             BorderView.SetHeld(true, IsOn);
         }
 
-        public void OnPointerUp(PointerEventData eventData)
+        protected override void OnPointerUp()
         {
-            if (!IsInteractable)
-            {
-                return;
-            }
             BackgroundView.SetHeld(false, IsOn);
             BorderView.SetHeld(false, IsOn);
             SetValue(!IsOn);
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            if (!IsInteractable)
-            {
-                return;
-            }
-            IsHovered = true;
-        }
+        protected override void OnPointerEnter() { }
 
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            if (!IsInteractable)
-            {
-                return;
-            }
-            IsHovered = false;
-        }
+        protected override void OnPointerExit() { }
     }
 }

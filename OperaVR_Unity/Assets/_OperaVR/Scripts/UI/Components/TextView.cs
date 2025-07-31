@@ -11,7 +11,10 @@ namespace OperaVR
 
         [SerializeField]
         private Color _normalColor;
-        
+
+        [SerializeField]
+        private Color _selectedColor;
+
         [SerializeField]
         private Color _notInteractableColor;
 
@@ -33,10 +36,7 @@ namespace OperaVR
 
         public void SetSelected(bool isSelected)
         {
-            if (isSelected)
-            {
-                UpdateView(_normalColor);
-            }
+            UpdateView(isSelected ? _selectedColor : _normalColor);
         }
 
         public void SetInteractable(bool isInteractable)

@@ -28,7 +28,7 @@ namespace OperaVR
         public void Reset()
         {
             _textView.TextDisplayer.text = string.Empty;
-            _textView.SetSelected(true);
+            _textView.SetSelected(false);
         }
 
         public void SetText(string text)
