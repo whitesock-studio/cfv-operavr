@@ -39,7 +39,6 @@ namespace OperaVR
             var normTime = _referenceAudioSource.time / _referenceAudioSource.clip.length;
             normTime = Mathf.Clamp01(normTime);
             _multitrackPlayTracker.SetValue(normTime);
-            SetTracksValue(normTime);
 
             var isPlaying = _referenceAudioSource.isPlaying;
             var isPaused = !isPlaying && (_referenceAudioSource.time > 0 && 
@@ -89,6 +88,7 @@ namespace OperaVR
             var targetTime = _referenceAudioSource.clip.length * normalizedTime;
             _referenceAudioSource.time = Mathf.Clamp(targetTime, 0, 
                 _referenceAudioSource.clip.length - .01f);
+            SetTracksValue(normalizedTime);
         }
 
         private void Play()
