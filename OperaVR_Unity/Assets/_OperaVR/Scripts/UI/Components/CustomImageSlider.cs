@@ -16,6 +16,10 @@ namespace OperaVR
 
         public void SetNormalizedValue(float normalizedValue)
         {
+            if (_maskTransform == null)
+            {
+                return;
+            }
             _maskTransform.anchorMax = new Vector2(normalizedValue, 1);
             _maskTransform.offsetMax = Vector2.zero;
         }

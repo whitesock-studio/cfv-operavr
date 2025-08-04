@@ -28,6 +28,10 @@ namespace OperaVR
 
         private void Update()
         {
+            if (!_audioSource.clip)
+            {
+                return;
+            }
             _slider.SetNormalizedValue(_audioSource.time / _audioSource.clip.length);
             _playImage.SetActive(!_audioSource.isPlaying);
             _pauseImage.SetActive(_audioSource.isPlaying);
@@ -37,6 +41,11 @@ namespace OperaVR
         {
             _audioSource.clip = clip;
             _audioSource.Stop();
+        }
+
+        public void SetVolume(float volume)
+        {
+            _audioSource.volume = volume;
         }
 
         public void Play()
@@ -62,7 +71,8 @@ namespace OperaVR
 
         public void SetTime(float normalizedTime)
         {
-            _audioSource.time = normalizedTime * _audioSource.clip.length;
+            var targetTime = _audioSource.clip.length * normalizedTime;
+            _audioSource.time = Mathf.Clamp(targetTime, 0, _audioSource.clip.length - .01f);
         }
 
         private void ButtonClicked()
