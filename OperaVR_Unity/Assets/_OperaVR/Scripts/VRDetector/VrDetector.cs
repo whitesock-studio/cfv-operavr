@@ -11,7 +11,7 @@ namespace OperaVR
 
         private void Update()
         {
-            _debugText.text = SpatialBridge.cameraService.xrCameraMode.ToString();
+            _debugText.text = SpatialBridge.actorService.localActor.platform.ToString();
         }
     }
 }
