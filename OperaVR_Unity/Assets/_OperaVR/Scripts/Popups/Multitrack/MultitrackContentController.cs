@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 namespace OperaVR
@@ -7,6 +8,9 @@ namespace OperaVR
     {
         [SerializeField]
         private MultitrackPlayTracker _multitrackPlayTracker;
+
+        [SerializeField]
+        private AudioMixerGroup _mixerGroup;
 
         [SerializeField]
         private Button _playButton;
@@ -78,6 +82,7 @@ namespace OperaVR
             {
                 _referenceAudioSource = gameObject.AddComponent<AudioSource>();
             }
+            _referenceAudioSource.outputAudioMixerGroup = _mixerGroup;
             _referenceAudioSource.clip = clip;
             _referenceAudioSource.volume = 0;
             _referenceAudioSource.Stop();
