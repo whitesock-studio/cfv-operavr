@@ -11,7 +11,6 @@ namespace OperaVR
     [System.Serializable]
     public class QuestData
     {
-        public string Id;
-        public string DisplayedName;
+        public uint Id;
     }
 }

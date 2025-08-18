@@ -1,3 +1,4 @@
+using SpatialSys.UnitySDK;
 using System;
 using UnityEngine;
 
@@ -22,8 +23,8 @@ namespace OperaVR
         [SerializeField]
         private GameObject _completedIcon;
 
-        private QuestData _loadedData;
-        public QuestData LoadedData => _loadedData;
+        private IQuest _loadedData;
+        public IQuest LoadedData => _loadedData;
 
         private State _currentState;
         public State CurrentState => _currentState;
@@ -45,10 +46,10 @@ namespace OperaVR
             }
         }
 
-        public void LoadData(QuestData data)
+        public void LoadData(IQuest quest)
         {
-            _loadedData = data;
-            TextView.TextDisplayer.text = _loadedData.DisplayedName;
+            _loadedData = quest;
+            TextView.TextDisplayer.text = _loadedData.name;
         }
 
         public void SetState(State state)

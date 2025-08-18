@@ -1,4 +1,4 @@
-
+using SpatialSys.UnitySDK;
 using UnityEngine;
 
 namespace OperaVR
@@ -11,14 +11,15 @@ namespace OperaVR
         public QuestSelectionPopupData QuestSelectionData => Data as QuestSelectionPopupData;
 
         [Header("TEST")]
-        public string QuestId;
+        public uint QuestId;
         public bool Completes;
 
         private void Update()
         {
             if (Completes)
             {
-                TESTQuestTracker.TryCompleteQuest(QuestId, out var _);
+                SpatialBridge.questService.quests[QuestId].Complete();
+                Completes = false;
             }
         }
 
