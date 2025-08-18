@@ -14,6 +14,11 @@ namespace OperaVR
 
         private IEnumerator Start()
         {
+            if (!_teleportAtStart)
+            {
+                yield break;
+            }
+
             while (!SpatialBridge.actorService.localActor.avatar.isBodyLoaded)
             {
                 yield return null;

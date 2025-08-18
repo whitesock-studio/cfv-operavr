@@ -85,7 +85,6 @@ namespace OperaVR
                     _codelock.LoadCodes(_researchPopupData.AcceptedCodes);
                     break;
                 case Page.End:
-
                     break;
             }
         }
