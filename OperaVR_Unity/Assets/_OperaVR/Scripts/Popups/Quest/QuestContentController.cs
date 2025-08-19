@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using SpatialSys.UnitySDK;
 using System.Linq;
 using UnityEngine;
 
@@ -28,7 +28,8 @@ namespace OperaVR
 
         public void RefreshData()
         {
-            var isAnyCurrentQuest = _questSelectionPopupData.Quests.Any(q => q.Id == TESTQuestTracker.CurrentQuestId);
+            var isAnyQuestInProgress = _questSelectionPopupData.Quests.Any(
+                q => SpatialBridge.questService.quests[q.Id].status == QuestStatus.InProgress);
             for (var i = 0; i < _questsViews.Length; i++)
             {
                 var view = _questsViews[i];
@@ -37,16 +38,16 @@ namespace OperaVR
                     view.gameObject.SetActive(false);
                     continue;
                 }
-                var quest = _questSelectionPopupData.Quests[i];
+                var quest = SpatialBridge.questService.quests[_questSelectionPopupData.Quests[i].Id];
                 view.gameObject.SetActive(true);
 
                 var targetState = QuestSelectionView.State.Normal;
-                if (isAnyCurrentQuest)
+                if (isAnyQuestInProgress)
                 {
-                    targetState = quest.Id == TESTQuestTracker.CurrentQuestId ?
+                    targetState = quest.status == QuestStatus.InProgress ?
                         QuestSelectionView.State.Selected : QuestSelectionView.State.NotInteractable;
                 }
-                if (TESTQuestTracker.IsQuestCompleted(quest.Id))
+                if (quest.status == QuestStatus.Completed)
                 {
                     targetState = QuestSelectionView.State.Completed;
                 }
@@ -58,49 +59,8 @@ namespace OperaVR
 
         private void OnQuestViewClicked(QuestSelectionView view)
         {
-            TESTQuestTracker.CurrentQuestId = view.LoadedData.Id;
+            view.LoadedData.Start();
             RefreshData();
-        }
-    }
-    
-    public static class TESTQuestTracker
-    {
-        private static string _currentQuestId = "";
-        public static string CurrentQuestId
-        {
-            get
-            {
-                if (IsQuestCompleted(_currentQuestId))
-                {
-                    _currentQuestId = "";
-                }
-                return _currentQuestId;
-            }
-            set => _currentQuestId = value;
-        }
-
-        public static List<string> CompletedQuestsIds = new();
-
-        public static bool IsQuestCompleted(string questId)
-        {
-            return CompletedQuestsIds.Contains(questId);
-        }
-
-        public static bool TryCompleteQuest(string questId, out bool isAlreadyCompleted)
-        {
-            if (IsQuestCompleted(questId))
-            {
-                isAlreadyCompleted = true;
-                return false;
-            }
-
-            if (CurrentQuestId == questId)
-            {
-                CurrentQuestId = "";
-            }
-            CompletedQuestsIds.Add(questId);
-            isAlreadyCompleted = false;
-            return true;
         }
     }
 }
