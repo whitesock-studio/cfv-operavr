@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using static SpatialSys.UnitySDK.SpatialNetworkVariables;
 
 namespace OperaVR
 {
@@ -26,8 +24,6 @@ namespace OperaVR
 
         private void PostProcessData(string data)
         {
-            _localizationData = new LocalizationData();
-
             var result = CSVToLocalizationData.ParseCsv(data);
             var languagesRow = result[0];
             var languagesKeys = new List<string>();
@@ -47,6 +43,10 @@ namespace OperaVR
                     if (i == 0)
                     {
                         key = rowData[i];
+                        if (string.IsNullOrEmpty(key))
+                        {
+                            break;
+                        }
                         continue;
                     }
                     _localizationData.InsertValue(languagesKeys[i - 1], key, rowData[i]);

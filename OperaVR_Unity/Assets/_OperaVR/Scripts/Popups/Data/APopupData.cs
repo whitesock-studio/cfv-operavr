@@ -9,6 +9,8 @@ namespace OperaVR
         public bool InterruptsMovement = true;
 
         public string Title = "Title";
+        public string TitleKey = "";
         public string SubTitle = "This is the subtitle";
+        public string SubTitleKey = "";
     }
 }

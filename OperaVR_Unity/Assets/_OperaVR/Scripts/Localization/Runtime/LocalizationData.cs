@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace OperaVR
 {
-    [System.Serializable]
-    public class LocalizationData
+    [CreateAssetMenu(menuName = "Localization/Data", fileName = "LocalizationData")]
+    public class LocalizationData : ScriptableObject
     {
         public List<LanguageTable> LanguagesTables = new();
 
@@ -16,15 +17,13 @@ namespace OperaVR
             }
         }
 
-        public bool TryGetValue(string key, out string value)
+        public bool TryGetValue(string key, string language, out string value)
         {
-            var currentLanguage = "it";
-
             foreach (var languageTable in LanguagesTables)
             {
-                if (languageTable.LanguageKey == currentLanguage)
+                if (languageTable.LanguageKey == language)
                 {
-                    return TryGetValue(key, out value);
+                    return languageTable.TryGetValue(key, out value);
                 }
             }
             value = string.Empty;

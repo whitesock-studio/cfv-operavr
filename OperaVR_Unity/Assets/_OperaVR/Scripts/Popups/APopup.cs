@@ -33,10 +33,10 @@ namespace OperaVR
 
         [Header("Components")]
         [SerializeField]
-        protected TMP_Text _title;
+        protected LocalizedText _titleLoc;
 
         [SerializeField]
-        protected TMP_Text _subTitle;
+        protected LocalizedText _subTitleLoc;
 
         public abstract bool IsComplete { get; }
 
@@ -66,8 +66,8 @@ namespace OperaVR
 
         protected virtual void OnPreOpened() 
         {
-            _title.text = Data.Title;
-            _subTitle.text = Data.SubTitle;
+            _titleLoc.Key = Data.TitleKey;
+            _subTitleLoc.Key = Data.SubTitleKey;
         }
 
         protected virtual void OnPostOpened() { }

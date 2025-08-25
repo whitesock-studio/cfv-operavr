@@ -35,6 +35,10 @@ namespace OperaVR
 
         private void FixedUpdate()
         {
+            if (!HasAvatar)
+            {
+                return;
+            }
             transform.position = _avatar.position;
             transform.rotation = _avatar.rotation;
         }
