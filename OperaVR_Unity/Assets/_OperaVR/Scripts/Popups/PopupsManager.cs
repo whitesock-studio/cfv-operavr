@@ -44,6 +44,7 @@ namespace OperaVR
                 InsertInPool(popup);
             }
 
+            popup.Data = data;
             SetPopupEnabled(popup, true);
             popup.Open(data);
 
