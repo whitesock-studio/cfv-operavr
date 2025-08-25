@@ -227,8 +227,8 @@ namespace OperaVR
 
         private void Restart()
         {
-            LoadQuestionPage(0);
             OnRestart?.Invoke();
+            LoadQuestionPage(0);
         }
 
         private void QuizCompleted()
