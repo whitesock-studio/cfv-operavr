@@ -10,6 +10,8 @@ namespace OperaVR
 
         public QuestSelectionPopupData QuestSelectionData => Data as QuestSelectionPopupData;
 
+        public override bool IsComplete => false;
+
         [Header("TEST")]
         public uint QuestId;
         public bool Completes;

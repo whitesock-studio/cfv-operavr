@@ -65,6 +65,11 @@ namespace OperaVR
             SetPage(Page.Link);
         }
 
+        public bool CanComplete()
+        {
+            return _endPage.activeSelf;
+        }
+
         private void ResearchCompleted()
         {
             OnComplete?.Invoke();

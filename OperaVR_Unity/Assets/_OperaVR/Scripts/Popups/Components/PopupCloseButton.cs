@@ -25,6 +25,10 @@ namespace OperaVR
                 return;
             }
 
+            if (_popup.IsComplete)
+            {
+                _popup.OnSuccess?.Invoke(_popup);
+            }
             PopupsManager.Instance.ClosePopup(_popup);
         }
     }

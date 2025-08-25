@@ -9,6 +9,7 @@ namespace OperaVR
 
         public ResearchPopupData ResearchData => Data as ResearchPopupData;
 
+        public override bool IsComplete => _researchContentController.CanComplete();
 
         private void Awake()
         {

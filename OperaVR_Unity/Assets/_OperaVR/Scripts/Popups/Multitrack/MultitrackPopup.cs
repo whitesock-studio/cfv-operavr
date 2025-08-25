@@ -10,6 +10,8 @@ namespace OperaVR
 
         public MultitrackPopupData MultitrackData => Data as MultitrackPopupData;
 
+        public override bool IsComplete => false;
+
         protected override void OnPreOpened()
         {
             base.OnPreOpened();

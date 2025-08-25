@@ -10,6 +10,8 @@ namespace OperaVR
 
         public DragAndDropQuizPopupData DragAndDropData => Data as DragAndDropQuizPopupData;
 
+        public override bool IsComplete => _dragAndDropContentController.IsCompleted();
+
         private Coroutine _completeCoroutine;
 
         private void Awake()

@@ -83,6 +83,11 @@ namespace OperaVR
             LoadQuestionPage(0);
         }
 
+        public virtual bool IsCompleted()
+        {
+            return _quizPopupData.Questions.Length <= _displayedPage + 1;
+        }
+
         protected virtual void LoadQuestionPage(int pageIndex)
         { 
             if (_quizPopupData.Questions.Length <= pageIndex)
@@ -206,7 +211,7 @@ namespace OperaVR
 
         private void Progress()
         {
-            if (_quizPopupData.Questions.Length <= _displayedPage + 1)
+            if (IsCompleted())
             {
                 QuizCompleted();
                 return;

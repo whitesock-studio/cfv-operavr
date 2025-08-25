@@ -64,7 +64,7 @@ namespace OperaVR
             _confirmView.SetInteractable(areAllSlotsUsed, false);
         }
 
-        private void TryComplete()
+        public bool IsCompleted()
         {
             var pairings = _draggableManager.Pairings;
             var isCorrect = true;
@@ -82,6 +82,12 @@ namespace OperaVR
                     break;
                 }
             }
+            return isCorrect;
+        }
+
+        private void TryComplete()
+        {
+            var isCorrect = IsCompleted();
 
             SetOutcomes(true, isCorrect);
             if (isCorrect)

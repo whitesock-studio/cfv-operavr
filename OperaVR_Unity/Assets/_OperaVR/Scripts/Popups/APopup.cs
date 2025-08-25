@@ -38,6 +38,8 @@ namespace OperaVR
         [SerializeField]
         protected TMP_Text _subTitle;
 
+        public abstract bool IsComplete { get; }
+
         public virtual void Open(APopupData data)
         {
             data = Data;

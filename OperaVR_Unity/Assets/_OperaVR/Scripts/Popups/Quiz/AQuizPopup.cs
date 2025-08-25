@@ -9,6 +9,8 @@ namespace OperaVR
 
         public QuizPopupData QuizData => Data as QuizPopupData;
 
+        public override bool IsComplete => ContentController.IsCompleted();
+
         protected virtual void Awake()
         {
             ContentController.OnComplete += OnQuizCompleted;
