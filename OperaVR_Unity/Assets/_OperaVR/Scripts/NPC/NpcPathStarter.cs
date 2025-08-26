@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,9 +24,11 @@ namespace OperaVR
 
         [Header("Triggered when the path is complete\n(only for loop == false paths)")]
         public UnityEvent OnComplete;
+        public float OnCompleteDelay = 0;
 
         [Header("Triggered every time the path loops\n(only for loop == true paths)")]
         public UnityEvent OnLoop;
+        public float OnLoopDelay = 0;
 
         private bool _isOn;
         private int _currentIndex = 0;
@@ -88,12 +91,18 @@ namespace OperaVR
             {
                 _currentIndex %= _path.Points.Length;
                 _npc.SetDestination(_path.Points[_currentIndex].position);
-                OnLoop?.Invoke();
+                StartCoroutine(InvokeDelayed(OnLoop, OnLoopDelay));
                 return;
             }
 
-            OnComplete?.Invoke();
+            StartCoroutine(InvokeDelayed(OnComplete, OnCompleteDelay));
             _isOn = false;
+        }
+
+        private IEnumerator InvokeDelayed(UnityEvent unityEvent, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            unityEvent?.Invoke();
         }
     }
 }
