@@ -17457,8 +17457,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e9fc4eb2f25694cb5a86261acc7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RunningSpeed: 5.13
+  WalkingSpeed: 3.2
   _npc: {fileID: 1368596013}
   _path: {fileID: 321129161421074562}
+  _activateOnStart: 0
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLoop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2131644282
 Transform:
   m_ObjectHideFlags: 0
