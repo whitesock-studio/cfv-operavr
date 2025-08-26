@@ -13,49 +13,73 @@ namespace OperaVR
         public List<(int slotIndex, int draggableIndex)> Pairings;
 
         [SerializeField]
-        private List<Draggable> _startingDraggables = new();
-        private List<Draggable> _draggables = new();
+        protected List<Draggable> StartingDraggables = new();
+        protected List<Draggable> Draggables = new();
 
         [SerializeField]
-        private List<DraggableSlot> _startingInputDraggableSlots = new();
-        private List<DraggableSlot> _inputDraggableSlots = new();
+        protected List<DraggableSlot> StartingInputDraggableSlots = new();
+        protected List<DraggableSlot> InputDraggableSlots = new();
 
         [SerializeField]
-        private List<DraggableSlot> _startingOutputDraggableSlots = new();
-        private List<DraggableSlot> _outputDraggableSlots = new();
+        protected List<DraggableSlot> StartingOutputDraggableSlots = new();
+        protected List<DraggableSlot> OutputDraggableSlots = new();
 
         public Draggable CurrentDraggable;
         public DraggableSlot CurrentHoveredDraggableSlot;
         public DraggableSlot PreviousDraggableSlot;
 
-        private void Awake()
+        protected virtual void Awake()
         {
-            foreach(var draggable in _startingDraggables)
+            foreach(var draggable in StartingDraggables)
             {
                 RegisterDraggable(draggable);
             }
 
-            foreach (var draggableSlot in _startingInputDraggableSlots)
+            foreach (var draggableSlot in StartingInputDraggableSlots)
             {
                 RegisterDraggableSlot(draggableSlot, true);
             }
 
-            foreach (var draggableSlot in _startingOutputDraggableSlots)
+            foreach (var draggableSlot in StartingOutputDraggableSlots)
             {
                 RegisterDraggableSlot(draggableSlot, false);
             }
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             CheckHoveredSlot();
         }
 
-        public void LoadData(DraggableSlotData[] draggableSlotsData, DraggableData[] draggablesData)
+        public void Reset()
         {
-            for (var i = 0; i < _outputDraggableSlots.Count; i++)
+            for (var i = 0; i < OutputDraggableSlots.Count; i++)
             {
-                var slot = _outputDraggableSlots[i];
+                var slot = OutputDraggableSlots[i];
+                slot.LinkedDraggable = null;
+            }
+
+            for (var i = 0; i < InputDraggableSlots.Count; i++)
+            {
+                var slot = InputDraggableSlots[i];
+                slot.LinkedDraggable = null;
+            }
+
+            for (var i = 0; i < Draggables.Count; i++)
+            {
+                var draggable = Draggables[i];
+                draggable.Reset();
+            }
+
+            SetOutcomes(false, false);
+        }
+
+        public virtual void LoadData(DraggableSlotData[] draggableSlotsData, DraggableData[] draggablesData)
+        {
+            Reset();
+            for (var i = 0; i < OutputDraggableSlots.Count; i++)
+            {
+                var slot = OutputDraggableSlots[i];
                 slot.gameObject.SetActive(i < draggableSlotsData.Length);
                 if (i < draggableSlotsData.Length)
                 {
@@ -64,27 +88,27 @@ namespace OperaVR
                 }
             }
 
-            for (var i = 0; i < _inputDraggableSlots.Count; i++)
+            for (var i = 0; i < InputDraggableSlots.Count; i++)
             {
-                var slot = _inputDraggableSlots[i];
-                _inputDraggableSlots[i].gameObject.SetActive(i < draggablesData.Length);
+                var slot = InputDraggableSlots[i];
+                InputDraggableSlots[i].gameObject.SetActive(i < draggablesData.Length);
             }
 
-            for (var i = 0; i < _draggables.Count; i++)
+            for (var i = 0; i < Draggables.Count; i++)
             {
-                var draggable = _draggables[i];
+                var draggable = Draggables[i];
                 draggable.gameObject.SetActive(i < draggablesData.Length);
                 if (i < draggablesData.Length)
                 {
-                    draggable.transform.position = _inputDraggableSlots[i].Position;
+                    draggable.transform.position = InputDraggableSlots[i].Position;
                     continue;
                 }
             }
         }
 
-        public void SetOutcomes(bool areGraphicsOn, bool isCorrect)
+        public virtual void SetOutcomes(bool areGraphicsOn, bool isCorrect)
         {
-            foreach (var outputSlot in _outputDraggableSlots)
+            foreach (var outputSlot in OutputDraggableSlots)
             {
                 if (!outputSlot.gameObject.activeSelf)
                 {
@@ -94,18 +118,18 @@ namespace OperaVR
             }
         }
 
-        private void CheckPairings()
+        protected virtual void CheckPairings()
         {
             Pairings = new List<(int, int)>();
-            for (var i = 0; i < _outputDraggableSlots.Count; i++)
+            for (var i = 0; i < OutputDraggableSlots.Count; i++)
             {
-                var slot = _outputDraggableSlots[i];
+                var slot = OutputDraggableSlots[i];
                 if (!slot.gameObject.activeSelf)
                 {
                     continue;
                 }
                 var linkedDraggableIndex = slot.LinkedDraggable == null ? -1 : 
-                    _draggables.IndexOf(slot.LinkedDraggable);
+                    Draggables.IndexOf(slot.LinkedDraggable);
                 Pairings.Add((i, linkedDraggableIndex));
             }
             OnPairingsChanged?.Invoke(Pairings);
@@ -113,7 +137,6 @@ namespace OperaVR
 
         private void LinkDraggableToSlot(Draggable draggable, DraggableSlot slot)
         {
-            draggable.transform.position = slot.Position;
             slot.LinkedDraggable = draggable;
         }
 
@@ -121,11 +144,11 @@ namespace OperaVR
 
         public void RegisterDraggable(Draggable draggable)
         {
-            if (_draggables.Contains(draggable))
+            if (Draggables.Contains(draggable))
             {
                 return;
             }
-            _draggables.Add(draggable);
+            Draggables.Add(draggable);
             draggable.OnHoverEnterRequest += DraggableHoverEnterRequested;
             draggable.OnStartDragRequest += DraggableStartDragRequested;
             draggable.OnDragRequest += DraggableDragRequested;
@@ -135,11 +158,11 @@ namespace OperaVR
 
         public void DeregisterDraggable(Draggable draggable)
         {
-            if (!_draggables.Contains(draggable))
+            if (!Draggables.Contains(draggable))
             {
                 return;
             }
-            _draggables.Remove(draggable);
+            Draggables.Remove(draggable);
             draggable.OnHoverEnterRequest -= DraggableHoverEnterRequested;
             draggable.OnStartDragRequest -= DraggableStartDragRequested;
             draggable.OnDragRequest -= DraggableDragRequested;
@@ -149,7 +172,7 @@ namespace OperaVR
 
         public void RegisterDraggableSlot(DraggableSlot draggableSlot, bool asInput)
         {
-            var list = asInput ? _inputDraggableSlots : _outputDraggableSlots;
+            var list = asInput ? InputDraggableSlots : OutputDraggableSlots;
             if (list.Contains(draggableSlot))
             {
                 return;
@@ -159,7 +182,7 @@ namespace OperaVR
 
         public void DeregisterDraggableSlot(DraggableSlot draggableSlot, bool asInput)
         {
-            var list = asInput ? _inputDraggableSlots : _outputDraggableSlots;
+            var list = asInput ? InputDraggableSlots : OutputDraggableSlots;
             if (!list.Contains(draggableSlot))
             {
                 return;
@@ -260,7 +283,7 @@ namespace OperaVR
             var mousePos = Input.mousePosition;
             var prevHoveredSlot = CurrentHoveredDraggableSlot;
             CurrentHoveredDraggableSlot = null;
-            foreach (var slot in _inputDraggableSlots)
+            foreach (var slot in InputDraggableSlots)
             {
                 if (slot.IsPointInsideRect(mousePos))
                 {
@@ -268,7 +291,7 @@ namespace OperaVR
                     break;
                 }
             }
-            foreach (var slot in _outputDraggableSlots)
+            foreach (var slot in OutputDraggableSlots)
             {
                 if (slot.IsPointInsideRect(mousePos))
                 {

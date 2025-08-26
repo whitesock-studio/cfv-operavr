@@ -365,7 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8324808466476571110}
   - component: {fileID: 7497485447807152538}
-  - component: {fileID: 5149874082932110644}
+  - component: {fileID: 9181173910872726717}
   m_Layer: 0
   m_Name: DraggableManager
   m_TagString: Untagged
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &5149874082932110644
+--- !u!114 &9181173910872726717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -432,21 +432,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2289285400046342330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5c3be12ad6fff4086554574b973cc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 94c874633f18cea4aa09c85e5f92bda5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingDraggables:
+  StartingDraggables:
   - {fileID: 5353097921031990473}
   - {fileID: 1451713764499182382}
   - {fileID: 920811287366002070}
-  _startingInputDraggableSlots:
+  StartingInputDraggableSlots:
   - {fileID: 4326816567368158431}
   - {fileID: 192565146059095823}
   - {fileID: 4749448695194695039}
-  _startingOutputDraggableSlots:
+  StartingOutputDraggableSlots:
   - {fileID: 8663299952565116297}
   - {fileID: 5298942833495665547}
-  - {fileID: 5579393894877902316}
   CurrentDraggable: {fileID: 0}
   CurrentHoveredDraggableSlot: {fileID: 0}
   PreviousDraggableSlot: {fileID: 0}
@@ -714,7 +713,7 @@ MonoBehaviour:
   _confirmButton: {fileID: 8967249419534913598}
   _confirmView: {fileID: 8313142765054481895}
   _outcomeBorder: {fileID: 8226893136038012686}
-  _draggableManager: {fileID: 5149874082932110644}
+  _draggableManager: {fileID: 9181173910872726717}
 --- !u!114 &5383639811043252184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2100,18 +2099,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2199537911731493394}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5579393894877902316 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6047112999920775166, guid: 4ef7287cc2c75144886d8fd447910128,
-    type: 3}
-  m_PrefabInstance: {fileID: 2199537911731493394}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec5519e03b8c8847a346253e198ccef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2836824661723413885
 PrefabInstance:
   m_ObjectHideFlags: 0

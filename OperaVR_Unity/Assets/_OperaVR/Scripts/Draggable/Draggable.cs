@@ -30,6 +30,11 @@ namespace OperaVR
 
         private void Start()
         {
+            Reset();
+        }
+
+        public void Reset()
+        {
             if (StartingSlot == null)
             {
                 return;

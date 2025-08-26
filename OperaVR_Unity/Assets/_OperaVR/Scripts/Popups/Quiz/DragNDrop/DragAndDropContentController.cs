@@ -67,6 +67,10 @@ namespace OperaVR
         public bool IsCompleted()
         {
             var pairings = _draggableManager.Pairings;
+            if (pairings == null)
+            {
+                return false;
+            }
             var isCorrect = true;
             foreach (var pair in pairings)
             {
