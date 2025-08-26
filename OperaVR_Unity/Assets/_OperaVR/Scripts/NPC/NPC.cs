@@ -43,6 +43,12 @@ namespace OperaVR
             transform.rotation = _avatar.rotation;
         }
 
+        public void SetSpeeds(float runningSpeed, float walkingSpeed)
+        {
+            _avatar.runSpeed = runningSpeed;
+            _avatar.walkSpeed = walkingSpeed;
+        }
+
         public void SetDestination(Vector3 destination)
         {
             _destination = destination;
