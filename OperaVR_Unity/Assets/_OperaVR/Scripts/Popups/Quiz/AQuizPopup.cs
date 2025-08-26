@@ -21,6 +21,7 @@ namespace OperaVR
         protected override void OnPreOpened()
         {
             base.OnPreOpened();
+            ContentController.ChoicesSelected = new();
             ContentController.LoadData(QuizData);
         }
 
