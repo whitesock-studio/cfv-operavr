@@ -73,6 +73,7 @@ namespace OperaVR
         {
             if (!_npc.HasReachedDestination)
             {
+                _npc.SetDestination(_path.Points[_currentIndex].position);
                 return;
             }
 
@@ -90,6 +91,7 @@ namespace OperaVR
                 OnLoop?.Invoke();
                 return;
             }
+
             OnComplete?.Invoke();
             _isOn = false;
         }
