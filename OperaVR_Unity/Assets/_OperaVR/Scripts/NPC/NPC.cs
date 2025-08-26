@@ -12,12 +12,25 @@ namespace OperaVR
         [SerializeField]
         private string _assetId = "digi_avatar";
 
+        [SerializeField, Range(0, 359f)]
+        private float _startingAngle;
+
         public bool HasAvatar => _avatar != null;
 
         public bool HasReachedDestination => Vector3.Distance(_avatar.position, _destination) <= .1f;
 
         private IAvatar _avatar;
         private Vector3 _destination;
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireCube(transform.position + Vector3.up, new Vector3(.3f, 2f, .3f));
+            var forwardPoint = Quaternion.AngleAxis(_startingAngle, Vector3.up) * Vector3.forward;
+            var lookingPoint = transform.position + forwardPoint;
+            Gizmos.DrawLine(transform.position, lookingPoint);
+            Gizmos.DrawWireCube(lookingPoint + Vector3.up * .3f, new Vector3(.3f, .6f, .3f));
+        }
 
         private IEnumerator Start()
         {
@@ -59,7 +72,9 @@ namespace OperaVR
         {
             _avatar = request.avatar;
             _avatar.position = transform.position;
-            _avatar.rotation = transform.rotation;
+            var forwardPoint = Quaternion.AngleAxis(_startingAngle, Vector3.up) * Vector3.forward * .15f;
+            var lookingPoint = transform.position + forwardPoint;
+            _avatar.SetDestination(lookingPoint);
         }
     }
 }
