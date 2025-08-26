@@ -58,6 +58,8 @@ namespace OperaVR
         private void OnAvatarSpawned(SpatialAsyncOperation op, SpawnAvatarRequest request)
         {
             _avatar = request.avatar;
+            _avatar.position = transform.position;
+            _avatar.rotation = transform.rotation;
         }
     }
 }
