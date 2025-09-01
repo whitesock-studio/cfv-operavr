@@ -6,13 +6,20 @@ namespace OperaVR
 {
     public class SpaceObjectSnapper : MonoBehaviour
     {
-        private void Awake()
+        private void OnEnable()
         {
             SpatialBridge.spaceContentService.onObjectSpawned += OnObjectSpawned;
         }
 
+        private void OnDisable()
+        {
+            SpatialBridge.spaceContentService.onObjectSpawned -= OnObjectSpawned;
+        }
+
         private void OnObjectSpawned(IReadOnlySpaceObject readOnlySpaceObject)
         {
+            TryDespawnPreviousObject();
+
             if (!isActiveAndEnabled)
                 return;
 
@@ -27,6 +34,18 @@ namespace OperaVR
             spaceObject.position = transform.position;
             spaceObject.rotation = transform.rotation;
             spaceObject.scale = transform.localScale;
+        }
+
+        private void TryDespawnPreviousObject()
+        {
+            foreach (var spaceObject in SpatialBridge.spaceContentService.allObjects.Values)
+            {
+                if (Vector3.Distance(transform.position, spaceObject.position) > .1f)
+                {
+                    continue;
+                }
+                SpatialBridge.spaceContentService.DestroySpaceObject(spaceObject.objectID);
+            }
         }
     }
 }
