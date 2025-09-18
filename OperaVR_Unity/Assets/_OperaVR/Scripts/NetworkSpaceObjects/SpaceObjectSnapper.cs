@@ -6,6 +6,23 @@ namespace OperaVR
 {
     public class SpaceObjectSnapper : MonoBehaviour
     {
+        [SerializeField]
+        private float _size = 1f;
+
+        private void OnDrawGizmos()
+        {
+            Matrix4x4 rotationMatrix = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
+            Gizmos.matrix = rotationMatrix;
+            
+            var color = Color.blue;
+            color.a = .4f;
+            Gizmos.color = color;
+            Gizmos.DrawCube(Vector3.zero, new Vector3(_size, _size, .1f));
+            
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireCube(Vector3.zero, new Vector3(_size, _size, .1f));
+        }
+
         private void OnEnable()
         {
             SpatialBridge.spaceContentService.onObjectSpawned += OnObjectSpawned;
@@ -33,7 +50,7 @@ namespace OperaVR
             var spaceObject = (ISpaceObject)readOnlySpaceObject;
             spaceObject.position = transform.position;
             spaceObject.rotation = transform.rotation;
-            spaceObject.scale = transform.localScale;
+            spaceObject.scale = new Vector3(_size, _size, 1);
         }
 
         private void TryDespawnPreviousObject()
