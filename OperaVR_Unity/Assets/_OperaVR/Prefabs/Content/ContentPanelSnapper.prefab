@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782871950125633675}
   m_LocalRotation: {x: -0, y: 0.7071063, z: -0, w: 0.7071073}
-  m_LocalPosition: {x: -0.13000011, y: 1.9699993, z: 0}
+  m_LocalPosition: {x: -0.13000011, y: 2.25, z: 0}
   m_LocalScale: {x: 7, y: 4.5, z: 0.29573}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -223,7 +223,19 @@ MonoBehaviour:
     unityEventIsSynced: 0
     unityEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2686736071920245891}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     animatorEvent:
       events:
       - animator: {fileID: 981600108608253132}
@@ -508,17 +520,7 @@ PrefabInstance:
     - target: {fileID: 522991490208691355, guid: 87dd9b297495c534087cc259fedfa63b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 522991490208691355, guid: 87dd9b297495c534087cc259fedfa63b,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 522991490208691355, guid: 87dd9b297495c534087cc259fedfa63b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6.4747705
       objectReference: {fileID: 0}
     - target: {fileID: 522991490293477835, guid: 87dd9b297495c534087cc259fedfa63b,
         type: 3}
@@ -538,7 +540,7 @@ PrefabInstance:
     - target: {fileID: 522991490293477839, guid: 87dd9b297495c534087cc259fedfa63b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3600006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 522991490293477839, guid: 87dd9b297495c534087cc259fedfa63b,
         type: 3}
