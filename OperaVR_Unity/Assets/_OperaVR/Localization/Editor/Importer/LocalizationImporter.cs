@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace OperaVR
@@ -52,6 +53,8 @@ namespace OperaVR
                     _localizationData.InsertValue(languagesKeys[i - 1], key, rowData[i]);
                 }
             }
+
+            EditorUtility.SetDirty(_localizationData);
         }
     }
 #endif
