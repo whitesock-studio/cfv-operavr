@@ -17,7 +17,7 @@ namespace OperaVR
 
         public bool HasAvatar => _avatar != null;
 
-        public bool HasReachedDestination => Vector3.Distance(_avatar.position, _destination) <= .1f;
+        public bool HasReachedDestination => Vector3.Distance(_avatar.position, _destination) <= 1f;
 
         private IAvatar _avatar;
         private Vector3 _destination;
