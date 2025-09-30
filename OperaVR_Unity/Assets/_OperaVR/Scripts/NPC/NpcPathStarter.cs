@@ -22,6 +22,10 @@ namespace OperaVR
         [SerializeField]
         private bool _activateOnStart;
 
+        [Header("Triggered when the path has started\n(only for loop == false paths)")]
+        public UnityEvent OnStarted;
+        //public float OnStartedDelay = 0;
+
         [Header("Triggered when the path is complete\n(only for loop == false paths)")]
         public UnityEvent OnComplete;
         public float OnCompleteDelay = 0;
@@ -70,6 +74,7 @@ namespace OperaVR
             _currentIndex = 0;
             _npc.SetDestination(_path.Points[_currentIndex].position);
             _npc.SetSpeeds(RunningSpeed, WalkingSpeed);
+            OnStarted?.Invoke();
         }
 
         private void FollowPath()
