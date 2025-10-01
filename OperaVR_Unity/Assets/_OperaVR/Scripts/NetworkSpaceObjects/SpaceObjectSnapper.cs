@@ -35,7 +35,7 @@ namespace OperaVR
 
         private void OnObjectSpawned(IReadOnlySpaceObject readOnlySpaceObject)
         {
-            TryDespawnPreviousObject();
+            //TryDespawnPreviousObject();
 
             if (!isActiveAndEnabled)
                 return;
