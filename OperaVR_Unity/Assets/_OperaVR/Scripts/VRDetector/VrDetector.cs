@@ -11,7 +11,11 @@ namespace OperaVR
 
         private void Update()
         {
-            _debugText.text = SpatialBridge.actorService.localActor.platform.ToString();
+            try
+            {
+                _debugText.text = SpatialBridge.actorService.localActor.platform.ToString();
+            }
+            catch { }
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8679939464700041894}
   - component: {fileID: 605272794592363790}
   - component: {fileID: 824996769086133202}
+  - component: {fileID: 249991715726591614}
   - component: {fileID: 8684807738284556852}
   m_Layer: 0
   m_Name: DescriptionText
@@ -67,6 +68,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!114 &249991715726591614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274527071231542569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e065201456ca03b42bf28e631657893f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 
+  _textDisplayer: {fileID: 8684807738284556852}
 --- !u!114 &8684807738284556852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +231,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a825fc9e4b6f9b489562fa6596bdcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _image: {fileID: 7917346272891556518}
+  _titleTextDisplayer: {fileID: 3700530028851930696}
+  _titleLocalizedText: {fileID: 5595083213694075633}
+  _scoreTextDisplayer: {fileID: 138635446945995704}
+  _scoreLocalizedText: {fileID: 361414601360557264}
+  _scoreValueTextDisplayer: {fileID: 4847418759321729948}
+  _scoreSlider: {fileID: 2184382831120942150}
+  _descriptionTextDisplayer: {fileID: 8684807738284556852}
+  _descriptionLocalizedText: {fileID: 249991715726591614}
   _closeButton: {fileID: 1701689778039183603}
 --- !u!114 &146247007815541113
 MonoBehaviour:
@@ -862,6 +886,7 @@ GameObject:
   - component: {fileID: 2145486923928041963}
   - component: {fileID: 3118302531617964089}
   - component: {fileID: 2649334878856796123}
+  - component: {fileID: 361414601360557264}
   - component: {fileID: 138635446945995704}
   m_Layer: 0
   m_Name: ScoreText
@@ -918,6 +943,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!114 &361414601360557264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075820904726341350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e065201456ca03b42bf28e631657893f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 
+  _textDisplayer: {fileID: 138635446945995704}
 --- !u!114 &138635446945995704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,7 +977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hai ottenuto un punteggio superiore all\u201980%, congratulazioni!"
+  m_text: Hai ottenuto un punteggio di {0}, congratulazioni!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f5c4c47de815714298ddace4b4e40cc, type: 2}
   m_sharedMaterial: {fileID: -8254242203181296144, guid: 8f5c4c47de815714298ddace4b4e40cc,
@@ -1365,6 +1404,7 @@ GameObject:
   - component: {fileID: 2758647614821504945}
   - component: {fileID: 7063809560424377706}
   - component: {fileID: 8776102792378465770}
+  - component: {fileID: 5595083213694075633}
   - component: {fileID: 3700530028851930696}
   m_Layer: 0
   m_Name: Title
@@ -1421,6 +1461,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!114 &5595083213694075633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073420804821822929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e065201456ca03b42bf28e631657893f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 
+  _textDisplayer: {fileID: 3700530028851930696}
 --- !u!114 &3700530028851930696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,3 +1807,35 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6236954391857380139}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3220387157494277950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8808761560007023637, guid: 535373836d25ef74c85c959bebc4679c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6236954391857380139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4837797372936840696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220387157494277950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e065201456ca03b42bf28e631657893f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: Close
+  _textDisplayer: {fileID: 3312791157666502948}
+--- !u!114 &3312791157666502948 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8896714798645699087, guid: 535373836d25ef74c85c959bebc4679c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6236954391857380139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220387157494277950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

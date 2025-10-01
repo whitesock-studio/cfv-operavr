@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -39,15 +40,57 @@ namespace OperaVR
             }
             var profile = QuizData.ProfilingData.GetData(score);
             Debug.Log($"Profile: {profile.name}");
-            
-            LoadProfileData(profile);
+
+            var minScore = 0f;
+            var maxScore = 0f;
+
+            foreach (var question in QuizData.Questions)
+            {
+                var copy = new QuizChoice[question.Choices.Length];
+                question.Choices.CopyTo(copy, 0);
+                Array.Sort(copy, (c1, c2) => c1.PointsGiven.CompareTo(c2.PointsGiven));
+
+                var choicesLeft = question.MaxChoices;
+                var minPoints = 0f;
+                var maxPoints = 0f;
+
+                for (var i = 0; i < copy.Length && choicesLeft > 0; i++)
+                {
+                    if (copy[i].PointsGiven >= 0)
+                    {
+                        break;
+                    }
+
+                    minPoints += copy[i].PointsGiven;
+                    choicesLeft--;
+                }
+
+                choicesLeft = question.MaxChoices;
+                for (var i = copy.Length - 1; i >= 0 && choicesLeft > 0; i--)
+                {
+                    if (copy[i].PointsGiven <= 0)
+                    {
+                        break;
+                    }
+
+                    maxPoints += copy[i].PointsGiven;
+                    choicesLeft--;
+                }
+
+                minScore += minPoints;
+                maxScore += maxPoints;
+            }
+
+            var normalizedScore = Mathf.InverseLerp(minScore, maxScore, score);
+
+            LoadProfileData(profile, normalizedScore);
         }
 
-        private void LoadProfileData(ProfileData data)
+        private void LoadProfileData(ProfileData data, float normalizedScore)
         {
             ContentController.gameObject.SetActive(false);
             _profileView.gameObject.SetActive(true);
-            _profileView.LoadProfile(data);
+            _profileView.LoadProfile(data, normalizedScore);
         }
 
         private void OnProfileViewClosed()

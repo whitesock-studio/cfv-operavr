@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace OperaVR
@@ -32,7 +33,13 @@ namespace OperaVR
 
         [Header("Components")]
         [SerializeField]
+        protected TMP_Text _titleDisplayer;
+
+        [SerializeField]
         protected LocalizedText _titleLoc;
+
+        [SerializeField]
+        protected TMP_Text _subTitleDisplayer;
 
         [SerializeField]
         protected LocalizedText _subTitleLoc;
@@ -65,8 +72,17 @@ namespace OperaVR
 
         protected virtual void OnPreOpened() 
         {
-            _titleLoc.Key = Data.TitleKey;
-            _subTitleLoc.Key = Data.SubTitleKey;
+            _titleDisplayer.text = Data.Title;
+            if (!string.IsNullOrEmpty(_titleLoc.Key))
+            {
+                _titleLoc.Key = Data.TitleKey;
+            }
+
+            _subTitleDisplayer.text = Data.SubTitle;
+            if (!string.IsNullOrEmpty(_subTitleLoc.Key))
+            {
+                _subTitleLoc.Key = Data.SubTitleKey;
+            }
         }
 
         protected virtual void OnPostOpened() { }
