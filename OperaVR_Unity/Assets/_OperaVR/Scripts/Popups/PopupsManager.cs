@@ -1,3 +1,4 @@
+using SpatialSys.UnitySDK;
 using System.Collections.Generic;
 using UnityEngine;
 namespace OperaVR
@@ -8,6 +9,9 @@ namespace OperaVR
 
         [SerializeField]
         private Transform _popupsContainer;
+        
+        [SerializeField]
+        private Transform _popupsMetaQuestContainer;
 
         [SerializeField]
         private PopupTypesPairing[] _pairings;
@@ -38,7 +42,12 @@ namespace OperaVR
 
             if (!TryGetFreePopupInPool(data.PopupType, out var popup))
             {
-                var newPopupObject = Instantiate(pairing.Prefab, _popupsContainer);
+                var container = _popupsContainer;
+                if (SpatialBridge.actorService.localActor.platform == SpatialPlatform.MetaQuest)
+                {
+                    container = _popupsMetaQuestContainer;
+                }
+                var newPopupObject = Instantiate(pairing.Prefab, container);
                 popup = newPopupObject.GetComponent<APopup>();
                 popup.Data = data;
                 InsertInPool(popup);

@@ -51,16 +51,22 @@ namespace OperaVR
 
         public void BlockInputs()
         {
-            SpatialBridge.inputService.StartCompleteCustomInputCapture(_blockAvatarInput);
-            _currentInput = _blockAvatarInput;
+            if (SpatialBridge.actorService.localActor.platform != SpatialPlatform.MetaQuest)
+            {
+                SpatialBridge.inputService.StartCompleteCustomInputCapture(_blockAvatarInput);
+                _currentInput = _blockAvatarInput;
+            }
             _lockedPosition = SpatialBridge.actorService.localActor.avatar.position;
             _isMovementLocked = true;
         }
 
         public void BlockInputsExceptLookAndActions()
         {
-            SpatialBridge.inputService.StartAvatarInputCapture(true, true, true, false, _blockAvatarInput);
-            _currentInput = _blockAvatarInput;
+            if (SpatialBridge.actorService.localActor.platform != SpatialPlatform.MetaQuest)
+            {
+                SpatialBridge.inputService.StartAvatarInputCapture(true, true, true, false, _blockAvatarInput);
+                _currentInput = _blockAvatarInput;
+            }
             _lockedPosition = SpatialBridge.actorService.localActor.avatar.position;
             _isMovementLocked = true;
         }
