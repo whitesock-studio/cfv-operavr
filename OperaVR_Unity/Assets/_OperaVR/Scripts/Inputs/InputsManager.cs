@@ -39,6 +39,11 @@ namespace OperaVR
 
         public void RestoreInputs()
         {
+            if (SpatialBridge.actorService.localActor.platform == SpatialPlatform.MetaQuest)
+            {
+                return;
+            }
+
             if (_currentInput == null)
             {
                 SpatialBridge.inputService.StartAvatarInputCapture(false, false, false, false, null);
@@ -51,22 +56,27 @@ namespace OperaVR
 
         public void BlockInputs()
         {
-            if (SpatialBridge.actorService.localActor.platform != SpatialPlatform.MetaQuest)
+            if (SpatialBridge.actorService.localActor.platform == SpatialPlatform.MetaQuest)
             {
-                SpatialBridge.inputService.StartCompleteCustomInputCapture(_blockAvatarInput);
-                _currentInput = _blockAvatarInput;
+                BlockInputsExceptLookAndActions();
+                return;
             }
+
+            SpatialBridge.inputService.StartCompleteCustomInputCapture(_blockAvatarInput);
+            _currentInput = _blockAvatarInput;
             _lockedPosition = SpatialBridge.actorService.localActor.avatar.position;
             _isMovementLocked = true;
         }
 
         public void BlockInputsExceptLookAndActions()
         {
-            if (SpatialBridge.actorService.localActor.platform != SpatialPlatform.MetaQuest)
+            if (SpatialBridge.actorService.localActor.platform == SpatialPlatform.MetaQuest)
             {
-                SpatialBridge.inputService.StartAvatarInputCapture(true, true, true, false, _blockAvatarInput);
-                _currentInput = _blockAvatarInput;
+                return;
             }
+
+            SpatialBridge.inputService.StartAvatarInputCapture(true, true, true, false, _blockAvatarInput);
+            _currentInput = _blockAvatarInput;
             _lockedPosition = SpatialBridge.actorService.localActor.avatar.position;
             _isMovementLocked = true;
         }
