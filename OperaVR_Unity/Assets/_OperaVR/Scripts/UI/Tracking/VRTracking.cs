@@ -15,8 +15,11 @@ namespace OperaVR
                 return;
             }
 
-            var offset = SpatialBridge.cameraService.forward * _distance;
-            transform.position = SpatialBridge.cameraService.position + offset;
+            var forward = Vector3.ProjectOnPlane(SpatialBridge.cameraService.forward, 
+                transform.up).normalized;
+            var offset = forward * _distance;
+            transform.position = Vector3.Lerp(transform.position, 
+                SpatialBridge.cameraService.position + offset, Time.deltaTime * 5f);
         }
     }
 }
