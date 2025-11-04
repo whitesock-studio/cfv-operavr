@@ -1,0 +1,186 @@
+@startuml
+
+class Localization <<(M, lightblue) Singleton>>
+{
+    -LocalizationData : _data
+    +TryGetLocalizedText(string key, out string value)
+}
+
+class InputsManager <<(M, lightblue) Singleton>>
+{
+    -bool : _isMovementLocked
+    +RestoreInputs()
+    +BlockInputs()
+}
+
+package POPUPS
+{
+    class PopupsManager <<(M, lightblue) Singleton>>
+    {
+        -Dictionary<PopupType, List<APopup>> : _popupsPool
+        -Canvas : _normalCanvas
+        -Canvas : _vrCanvas
+        +OpenPopup(APopupData)
+        +ClosePopup(APopup)
+        +SetCharacterMovementsEnabled()
+    }
+    
+    class PopupRequester <<(M, lightblue)>>
+    {
+        -APopupData : _data;
+        -APopup : _openedPopup;
+        +Open()
+        +Close()
+    }
+    
+    +enum PopupType
+    {
+        ProfilingQuizText
+        LinearQuizText
+        LinearQuizImage
+        DragNDropQuizAudio
+        QuestSelection
+        Research
+        Multitrack
+    }
+    
+    abstract APopupData <<(S, red)>>
+    {
+        +PopupType : PopupType
+        +bool : InterruptsMovement
+        +string : Title
+        +string : SubTitle
+    }
+    
+    class QuizPopupData <<(S, red)>>
+    {
+        +QuizType : Type
+        +ProfilingData : ProfilingData
+        +bool : CanGoBack
+        +QuizQuestion[] : Questions
+    }
+    
+    class ResearchPopupData <<(S, red)>> 
+    {
+        +Sprite : Image
+        +string : Link
+        +string[] : AcceptedCodes
+    }
+    
+    class DragNDropQuizPopupData <<(S, red)>>
+    {
+        +string : QuestionText
+        +AudioClip : AudioClip
+        +Sprite : Image
+        +DraggableSlotData[] : DraggableSlotsData
+        +DraggableData[] : DraggablesData
+    }
+    
+    class MultitrackPopupData <<(S, red)>> 
+    {
+        +AudioClip[] : TrackClips
+    }
+    
+    class QuestSelectionPopupData <<(S, red)>>
+    {
+        +QuestData[] : Quests (uint)
+    }
+    
+    class ProfileData <<(S, red)>>
+    {
+        +Sprite : Image
+        +string : Title
+        +string : ScoreDescription
+        +string : Description
+    }
+    
+    class QuizQuestion
+    {
+        +Sprite : Image
+        +QuizContent : Content
+        +string : CorrectChoiceDescription
+        +int : MaxChoices
+        +QuizChoice[] : Choices
+    }
+    
+    class QuizChoice
+    {
+        +bool : IsCorrect
+        +int : PointsGiven
+        +QuizContent : Content
+    }
+    
+    PopupsManager <-- PopupRequester : asks for popups
+    PopupType --o APopupData
+    APopupData -o PopupRequester
+    APopupData <|-- QuizPopupData
+    APopupData <|-- ResearchPopupData
+    APopupData <|-- DragNDropQuizPopupData
+    APopupData <|-- MultitrackPopupData
+    APopupData <|-- QuestSelectionPopupData
+    QuizPopupData *-- ProfileData
+    QuizPopupData *-- QuizQuestion
+    QuizQuestion *-- QuizChoice
+}
+
+package SPATIAL
+{
+    class PlayerControls <<(M, lightblue)>>
+    class Avatar <<(M, lightblue)>>
+    class SpatialInteractable <<(M, lightblue)>>
+    class SpatialAvatarTeleport <<(M, lightblue)>>
+    {
+        +Transform : TargetLocation
+        +Teleport(Avatar)
+    }
+    class QuestSystem
+    
+    PlayerControls --> Avatar : moves
+    PlayerControls --> SpatialInteractable : interacts with
+    SpatialAvatarTeleport --> Avatar : teleports
+}
+
+package NPC
+{
+    class Npc
+    {
+        +bool : HasReachedDestination
+        -string : _assetId (for model)
+        -Avatar : _connectedAvatar
+        -Vector3 : _destination
+        +GoTo(Vector3)
+        -Walk(Vector3)
+        -Run(Vector3)
+    }
+    
+    class NPCPathStarter
+    {
+        -float : _walkingSpeed
+        -float : _runningSpeed
+        -NPC : _controlledNpc
+        -Path : _pathToFollow
+        +UnityEvent : OnStarted
+        +UnityEvent : OnCompleted
+        +UnityEvent : OnLoop
+    }
+    
+    class Path
+    {
+        +Transform[] : Points
+        -bool : _loops
+    }
+    
+    Npc -* NPCPathStarter
+    NPCPathStarter o-- Path
+}
+
+
+Localization -[hidden] InputsManager 
+InputsManager <-- PopupsManager : to control inputs
+InputsManager --> PlayerControls : blocks and restores
+
+Avatar --o Npc
+
+QuestSystem <---> QuestSelectionPopupData
+
+@enduml
