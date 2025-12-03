@@ -71,6 +71,10 @@ namespace OperaVR
         private void OnAvatarSpawned(SpatialAsyncOperation op, SpawnAvatarRequest request)
         {
             _avatar = request.avatar;
+            if (_avatar == null)
+            {
+                return;
+            }
             _avatar.position = transform.position;
             var forwardPoint = Quaternion.AngleAxis(_startingAngle, Vector3.up) * Vector3.forward * .15f;
             var lookingPoint = transform.position + forwardPoint;

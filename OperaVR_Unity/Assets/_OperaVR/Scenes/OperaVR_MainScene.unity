@@ -10270,6 +10270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291631713}
   - component: {fileID: 291631714}
+  - component: {fileID: 291631715}
   m_Layer: 0
   m_Name: Interactable (1)
   m_TagString: Untagged
@@ -10427,6 +10428,18 @@ MonoBehaviour:
       events: []
     questEvent:
       events: []
+--- !u!114 &291631715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291631712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acadc1aa25acd44588e6f62209406b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &291858023
 GameObject:
   m_ObjectHideFlags: 0
@@ -18967,6 +18980,7 @@ GameObject:
   - component: {fileID: 658448003}
   - component: {fileID: 658448004}
   - component: {fileID: 658448005}
+  - component: {fileID: 658448006}
   m_Layer: 0
   m_Name: Interactable_QuestResetter
   m_TagString: Untagged
@@ -19066,6 +19080,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questToResetID: 0
+--- !u!114 &658448006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658448002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acadc1aa25acd44588e6f62209406b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &658689446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21526,6 +21552,7 @@ GameObject:
   - component: {fileID: 755942197}
   - component: {fileID: 755942199}
   - component: {fileID: 755942198}
+  - component: {fileID: 755942200}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -21576,6 +21603,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &755942200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755942196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &756562137
 GameObject:
   m_ObjectHideFlags: 0
@@ -29161,6 +29200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1102076677}
   - component: {fileID: 1102076678}
+  - component: {fileID: 1102076679}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Untagged
@@ -29318,6 +29358,18 @@ MonoBehaviour:
       events: []
     questEvent:
       events: []
+--- !u!114 &1102076679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102076676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8acadc1aa25acd44588e6f62209406b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1102320890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54168,6 +54220,7 @@ GameObject:
   - component: {fileID: 6988448874251760229}
   - component: {fileID: 6988448874251760231}
   - component: {fileID: 6988448874251760230}
+  - component: {fileID: 6988448874251760232}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -54218,6 +54271,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6988448874251760232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448874251760228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6988448874276938318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54372,6 +54437,7 @@ GameObject:
   - component: {fileID: 6988448874335608506}
   - component: {fileID: 6988448874335608504}
   - component: {fileID: 6988448874335608505}
+  - component: {fileID: 6988448874335608508}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -54379,6 +54445,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6988448874335608508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448874335608507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6988448874347598080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54972,6 +55050,7 @@ GameObject:
   - component: {fileID: 6988448874620953960}
   - component: {fileID: 6988448874620953962}
   - component: {fileID: 6988448874620953963}
+  - component: {fileID: 6988448874620953964}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -55005,6 +55084,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLocation: {fileID: 6988448875006922930}
+--- !u!114 &6988448874620953964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448874620953961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6988448874705160126
 GameObject:
   m_ObjectHideFlags: 0
@@ -56093,6 +56184,7 @@ GameObject:
   - component: {fileID: 6988448875049719348}
   - component: {fileID: 6988448875049719350}
   - component: {fileID: 6988448875049719351}
+  - component: {fileID: 6988448875049719352}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -56126,6 +56218,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLocation: {fileID: 6988448874429391854}
+--- !u!114 &6988448875049719352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448875049719349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6988448875083851801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56601,6 +56705,7 @@ GameObject:
   - component: {fileID: 6988448875211146285}
   - component: {fileID: 6988448875211146287}
   - component: {fileID: 6988448875211146286}
+  - component: {fileID: 6988448875211146288}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -56651,6 +56756,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6988448875211146288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448875211146284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6988448875238214108
 GameObject:
   m_ObjectHideFlags: 0
@@ -56662,6 +56779,7 @@ GameObject:
   - component: {fileID: 6988448875238214109}
   - component: {fileID: 6988448875238214111}
   - component: {fileID: 6988448875238214110}
+  - component: {fileID: 6988448875238214112}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -56712,6 +56830,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6988448875238214112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448875238214108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6988448875245506219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57085,6 +57215,7 @@ GameObject:
   - component: {fileID: 6988448875491457889}
   - component: {fileID: 6988448875491457891}
   - component: {fileID: 6988448875491457890}
+  - component: {fileID: 6988448875491457892}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -57135,6 +57266,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6988448875491457892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448875491457888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6988448875547662758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57372,6 +57515,7 @@ GameObject:
   - component: {fileID: 6988448875604594887}
   - component: {fileID: 6988448875604594885}
   - component: {fileID: 6988448875604594884}
+  - component: {fileID: 6988448875604594888}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -57396,6 +57540,18 @@ Transform:
   m_Father: {fileID: 6988448876185926292}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6988448875604594888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448875604594886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6988448875661441577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57524,6 +57680,7 @@ GameObject:
   - component: {fileID: 6988448875695555588}
   - component: {fileID: 6988448875695555590}
   - component: {fileID: 6988448875695555591}
+  - component: {fileID: 6988448875695555592}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -57557,6 +57714,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLocation: {fileID: 6988448876081017310}
+--- !u!114 &6988448875695555592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448875695555589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &6988448875729408564
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -57611,6 +57780,7 @@ GameObject:
   - component: {fileID: 6988448875729408566}
   - component: {fileID: 6988448875729408564}
   - component: {fileID: 6988448875729408565}
+  - component: {fileID: 6988448875729408568}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -57618,6 +57788,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6988448875729408568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448875729408567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6988448875772337548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58157,6 +58339,7 @@ GameObject:
   - component: {fileID: 6988448875909941549}
   - component: {fileID: 6988448875909941551}
   - component: {fileID: 6988448875909941550}
+  - component: {fileID: 6988448875909941552}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -58207,6 +58390,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6988448875909941552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448875909941548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6988448875922529912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58344,6 +58539,7 @@ GameObject:
   - component: {fileID: 6988448875964485203}
   - component: {fileID: 6988448875964485201}
   - component: {fileID: 6988448875964485200}
+  - component: {fileID: 6988448875964485204}
   m_Layer: 0
   m_Name: Avatar Teleporter
   m_TagString: Untagged
@@ -58368,6 +58564,18 @@ Transform:
   m_Father: {fileID: 6988448875375666176}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6988448875964485204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988448875964485202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df73bcfc018ed40a9bb06c7d714a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6988448875990312542
 PrefabInstance:
   m_ObjectHideFlags: 0
