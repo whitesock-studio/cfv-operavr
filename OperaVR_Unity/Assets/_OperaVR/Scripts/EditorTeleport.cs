@@ -7,7 +7,7 @@ namespace OperaVR
     public class EditorTeleport : MonoBehaviour
     {
 #if UNITY_EDITOR
-        private float InteractiveRadius => .5f;
+        private float InteractiveRadius => 1f;
         private SpatialAvatarTeleporter _teleporter;
         private IAvatar _avatar;
         
@@ -37,7 +37,7 @@ namespace OperaVR
                 return;
             }
 
-            Interact();
+            Interact(); 
         }
 
         private void Interact()

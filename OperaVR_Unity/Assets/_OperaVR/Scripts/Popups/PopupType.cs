@@ -8,6 +8,7 @@ namespace OperaVR
         DragNDropQuizAudio = 12,
         QuestSelection = 20,
         Research = 30,
-        Multitrack = 40
+        Multitrack = 40,
+        Quick = 50
     }
 }
