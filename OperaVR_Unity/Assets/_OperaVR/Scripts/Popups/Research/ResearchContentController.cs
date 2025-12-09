@@ -53,7 +53,7 @@ namespace OperaVR
         {
             _codelock.OnUnlock += () => SetPage(Page.End);
             _codelock.OnError += () => OnFail?.Invoke();
-            _linkButton.onClick.AddListener(() => SpatialBridge.spaceService.OpenURL(_researchPopupData.Link));
+            _linkButton.onClick.AddListener(TryOpenUrl);
             _toCodelockButton.onClick.AddListener(() => SetPage(Page.Code));
             _backButton.onClick.AddListener(() => SetPage(Page.Link));
             _endCloseButton.onClick.AddListener(ResearchCompleted);
@@ -70,6 +70,20 @@ namespace OperaVR
             return _endPage.activeSelf;
         }
 
+        private void TryOpenUrl()
+        {
+            if (SpatialBridge.actorService.localActor.platform == SpatialPlatform.MetaQuest)
+            {
+                GUIUtility.systemCopyBuffer = _researchPopupData.Link;
+                PopupsManager.Instance.OpenPopup(QuickPopupData.GenerateData(
+                    "URL copied:\n" +
+                    _researchPopupData.Link));
+                return;
+            }
+
+            SpatialBridge.spaceService.OpenURL(_researchPopupData.Link);
+        }
+        
         private void ResearchCompleted()
         {
             OnComplete?.Invoke();
