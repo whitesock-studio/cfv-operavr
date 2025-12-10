@@ -25,6 +25,9 @@ namespace OperaVR
 
         [SerializeField]
         private ImageView _outcomeBorder;
+        
+        [SerializeField]
+        private Image _image;
 
         [SerializeField]
         private DraggableManager _draggableManager;
@@ -42,6 +45,7 @@ namespace OperaVR
         {
             _dragAndDropPopupData = data;
             _questiontText.text = _dragAndDropPopupData.QuestionText;
+            _image.sprite = _dragAndDropPopupData.Image;
             _trackPlayer.LoadClip(_dragAndDropPopupData.AudioClip);
             _draggableManager.LoadData(data.DraggableSlotsData, data.DraggablesData);
         }
@@ -53,11 +57,12 @@ namespace OperaVR
             var areAllSlotsUsed = true;
             foreach (var pair in pairings)
             {
-                if (pair.draggableIndex == -1)
+                if (pair.draggableIndex != -1)
                 {
-                    areAllSlotsUsed = false;
-                    break;
+                    continue;
                 }
+                areAllSlotsUsed = false;
+                break;
             }
 
             _confirmButton.interactable = areAllSlotsUsed;
