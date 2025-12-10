@@ -1018,7 +1018,6 @@ Transform:
   - {fileID: 1519277565}
   - {fileID: 346924230}
   - {fileID: 6988448874595155047}
-  - {fileID: 760742189}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2598,8 +2597,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   version: 2
-  questName: Research path 1
-  description: Path1
+  questName: Primo filone di ricerca
+  description: Alla scoperta di Claudio Monteverdi
   startAutomatically: 0
   saveUserProgress: 1
   tasksAreOrdered: 1
@@ -6728,6 +6727,7 @@ Transform:
   - {fileID: 565651201}
   - {fileID: 1044555164}
   - {fileID: 658448003}
+  - {fileID: 760742189}
   - {fileID: 2127571388}
   - {fileID: 521653431}
   - {fileID: 968400850}
@@ -16305,7 +16305,7 @@ Transform:
   - {fileID: 442086460}
   - {fileID: 6988448874787075305}
   m_Father: {fileID: 273172054}
-  m_RootOrder: 47
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &528265144
 GameObject:
@@ -22132,8 +22132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   version: 2
-  questName: Research path 2
-  description: Path2
+  questName: Secondo filone di ricerca
+  description: Il femminile nei melodrammi di Claudio Monteverdi
   startAutomatically: 0
   saveUserProgress: 1
   tasksAreOrdered: 1
@@ -22923,13 +22923,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760742188}
-  m_LocalRotation: {x: -0, y: 0.9999852, z: -0, w: -0.005440402}
-  m_LocalPosition: {x: -0.06, y: 0.18, z: -5.18}
+  m_LocalRotation: {x: -0, y: 0.9943191, z: -0, w: 0.106440514}
+  m_LocalPosition: {x: 23.004974, y: -0.10099983, z: -78.46918}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 46704922}
-  m_RootOrder: 54
+  m_Father: {fileID: 273172054}
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 180.623, z: 0}
 --- !u!114 &760742190
 MonoBehaviour:
@@ -22943,7 +22943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeff4e3a104634a048283531bb82adc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1.9135957
+  radius: 1.5291095
 --- !u!1 &763977593
 GameObject:
   m_ObjectHideFlags: 0
@@ -24599,6 +24599,21 @@ PrefabInstance:
       propertyPath: _startingAngle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6551525285994869149, guid: c785eb42d21bcfc4ba181c38faf88448,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551525285994869149, guid: c785eb42d21bcfc4ba181c38faf88448,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 43f37fadb5c59094d8dad47e939bfe65, type: 3}
+    - target: {fileID: 9096554279079458959, guid: c785eb42d21bcfc4ba181c38faf88448,
+        type: 3}
+      propertyPath: _subtitleFile
+      value: 
+      objectReference: {fileID: 4900000, guid: 4e8d942f4f4f5dd4988c1065d320e1cd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c785eb42d21bcfc4ba181c38faf88448, type: 3}
 --- !u!4 &817841848 stripped
@@ -24617,6 +24632,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 186380ebdab013b4bb105e583472c722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &817841850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9096554279079458959, guid: c785eb42d21bcfc4ba181c38faf88448,
+    type: 3}
+  m_PrefabInstance: {fileID: 817841847}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfff1275e759a914eabdda69284a3644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &819621993
@@ -27467,7 +27494,7 @@ Transform:
   - {fileID: 188785761}
   - {fileID: 6988448875105963835}
   m_Father: {fileID: 273172054}
-  m_RootOrder: 48
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1 &974229909
 GameObject:
@@ -28617,8 +28644,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   version: 2
-  questName: Research path 3
-  description: Path3
+  questName: Terzo filone di ricerca
+  description: "Fonti e rete intertestuale della \u201CFavola di Orfeo\u201D\r\ndi
+    Claudio Monteverdi e Alessandro Striggio"
   startAutomatically: 0
   saveUserProgress: 1
   tasksAreOrdered: 1
@@ -35868,128 +35896,24 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1359890199}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359890202}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 186380ebdab013b4bb105e583472c722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1359890202 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6397607340414181115, guid: c785eb42d21bcfc4ba181c38faf88448,
+--- !u!114 &1359890204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9096554279079458959, guid: c785eb42d21bcfc4ba181c38faf88448,
     type: 3}
   m_PrefabInstance: {fileID: 1359890199}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1359890203
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359890202}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: aee1779ded32df845b7202e6fd982248, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &1359890204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359890202}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfff1275e759a914eabdda69284a3644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 1359890203}
-  _subtitleFile: {fileID: 4900000, guid: 67b59e969b32e3c47b15f85e05d4803d, type: 3}
 --- !u!1 &1362851377
 GameObject:
   m_ObjectHideFlags: 0
@@ -54323,7 +54247,7 @@ Transform:
   - {fileID: 756562138}
   - {fileID: 6988448875375666176}
   m_Father: {fileID: 273172054}
-  m_RootOrder: 46
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2129858594
 MeshCollider:
@@ -54866,6 +54790,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: IsOpen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 817841850}
+        m_TargetAssemblyTypeName: OperaVR.SubtitleManager, OperaVR
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   OnComplete:
