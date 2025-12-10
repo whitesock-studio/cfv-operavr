@@ -39,14 +39,24 @@ namespace OperaVR
 
         public void Activate()
         {
+            Activate(true);
+        }
+
+        public void Activate(bool teleport = true)
+        {
             _invertedSphere.SetActive(true);
             _camera.gameObject.SetActive(true);
             _snapper.gameObject.SetActive(true);
 
-            _previousActorPosition = SpatialBridge.actorService.localActor.avatar.position;
-            _previousActorRotation = SpatialBridge.actorService.localActor.avatar.rotation;
-            SpatialBridge.actorService.localActor.avatar.position = _spawnPoint.position;
-            SpatialBridge.actorService.localActor.avatar.rotation = _spawnPoint.rotation;
+            var localAvatar = SpatialBridge.actorService.localActor.avatar;
+            localAvatar.visibleRemotely = false;
+            if (teleport)
+            {
+                _previousActorPosition = SpatialBridge.actorService.localActor.avatar.position;
+                _previousActorRotation = SpatialBridge.actorService.localActor.avatar.rotation;
+                SpatialBridge.actorService.localActor.avatar.position = _spawnPoint.position;
+                SpatialBridge.actorService.localActor.avatar.rotation = _spawnPoint.rotation;
+            }
 
             _movementTools.DeactivatePlayerInputsExceptLookAndAction();
             _cameraTools.ActivateFirstPerson();
@@ -57,10 +67,12 @@ namespace OperaVR
 
         public void Deactivate(bool teleport = true)
         {
+            var localAvatar = SpatialBridge.actorService.localActor.avatar;
+            localAvatar.visibleRemotely = true;
             if (teleport)
             {
-                SpatialBridge.actorService.localActor.avatar.position = _previousActorPosition;
-                SpatialBridge.actorService.localActor.avatar.rotation = _previousActorRotation;
+                localAvatar.position = _previousActorPosition;
+                localAvatar.rotation = _previousActorRotation;
             }
 
             _movementTools.ActivatePlayerInputs();
