@@ -1817,6 +1817,7 @@ GameObject:
   - component: {fileID: 7535298811200153263}
   - component: {fileID: 6044778664190647532}
   - component: {fileID: 2599953852967459114}
+  - component: {fileID: 4343524836782689380}
   m_Layer: 0
   m_Name: ORCHESTRA:CONTRABBASSO
   m_TagString: Untagged
@@ -1889,6 +1890,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4343524836782689380
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169989547975795168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3353288793621264712, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &170797613792781693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,6 +2265,10 @@ GameObject:
   - component: {fileID: 4543463286075912329}
   - component: {fileID: 4049867084284241081}
   - component: {fileID: 6581408961331222305}
+  - component: {fileID: 5550754287209448953}
+  - component: {fileID: 4593836269500856174}
+  - component: {fileID: 1415101303748840747}
+  - component: {fileID: 2333451091062368747}
   m_Layer: 0
   m_Name: BOX_STANZA
   m_TagString: Untagged
@@ -2322,6 +2341,58 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5550754287209448953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202512067956283390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 21.304298, y: 10.728341, z: 0.23883057}
+  m_Center: {x: 0.030128002, y: -0.0000023841858, z: 20.812103}
+--- !u!65 &4593836269500856174
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202512067956283390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 21.138817, y: 10.728341, z: 0.23883057}
+  m_Center: {x: -0.025632858, y: -0.0000023841858, z: -26.7}
+--- !u!65 &1415101303748840747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202512067956283390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18107128, y: 10.728341, z: 47.34049}
+  m_Center: {x: -10.524918, y: -0.0000023841858, z: -2.9596653}
+--- !u!65 &2333451091062368747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202512067956283390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18107128, y: 10.728341, z: 47.34049}
+  m_Center: {x: 10.5, y: -0.0000023841858, z: -2.9596653}
 --- !u!1 &203772367492961831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,6 +2656,7 @@ GameObject:
   - component: {fileID: 8919633220077123289}
   - component: {fileID: 567221439279180908}
   - component: {fileID: 2397442654989460817}
+  - component: {fileID: 1700184882665065652}
   m_Layer: 0
   m_Name: TEATRO:PALCO
   m_TagString: Untagged
@@ -2657,6 +2729,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1700184882665065652
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228591699761060652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -50913796965255986, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &248370796537388370
 GameObject:
   m_ObjectHideFlags: 0
@@ -5815,6 +5901,7 @@ GameObject:
   - component: {fileID: 2391061875693337119}
   - component: {fileID: 6547119908827392552}
   - component: {fileID: 8828012331565042779}
+  - component: {fileID: 2874896107128474997}
   m_Layer: 0
   m_Name: GROUND_PLANE:GROUND_PLANE
   m_TagString: Untagged
@@ -5887,6 +5974,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2874896107128474997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557721927989082062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 40.00122, y: 0.0012207031, z: 40.00122}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &559889227874263365
 GameObject:
   m_ObjectHideFlags: 0
@@ -7130,6 +7230,7 @@ GameObject:
   - component: {fileID: 2662140083621318934}
   - component: {fileID: 3629362102172804913}
   - component: {fileID: 1254418667361424486}
+  - component: {fileID: 8848145830533641225}
   m_Layer: 0
   m_Name: ORCHESTRA:PIANOFORTE
   m_TagString: Untagged
@@ -7202,6 +7303,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8848145830533641225
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639786658989425735}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3942923952960467046, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &640471742180060181
 GameObject:
   m_ObjectHideFlags: 0
@@ -16725,6 +16840,7 @@ GameObject:
   - component: {fileID: 7712924843817428127}
   - component: {fileID: 7384706466051439482}
   - component: {fileID: 2074577637179619336}
+  - component: {fileID: 1814813112266293797}
   m_Layer: 0
   m_Name: TEATRO:FONDALE
   m_TagString: Untagged
@@ -16797,6 +16913,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1814813112266293797
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604339111469575503}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5709773402762863409, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &1606550695715798014
 GameObject:
   m_ObjectHideFlags: 0
@@ -24620,6 +24750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 462527823698848582}
   - component: {fileID: 1591873154629250765}
+  - component: {fileID: 387883893182170677}
   m_Layer: 0
   m_Name: TROMBETTISTA1:TROMBETTISTA
   m_TagString: Untagged
@@ -24701,6 +24832,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -1.3692262, y: -0.0000008046627, z: 0.1975851}
     m_Extent: {x: 1.402261, y: 0.18733564, z: 0.99481606}
   m_DirtyAABB: 0
+--- !u!64 &387883893182170677
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309267949217515163}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &2309977313756494470
 GameObject:
   m_ObjectHideFlags: 0
@@ -25028,6 +25173,7 @@ GameObject:
   - component: {fileID: 7058662156744981731}
   - component: {fileID: 3219057455340096620}
   - component: {fileID: 3914472841777666057}
+  - component: {fileID: 921226983291575809}
   m_Layer: 0
   m_Name: TEATRO:BOCCASCENA
   m_TagString: Untagged
@@ -25100,6 +25246,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &921226983291575809
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2337229743417654799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3847751050804061733, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &2339515086406723323
 GameObject:
   m_ObjectHideFlags: 0
@@ -32864,6 +33024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1295446163474458754}
   - component: {fileID: 4273881691641265082}
+  - component: {fileID: 7095109926337047101}
   m_Layer: 0
   m_Name: MUSICA:MUSICA
   m_TagString: Untagged
@@ -32944,6 +33105,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -1.2228391, y: 0.0011804402, z: -0.18732852}
     m_Extent: {x: 1.2739999, y: 0.870625, z: 0.18747604}
   m_DirtyAABB: 0
+--- !u!136 &7095109926337047101
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3073655273080137932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7023945
+  m_Height: 2.5480003
+  m_Direction: 1
+  m_Center: {x: -1.6644166, y: 11.809123, z: -11.66147}
 --- !u!1 &3075890646735086626
 GameObject:
   m_ObjectHideFlags: 0
@@ -34522,6 +34697,7 @@ GameObject:
   - component: {fileID: 5625721683594996226}
   - component: {fileID: 7861796198845054195}
   - component: {fileID: 2102809439625254468}
+  - component: {fileID: 636194273273446130}
   m_Layer: 0
   m_Name: TEATRO:QUINTA_03
   m_TagString: Untagged
@@ -34594,6 +34770,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &636194273273446130
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199260099526387205}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2916253863856517070, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &3207153870849474207
 GameObject:
   m_ObjectHideFlags: 0
@@ -37673,6 +37863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6728382763537927608}
+  - component: {fileID: 1089747978186765816}
   m_Layer: 0
   m_Name: CARONTE_CHARACTER_01:caronte_geo
   m_TagString: Untagged
@@ -37697,6 +37888,20 @@ Transform:
   m_Father: {fileID: 4294059554482744262}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1089747978186765816
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505195591740736652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.614931
+  m_Height: 10.918293
+  m_Direction: 1
+  m_Center: {x: -7.280607, y: 2.8442154, z: 11.9}
 --- !u!1 &3505413718773797933
 GameObject:
   m_ObjectHideFlags: 0
@@ -47733,6 +47938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8160110144037278594}
+  - component: {fileID: 5901893989314277639}
   m_Layer: 0
   m_Name: ORFEO_CHARACTER_02:orfeo_geo
   m_TagString: Untagged
@@ -47757,6 +47963,20 @@ Transform:
   m_Father: {fileID: 4294059554482744262}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &5901893989314277639
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447976176060846900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.028553
+  m_Height: 10.750825
+  m_Direction: 1
+  m_Center: {x: 8.700407, y: 3.3468595, z: -21.373878}
 --- !u!1 &4449540138180284322
 GameObject:
   m_ObjectHideFlags: 0
@@ -50913,6 +51133,7 @@ GameObject:
   - component: {fileID: 597257939405311706}
   - component: {fileID: 6645149898204175646}
   - component: {fileID: 5289102473123836025}
+  - component: {fileID: 1695301714117335186}
   m_Layer: 0
   m_Name: TEATRO:QUINTA_02
   m_TagString: Untagged
@@ -50985,6 +51206,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1695301714117335186
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702116377385198699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6479026364336663925, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &4702347519007885013
 GameObject:
   m_ObjectHideFlags: 0
@@ -54656,6 +54891,7 @@ GameObject:
   - component: {fileID: 3676338842851996247}
   - component: {fileID: 8327595792027535090}
   - component: {fileID: 3645970835047344906}
+  - component: {fileID: 8562350071536974012}
   m_Layer: 0
   m_Name: TEATRO:DIPINTO
   m_TagString: Untagged
@@ -54728,6 +54964,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8562350071536974012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5033365910138671267}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9853376, y: 1.4138733, z: 0.00015278826}
+  m_Center: {x: 2.3518536, y: 0.9153347, z: -1.6621187}
 --- !u!1 &5038061376862799535
 GameObject:
   m_ObjectHideFlags: 0
@@ -56935,6 +57184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6971218087563969015}
+  - component: {fileID: 8729108548612810904}
   m_Layer: 0
   m_Name: ADE_CHARACTER_01:ade_geo
   m_TagString: Untagged
@@ -56960,6 +57210,20 @@ Transform:
   m_Father: {fileID: 4294059554482744262}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8729108548612810904
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228941274141637563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.1226778
+  m_Height: 11.943537
+  m_Direction: 1
+  m_Center: {x: 7.1908703, y: 4.3722086, z: 11.54}
 --- !u!1 &5230257790247681661
 GameObject:
   m_ObjectHideFlags: 0
@@ -61146,6 +61410,7 @@ GameObject:
   - component: {fileID: 5650096425183853600}
   - component: {fileID: 6983954893289505825}
   - component: {fileID: 1840385944057555774}
+  - component: {fileID: 2979434505059075387}
   m_Layer: 0
   m_Name: ORCHESTRA:VIOLINISTA_02
   m_TagString: Untagged
@@ -61218,6 +61483,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2979434505059075387
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638300004347125783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8621846537206991006, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &5639918563949457372
 GameObject:
   m_ObjectHideFlags: 0
@@ -72578,6 +72857,7 @@ GameObject:
   - component: {fileID: 7421169408710326262}
   - component: {fileID: 5563256769121299901}
   - component: {fileID: 5671886181211684505}
+  - component: {fileID: 6622642996293683778}
   m_Layer: 0
   m_Name: ORCHESTRA:VIOLINISTA_01
   m_TagString: Untagged
@@ -72650,6 +72930,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6622642996293683778
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668107462544698870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -810156510078357603, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &6672105314218957288
 GameObject:
   m_ObjectHideFlags: 0
@@ -74079,6 +74373,7 @@ GameObject:
   - component: {fileID: 839783731432793678}
   - component: {fileID: 4637957299264266587}
   - component: {fileID: 17016705052143455}
+  - component: {fileID: 1167078112324096322}
   m_Layer: 0
   m_Name: ORCHESTRA:VIOLONCELLO_01
   m_TagString: Untagged
@@ -74151,6 +74446,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1167078112324096322
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6788026477010246272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5225536941657007160, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &6798990900544538505
 GameObject:
   m_ObjectHideFlags: 0
@@ -76558,6 +76867,7 @@ GameObject:
   - component: {fileID: 831460417352979624}
   - component: {fileID: 6504835089241395823}
   - component: {fileID: 5577355327586616851}
+  - component: {fileID: 8579900838830609118}
   m_Layer: 0
   m_Name: ORCHESTRA:VIOLONCELLO_02
   m_TagString: Untagged
@@ -76630,6 +76940,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8579900838830609118
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7003492974080809304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6796910737667244750, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &7010531969578147246
 GameObject:
   m_ObjectHideFlags: 0
@@ -80178,6 +80502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6963744903470987044}
+  - component: {fileID: 148487734035019786}
   m_Layer: 0
   m_Name: EURIDICE_CHARACTER_01:euridice_geo
   m_TagString: Untagged
@@ -80203,6 +80528,20 @@ Transform:
   m_Father: {fileID: 4294059554482744262}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &148487734035019786
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7302889090695812184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.449707
+  m_Height: 9.03375
+  m_Direction: 1
+  m_Center: {x: -8.217261, y: 4.290937, z: -21.25}
 --- !u!1 &7303461251777393963
 GameObject:
   m_ObjectHideFlags: 0
@@ -83896,6 +84235,7 @@ GameObject:
   - component: {fileID: 4411321172018600339}
   - component: {fileID: 3416488848971271508}
   - component: {fileID: 5129956681662015641}
+  - component: {fileID: 207342395185360777}
   m_Layer: 0
   m_Name: TEATRO:QUINTA_04
   m_TagString: Untagged
@@ -83968,6 +84308,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &207342395185360777
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577937310108749735}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1464802640376617137, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &7581825251402436233
 GameObject:
   m_ObjectHideFlags: 0
@@ -99733,6 +100087,8 @@ GameObject:
   - component: {fileID: 7387976328545286116}
   - component: {fileID: 7861645301388727316}
   - component: {fileID: 2396590057752677018}
+  - component: {fileID: 2853500087084392896}
+  - component: {fileID: 4462190328826065124}
   m_Layer: 0
   m_Name: PORTALE_ENTRATA:PORTALE_ENTRATA
   m_TagString: Untagged
@@ -99805,6 +100161,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2853500087084392896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8944119625393743975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.40719575, y: 3.0316727, z: 0.33450818}
+  m_Center: {x: 1.3992479, y: 1.5157837, z: -0.16720147}
+--- !u!65 &4462190328826065124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8944119625393743975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4291083, y: 3.0316727, z: 0.33450818}
+  m_Center: {x: -0.19771273, y: 1.5157837, z: -0.16720147}
 --- !u!1 &8945708713592287778
 GameObject:
   m_ObjectHideFlags: 0
@@ -102701,6 +103083,7 @@ GameObject:
   - component: {fileID: 2434208442560296056}
   - component: {fileID: 8259796681574792772}
   - component: {fileID: 5100293753823004937}
+  - component: {fileID: 4647768427146712965}
   m_Layer: 0
   m_Name: TEATRO:QUINTA_01
   m_TagString: Untagged
@@ -102773,6 +103156,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4647768427146712965
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200528283415166603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2179205175524790366, guid: 1b0f0b37781d00747b54548b46c341af, type: 3}
 --- !u!1 &9200779123535671677
 GameObject:
   m_ObjectHideFlags: 0
