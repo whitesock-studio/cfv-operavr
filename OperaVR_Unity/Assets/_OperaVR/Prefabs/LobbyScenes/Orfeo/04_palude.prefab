@@ -6762,8 +6762,8 @@ GameObject:
   - component: {fileID: 3709557783642881732}
   - component: {fileID: 6190797845958605213}
   - component: {fileID: 7418853585780043315}
-  - component: {fileID: 1532701942424961066}
-  - component: {fileID: 4678976835358339349}
+  - component: {fileID: 59861197153096593}
+  - component: {fileID: 2805223095218247973}
   m_Layer: 0
   m_Name: swamp_water
   m_TagString: Untagged
@@ -6836,8 +6836,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1532701942424961066
-SphereCollider:
+--- !u!136 &59861197153096593
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6846,21 +6846,23 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.17727831
-  m_Center: {x: -0.11813064, y: -1.7344079e-26, z: 0.0015220289}
---- !u!135 &4678976835358339349
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856846702781378643}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.1732085
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.11813064, y: -1.7344079e-26, z: 0.0015220289}
+--- !u!136 &2805223095218247973
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856846702781378643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.1732085
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0.096103795, y: 2.4608054e-26, z: -0.0015336489}
 --- !u!1 &1859711573101047301
 GameObject:
