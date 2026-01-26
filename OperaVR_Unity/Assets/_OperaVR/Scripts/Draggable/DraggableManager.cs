@@ -238,6 +238,7 @@ namespace OperaVR
                 PreviousDraggableSlot = CurrentHoveredDraggableSlot;
                 CurrentHoveredDraggableSlot.LinkedDraggable = null;
             }
+            CurrentDraggable.transform.SetAsLastSibling();
             draggable.StartDrag(eventData);
             CheckPairings();
         }
