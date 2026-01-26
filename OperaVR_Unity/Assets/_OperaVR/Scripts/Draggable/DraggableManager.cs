@@ -125,7 +125,7 @@ namespace OperaVR
                 }
 
                 draggable.StartingSlot = InputDraggableSlots[i];
-                draggable.transform.position = InputDraggableSlots[i].Position;
+                draggable.Reset();
             }
         }
 
