@@ -41,6 +41,7 @@ namespace OperaVR
         {
             _audioSource.clip = clip;
             _audioSource.Stop();
+            gameObject.SetActive(clip != null);
         }
 
         public void SetVolume(float volume)

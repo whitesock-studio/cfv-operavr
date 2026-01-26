@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static OperaVR.DragAndDropQuizPopupData;
@@ -17,7 +18,9 @@ namespace OperaVR
         protected List<Draggable> Draggables = new();
 
         [SerializeField]
-        protected List<DraggableSlot> StartingInputDraggableSlots = new();
+        protected List<DraggableSlot> StartingInputDraggableFewSlots = new();
+        [SerializeField]
+        protected List<DraggableSlot> StartingInputDraggableManySlots = new();
         protected List<DraggableSlot> InputDraggableSlots = new();
 
         [SerializeField]
@@ -33,11 +36,6 @@ namespace OperaVR
             foreach(var draggable in StartingDraggables)
             {
                 RegisterDraggable(draggable);
-            }
-
-            foreach (var draggableSlot in StartingInputDraggableSlots)
-            {
-                RegisterDraggableSlot(draggableSlot, true);
             }
 
             foreach (var draggableSlot in StartingOutputDraggableSlots)
@@ -81,39 +79,62 @@ namespace OperaVR
             {
                 var slot = OutputDraggableSlots[i];
                 slot.gameObject.SetActive(i < draggableSlotsData.Length);
-                if (i < draggableSlotsData.Length)
+                if (i >= draggableSlotsData.Length)
                 {
-                    slot.transform.localPosition = draggableSlotsData[i].Position;
                     continue;
                 }
+                slot.transform.localPosition = draggableSlotsData[i].Position;
+                slot.transform.localScale = draggableSlotsData[i].Scale;
             }
 
+            if (draggablesData.Length <= StartingInputDraggableFewSlots.Count)
+            {
+                foreach (var draggableSlot in StartingInputDraggableFewSlots)
+                {
+                    RegisterDraggableSlot(draggableSlot, true);
+                }
+                foreach (var draggableSlot in StartingInputDraggableManySlots)
+                {
+                    DeregisterDraggableSlot(draggableSlot, true);
+                }
+            }
+            else
+            {
+                foreach (var draggableSlot in StartingInputDraggableManySlots)
+                {
+                    RegisterDraggableSlot(draggableSlot, true);
+                }
+                foreach (var draggableSlot in StartingInputDraggableFewSlots)
+                {
+                    DeregisterDraggableSlot(draggableSlot, true);
+                }
+            }
+            
             for (var i = 0; i < InputDraggableSlots.Count; i++)
             {
                 var slot = InputDraggableSlots[i];
-                InputDraggableSlots[i].gameObject.SetActive(i < draggablesData.Length);
+                slot.gameObject.SetActive(i < draggablesData.Length);
             }
 
             for (var i = 0; i < Draggables.Count; i++)
             {
                 var draggable = Draggables[i];
                 draggable.gameObject.SetActive(i < draggablesData.Length);
-                if (i < draggablesData.Length)
+                if (i >= draggablesData.Length)
                 {
-                    draggable.transform.position = InputDraggableSlots[i].Position;
                     continue;
                 }
+
+                draggable.StartingSlot = InputDraggableSlots[i];
+                draggable.transform.position = InputDraggableSlots[i].Position;
             }
         }
 
         public virtual void SetOutcomes(bool areGraphicsOn, bool isCorrect)
         {
-            foreach (var outputSlot in OutputDraggableSlots)
+            foreach (var outputSlot in OutputDraggableSlots.Where(
+                         outputSlot => outputSlot.gameObject.activeSelf))
             {
-                if (!outputSlot.gameObject.activeSelf)
-                {
-                    continue;
-                }
                 outputSlot.BorderView.SetOutcome(areGraphicsOn, isCorrect);
             }
         }
@@ -183,6 +204,7 @@ namespace OperaVR
         public void DeregisterDraggableSlot(DraggableSlot draggableSlot, bool asInput)
         {
             var list = asInput ? InputDraggableSlots : OutputDraggableSlots;
+            draggableSlot.gameObject.SetActive(false);
             if (!list.Contains(draggableSlot))
             {
                 return;

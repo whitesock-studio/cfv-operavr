@@ -15,6 +15,7 @@ namespace OperaVR
         public class DraggableSlotData
         {
             public Vector2 Position;
+            public Vector3 Scale;
         }
 
         [System.Serializable]
