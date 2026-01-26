@@ -84,7 +84,6 @@ namespace OperaVR
                     continue;
                 }
                 slot.transform.localPosition = draggableSlotsData[i].Position;
-                slot.transform.localScale = draggableSlotsData[i].Scale;
             }
 
             if (draggablesData.Length <= StartingInputDraggableFewSlots.Count)
