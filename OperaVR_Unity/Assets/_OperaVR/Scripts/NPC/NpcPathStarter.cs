@@ -34,6 +34,9 @@ namespace OperaVR
         public UnityEvent OnLoop;
         public float OnLoopDelay = 0;
 
+        [SerializeField]
+        private bool _useSitAnimationOnEnd;
+        
         private bool _isOn;
         private int _currentIndex = 0;
 
@@ -72,6 +75,7 @@ namespace OperaVR
         {
             _isOn = true;
             _currentIndex = 0;
+            _npc.Sit(false);
             _npc.SetDestination(_path.Points[_currentIndex].position);
             _npc.SetSpeeds(RunningSpeed, WalkingSpeed);
             OnStarted?.Invoke();
@@ -101,6 +105,10 @@ namespace OperaVR
             }
 
             StartCoroutine(InvokeDelayed(OnComplete, OnCompleteDelay));
+            if (_useSitAnimationOnEnd)
+            {
+                _npc.Sit(true);
+            }
             _isOn = false;
         }
 
