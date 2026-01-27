@@ -35,7 +35,7 @@ namespace OperaVR
         public float OnLoopDelay = 0;
 
         [SerializeField]
-        private bool _useSitAnimationOnEnd;
+        private bool _useSitAnimationOnEnd = true;
         
         private bool _isOn;
         private int _currentIndex = 0;
