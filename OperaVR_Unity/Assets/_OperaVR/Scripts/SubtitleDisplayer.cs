@@ -5,20 +5,24 @@ namespace OperaVR
 
     public class SubtitleDisplayer : MonoBehaviour
     {
+	    public static SubtitleDisplayer Instance;
+	    
         [SerializeField] TextMeshProUGUI _textDisplayer;
 		[SerializeField] GameObject _textContainer;
-		private SubtitleManager _manager;
 
 		private void Awake()
 		{
-			_manager = FindFirstObjectByType<SubtitleManager>();
-			if (_manager)
+			if (Instance != null)
 			{
-				_manager.OnSubtitleChanged.AddListener(DisplayText);
+				Destroy(gameObject);
+				return;
 			}
+
+			Instance = this;
 			DisplayText("");
 		}
-		private void DisplayText(string text)
+		
+		public void DisplayText(string text)
         {
             _textDisplayer.text = text;
 			_textContainer.SetActive(!string.IsNullOrEmpty(text));

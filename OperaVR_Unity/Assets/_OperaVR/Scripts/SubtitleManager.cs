@@ -31,6 +31,7 @@ namespace OperaVR
 		public void Awake()
 		{
 			OnSubtitleChanged.AddListener(DebugEntry);
+			OnSubtitleChanged.AddListener(DisplaySubtitle);
 			if (_audioSource == null || _subtitleFile == null)
 			{
 				Debug.LogError("SubtitleManager: AudioSource o SubtitleFile mancante.");
@@ -56,6 +57,11 @@ namespace OperaVR
 		private void DebugEntry(string entry)
 		{
 			Debug.Log($"[SUBTITLE] {entry}");
+		}
+
+		private void DisplaySubtitle(string entry)
+		{
+			SubtitleDisplayer.Instance.DisplayText(entry);
 		}
 
 		private IEnumerator SubtitleCoroutine()
