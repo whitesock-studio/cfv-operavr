@@ -38,7 +38,13 @@ namespace OperaVR
                 Debug.LogError("No profiling data found!");
                 return;
             }
+            
             var profile = QuizData.ProfilingData.GetData(score);
+            if (profile == QuizData.ProfilingData.Ranges[0].Data)
+            {
+                ContentController.OnFail?.Invoke();
+                Debug.Log($"FAILED");
+            }
             Debug.Log($"Profile: {profile.name}");
 
             var minScore = 0f;
