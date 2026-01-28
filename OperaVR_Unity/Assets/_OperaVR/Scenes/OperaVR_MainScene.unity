@@ -1672,14 +1672,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e9fc4eb2f25694cb5a86261acc7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunningSpeed: 5.13
-  WalkingSpeed: 3.2
+  RunningSpeed: 1
+  WalkingSpeed: 1
   _npc: {fileID: 269968635}
   _path: {fileID: 59594695}
   _activateOnStart: 0
   OnStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 269968636}
+        m_TargetAssemblyTypeName: OperaVR.SubtitleManager, OperaVR
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnComplete:
     m_PersistentCalls:
       m_Calls:
@@ -5054,6 +5066,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 186380ebdab013b4bb105e583472c722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &105821447 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9096554279079458959, guid: c785eb42d21bcfc4ba181c38faf88448,
+    type: 3}
+  m_PrefabInstance: {fileID: 105821444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfff1275e759a914eabdda69284a3644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &108613237
@@ -11069,6 +11093,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 186380ebdab013b4bb105e583472c722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &269968636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9096554279079458959, guid: c785eb42d21bcfc4ba181c38faf88448,
+    type: 3}
+  m_PrefabInstance: {fileID: 269968633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfff1275e759a914eabdda69284a3644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &271181792
@@ -32230,6 +32266,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186380ebdab013b4bb105e583472c722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &668071551 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9096554279079458959, guid: c785eb42d21bcfc4ba181c38faf88448,
+    type: 3}
+  m_PrefabInstance: {fileID: 668071548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfff1275e759a914eabdda69284a3644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &669136335
 GameObject:
   m_ObjectHideFlags: 0
@@ -35954,8 +36002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e9fc4eb2f25694cb5a86261acc7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunningSpeed: 5.13
-  WalkingSpeed: 3.2
+  RunningSpeed: 1
+  WalkingSpeed: 1
   _npc: {fileID: 1359890201}
   _path: {fileID: 743170502}
   _activateOnStart: 0
@@ -40777,14 +40825,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e9fc4eb2f25694cb5a86261acc7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunningSpeed: 3
-  WalkingSpeed: 3
+  RunningSpeed: 1
+  WalkingSpeed: 1
   _npc: {fileID: 668071550}
   _path: {fileID: 847776023}
   _activateOnStart: 0
   OnStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 668071551}
+        m_TargetAssemblyTypeName: OperaVR.SubtitleManager, OperaVR
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnComplete:
     m_PersistentCalls:
       m_Calls:
@@ -55638,8 +55698,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033628185}
-  m_LocalRotation: {x: -0, y: 0.9999852, z: -0, w: -0.005440402}
-  m_LocalPosition: {x: 2.14, y: 1.85, z: 46.52}
+  m_LocalRotation: {x: -0, y: 0.7427177, z: -0, w: 0.6696047}
+  m_LocalPosition: {x: -228.28, y: 334.72, z: -714.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58370,6 +58430,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 186380ebdab013b4bb105e583472c722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1100984210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9096554279079458959, guid: c785eb42d21bcfc4ba181c38faf88448,
+    type: 3}
+  m_PrefabInstance: {fileID: 1100984207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfff1275e759a914eabdda69284a3644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1102076676
@@ -85085,14 +85157,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e9fc4eb2f25694cb5a86261acc7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunningSpeed: 5.13
-  WalkingSpeed: 3.2
+  RunningSpeed: 1
+  WalkingSpeed: 1
   _npc: {fileID: 1329930568}
   _path: {fileID: 1679984243}
   _activateOnStart: 0
   OnStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 668071551}
+        m_TargetAssemblyTypeName: OperaVR.SubtitleManager, OperaVR
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnComplete:
     m_PersistentCalls:
       m_Calls:
@@ -87581,8 +87665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e9fc4eb2f25694cb5a86261acc7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunningSpeed: 3
-  WalkingSpeed: 3
+  RunningSpeed: 1
+  WalkingSpeed: 1
   _npc: {fileID: 1994479410}
   _path: {fileID: 1777177215}
   _activateOnStart: 0
@@ -98078,14 +98162,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e9fc4eb2f25694cb5a86261acc7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunningSpeed: 5.13
-  WalkingSpeed: 3.2
+  RunningSpeed: 1
+  WalkingSpeed: 1
   _npc: {fileID: 105821446}
   _path: {fileID: 1923193256}
   _activateOnStart: 0
   OnStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 105821447}
+        m_TargetAssemblyTypeName: OperaVR.SubtitleManager, OperaVR
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnComplete:
     m_PersistentCalls:
       m_Calls:
@@ -101246,6 +101342,41 @@ PrefabInstance:
     - target: {fileID: 4575321362940558883, guid: c785eb42d21bcfc4ba181c38faf88448,
         type: 3}
       propertyPath: onInteractEvent.unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896406625267465225, guid: c785eb42d21bcfc4ba181c38faf88448,
+        type: 3}
+      propertyPath: onInteractEvent.unityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896406625267465225, guid: c785eb42d21bcfc4ba181c38faf88448,
+        type: 3}
+      propertyPath: onInteractEvent.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896406625267465225, guid: c785eb42d21bcfc4ba181c38faf88448,
+        type: 3}
+      propertyPath: onInteractEvent.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1994479412}
+    - target: {fileID: 5896406625267465225, guid: c785eb42d21bcfc4ba181c38faf88448,
+        type: 3}
+      propertyPath: onInteractEvent.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896406625267465225, guid: c785eb42d21bcfc4ba181c38faf88448,
+        type: 3}
+      propertyPath: onInteractEvent.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896406625267465225, guid: c785eb42d21bcfc4ba181c38faf88448,
+        type: 3}
+      propertyPath: onInteractEvent.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: OperaVR.SubtitleManager, OperaVR
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896406625267465225, guid: c785eb42d21bcfc4ba181c38faf88448,
+        type: 3}
+      propertyPath: onInteractEvent.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6397607340414181115, guid: c785eb42d21bcfc4ba181c38faf88448,
@@ -104928,14 +105059,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e9fc4eb2f25694cb5a86261acc7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunningSpeed: 5.13
-  WalkingSpeed: 3.2
+  RunningSpeed: 1
+  WalkingSpeed: 1
   _npc: {fileID: 1100984209}
   _path: {fileID: 2119260511}
   _activateOnStart: 0
   OnStarted:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1100984210}
+        m_TargetAssemblyTypeName: OperaVR.SubtitleManager, OperaVR
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnComplete:
     m_PersistentCalls:
       m_Calls:
@@ -105821,8 +105964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e9fc4eb2f25694cb5a86261acc7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunningSpeed: 3.2
-  WalkingSpeed: 3.2
+  RunningSpeed: 1
+  WalkingSpeed: 1
   _npc: {fileID: 817841849}
   _path: {fileID: 2136153253}
   _activateOnStart: 0
