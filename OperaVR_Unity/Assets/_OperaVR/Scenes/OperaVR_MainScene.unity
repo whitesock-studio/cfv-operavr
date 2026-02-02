@@ -96,8 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 9965c7d2310170946898d5d1f267ef97,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 4890085278179872738, guid: a862836c58058654386bb27f9a1dac52,
     type: 2}
 --- !u!196 &4
@@ -5944,6 +5943,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 253330569634723335, guid: c4f48794951d8df4bac5af3d2a19b825,
         type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 253330569634723335, guid: c4f48794951d8df4bac5af3d2a19b825,
+        type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.085
       objectReference: {fileID: 0}
@@ -5955,7 +5959,7 @@ PrefabInstance:
     - target: {fileID: 782871950303778684, guid: c4f48794951d8df4bac5af3d2a19b825,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 782871950303778684, guid: c4f48794951d8df4bac5af3d2a19b825,
         type: 3}
@@ -6010,7 +6014,7 @@ PrefabInstance:
     - target: {fileID: 782871950303778685, guid: c4f48794951d8df4bac5af3d2a19b825,
         type: 3}
       propertyPath: m_Name
-      value: Image-EH_01
+      value: PDF-EH_01
       objectReference: {fileID: 0}
     - target: {fileID: 2080962204819127814, guid: c4f48794951d8df4bac5af3d2a19b825,
         type: 3}
@@ -6020,7 +6024,7 @@ PrefabInstance:
     - target: {fileID: 2307126881769023346, guid: c4f48794951d8df4bac5af3d2a19b825,
         type: 3}
       propertyPath: _size
-      value: 5.3
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 6366785028452536656, guid: c4f48794951d8df4bac5af3d2a19b825,
         type: 3}
@@ -35023,7 +35027,7 @@ PrefabInstance:
     - target: {fileID: 253330569634723335, guid: e90ef42b7de8173458be58b8d2e4adc2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.15
+      value: 2.005
       objectReference: {fileID: 0}
     - target: {fileID: 253330569634723335, guid: e90ef42b7de8173458be58b8d2e4adc2,
         type: 3}
@@ -35038,7 +35042,7 @@ PrefabInstance:
     - target: {fileID: 782871950303778684, guid: e90ef42b7de8173458be58b8d2e4adc2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 782871950303778684, guid: e90ef42b7de8173458be58b8d2e4adc2,
         type: 3}
@@ -35093,7 +35097,7 @@ PrefabInstance:
     - target: {fileID: 782871950303778685, guid: e90ef42b7de8173458be58b8d2e4adc2,
         type: 3}
       propertyPath: m_Name
-      value: Link-EH_00
+      value: PDF-EH_00
       objectReference: {fileID: 0}
     - target: {fileID: 981600108608253129, guid: e90ef42b7de8173458be58b8d2e4adc2,
         type: 3}
@@ -35118,7 +35122,7 @@ PrefabInstance:
     - target: {fileID: 2307126881769023346, guid: e90ef42b7de8173458be58b8d2e4adc2,
         type: 3}
       propertyPath: _size
-      value: 5.3
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 3169002027568257007, guid: e90ef42b7de8173458be58b8d2e4adc2,
         type: 3}
@@ -55698,14 +55702,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033628185}
-  m_LocalRotation: {x: -0, y: 0.7427177, z: -0, w: 0.6696047}
-  m_LocalPosition: {x: -228.28, y: 334.72, z: -714.73}
+  m_LocalRotation: {x: -0, y: 0.99999624, z: -0, w: 0.002755217}
+  m_LocalPosition: {x: 1.73, y: 1.45, z: 46.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2145847608}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 180.623, z: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 179.684, z: 0}
 --- !u!114 &1033628187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78782,78 +78786,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1509833188}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1511653898
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1511653899}
-  - component: {fileID: 1511653900}
-  m_Layer: 0
-  m_Name: Text-EH02
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1511653899
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511653898}
-  m_LocalRotation: {x: -0, y: -0.2034666, z: -0, w: 0.9790819}
-  m_LocalPosition: {x: 5.967, y: 3.705, z: 18.443}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2145847608}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: -23.479, z: 0}
---- !u!114 &1511653900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511653898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679647456a363450ab8d072b2a91f5a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: Introduzione scritta e comandi
-  description: "Benvenuto nell\u2019esperienza Opera VR. Esplora i contenuti e preparati
-    al viaggio immersivo."
-  titleFontOverride:
-    overrideFont: 0
-    font: {fileID: 0}
-    material: {fileID: 0}
-  descriptionFontOverride:
-    overrideFont: 0
-    font: {fileID: 0}
-    material: {fileID: 0}
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0.4}
-  foregroundColor: {r: 1, g: 1, b: 1, a: 1}
-  sprite: {fileID: 0}
-  spriteSize: 0.75
-  spriteRectSize: {x: 0, y: 0}
-  textDisplayRadius: 3
-  markerDisplayRadius: 3
-  onTextDisplayedEvent:
-    id: 0
-    unityEventIsSynced: 0
-    unityEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    animatorEvent:
-      events: []
-    questEvent:
-      events: []
 --- !u!1001 &1514754596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106267,9 +106199,9 @@ Transform:
   - {fileID: 918489838}
   - {fileID: 627028945}
   - {fileID: 1089823209}
+  - {fileID: 1033628186}
   - {fileID: 704331993}
   - {fileID: 134603361}
-  - {fileID: 1511653899}
   - {fileID: 1380243489}
   - {fileID: 6988448875792674430}
   - {fileID: 571425545}
@@ -106279,7 +106211,6 @@ Transform:
   - {fileID: 8998895584751328112}
   - {fileID: 1555394707}
   - {fileID: 1851381051}
-  - {fileID: 1033628186}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
