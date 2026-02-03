@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6537543888330205622}
   - component: {fileID: 5916610360267662793}
   - component: {fileID: 4479014803582622353}
+  - component: {fileID: 8659635125567108426}
   m_Layer: 0
   m_Name: RestartButton
   m_TagString: Untagged
@@ -122,7 +123,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6537543888330205622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8659635125567108426}
+        m_TargetAssemblyTypeName: OperaVR.AudioPlayer, OperaVR
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4479014803582622353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +156,20 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &8659635125567108426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4051612331331403796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fc12875be335444b7e955c6e825b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 0}
+  _clip: {fileID: 8300000, guid: ae997780afdfc7942bae561e24a35e8a, type: 3}
 --- !u!1 &5724557944635183798
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +183,7 @@ GameObject:
   - component: {fileID: 5095767095295777761}
   - component: {fileID: 8839148302976476460}
   - component: {fileID: 2480216468610076473}
+  - component: {fileID: 6303689472125696171}
   m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
@@ -265,7 +293,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5095767095295777761}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6303689472125696171}
+        m_TargetAssemblyTypeName: OperaVR.AudioPlayer, OperaVR
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2480216468610076473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +326,20 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &6303689472125696171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724557944635183798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fc12875be335444b7e955c6e825b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 0}
+  _clip: {fileID: 8300000, guid: ae997780afdfc7942bae561e24a35e8a, type: 3}
 --- !u!1 &6386666287193187238
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +442,7 @@ GameObject:
   - component: {fileID: 592010979924733343}
   - component: {fileID: 3450513214842135473}
   - component: {fileID: 4140547665565581964}
+  - component: {fileID: 497905518987820266}
   m_Layer: 0
   m_Name: ConfirmButton
   m_TagString: Untagged
@@ -497,7 +552,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 592010979924733343}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 497905518987820266}
+        m_TargetAssemblyTypeName: OperaVR.AudioPlayer, OperaVR
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4140547665565581964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +585,20 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &497905518987820266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6455428516134468241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fc12875be335444b7e955c6e825b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 0}
+  _clip: {fileID: 8300000, guid: ae997780afdfc7942bae561e24a35e8a, type: 3}
 --- !u!1 &7222300143708535199
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +612,7 @@ GameObject:
   - component: {fileID: 8154987874627817907}
   - component: {fileID: 7617357581530067271}
   - component: {fileID: 4243730743481601808}
+  - component: {fileID: 6203170017756049031}
   m_Layer: 0
   m_Name: ConfirmOutcomeButton
   m_TagString: Untagged
@@ -640,7 +722,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8154987874627817907}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6203170017756049031}
+        m_TargetAssemblyTypeName: OperaVR.AudioPlayer, OperaVR
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4243730743481601808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,6 +755,20 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &6203170017756049031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222300143708535199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fc12875be335444b7e955c6e825b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 0}
+  _clip: {fileID: 8300000, guid: ae997780afdfc7942bae561e24a35e8a, type: 3}
 --- !u!1001 &177744322752637379
 PrefabInstance:
   m_ObjectHideFlags: 0
