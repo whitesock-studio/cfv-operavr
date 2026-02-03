@@ -179608,12 +179608,6 @@ Transform:
   m_Father: {fileID: 1304285868}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -15.321922, y: -0.000000035504033, z: -3.06526}
---- !u!4 &730397487 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4946844391675327495, guid: 0d6788eeeb2008946af162cf2802b96b,
-    type: 3}
-  m_PrefabInstance: {fileID: 4946844392388824872}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730434120
 GameObject:
   m_ObjectHideFlags: 0
@@ -584644,7 +584638,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetLocation
       value: 
-      objectReference: {fileID: 730397487}
+      objectReference: {fileID: 0}
     - target: {fileID: 1305884587076889648, guid: 2bb218655425f0d4c8c0d5052f6c7049,
         type: 3}
       propertyPath: m_RootOrder
@@ -584729,6 +584723,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4359396233771038208, guid: 400e6e076c708a24cb32a05ef3018f5f,
+        type: 3}
+      propertyPath: questName
+      value: "\u201CCenerentola\u201D e il fiabesco in danza"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359396233771038214, guid: 400e6e076c708a24cb32a05ef3018f5f,
+        type: 3}
+      propertyPath: m_Name
+      value: Quest-Path1-C_RR_17
+      objectReference: {fileID: 0}
     - target: {fileID: 4359396233956832368, guid: 400e6e076c708a24cb32a05ef3018f5f,
         type: 3}
       propertyPath: m_Name
@@ -584789,6 +584793,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4359396234156881995, guid: 400e6e076c708a24cb32a05ef3018f5f,
+        type: 3}
+      propertyPath: m_Name
+      value: Quest-Path2-C_RR_18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359396234156882005, guid: 400e6e076c708a24cb32a05ef3018f5f,
+        type: 3}
+      propertyPath: questName
+      value: "I mestieri dello spettacolo \u2013 Prendersi cura della scena"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359396234459797432, guid: 400e6e076c708a24cb32a05ef3018f5f,
+        type: 3}
+      propertyPath: questName
+      value: "I mestieri dello spettacolo \u2013 Prendersi cura della tecnologia"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359396234459797432, guid: 400e6e076c708a24cb32a05ef3018f5f,
+        type: 3}
+      propertyPath: description
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359396234459797438, guid: 400e6e076c708a24cb32a05ef3018f5f,
+        type: 3}
+      propertyPath: m_Name
+      value: Quest-Path3-C_RR_19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926183686714108722, guid: 400e6e076c708a24cb32a05ef3018f5f,
+        type: 3}
+      propertyPath: _data
+      value: 
+      objectReference: {fileID: 11400000, guid: eef7f301ca768554f9dbce5f694fc3ef,
+        type: 2}
+    - target: {fileID: 5926183687059905107, guid: 400e6e076c708a24cb32a05ef3018f5f,
+        type: 3}
+      propertyPath: _data
+      value: 
+      objectReference: {fileID: 11400000, guid: bbef7f89cd70d8945acad1136f918636,
+        type: 2}
     - target: {fileID: 6666553397625547932, guid: 400e6e076c708a24cb32a05ef3018f5f,
         type: 3}
       propertyPath: targetLocation
