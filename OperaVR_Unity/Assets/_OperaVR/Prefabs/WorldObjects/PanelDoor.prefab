@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 8268416174982216725}
+  _clip: {fileID: 0}
 --- !u!82 &8268416174982216725
 AudioSource:
   m_ObjectHideFlags: 0
@@ -201,8 +202,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 8.797562
-  MaxDistance: 500
+  MinDistance: 1
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

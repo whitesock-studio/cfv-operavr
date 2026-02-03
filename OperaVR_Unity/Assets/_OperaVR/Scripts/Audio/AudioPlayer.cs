@@ -1,3 +1,4 @@
+using SpatialSys.UnitySDK;
 using UnityEngine;
 
 namespace OperaVR
@@ -14,11 +15,23 @@ namespace OperaVR
         {
             if (_audioSource == null)
             {
+                GameObject listenerObject;
                 var listener = FindFirstObjectByType<AudioListener>();
-                _audioSource = listener.gameObject.GetComponent<AudioSource>();
+                if (listener != null)
+                {
+                    listenerObject = listener.gameObject;
+                }
+                else
+                {
+                    listenerObject = new GameObject("Dummy audio");
+                }
+
+                _audioSource = listenerObject.GetComponent<AudioSource>();
                 if (_audioSource == null)
                 {
-                    _audioSource = listener.gameObject.AddComponent<AudioSource>();
+                    _audioSource = listenerObject.AddComponent<AudioSource>();
+                    _audioSource.playOnAwake = false;
+                    _audioSource.spatialBlend = 0;
                 }
             }
             if (_clip != null)
