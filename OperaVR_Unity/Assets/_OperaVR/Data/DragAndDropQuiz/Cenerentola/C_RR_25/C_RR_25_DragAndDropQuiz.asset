@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed0c642008a9c44597ebb15c40434dc, type: 3}
+  m_Name: C_RR_25_DragAndDropQuiz
+  m_EditorClassIdentifier: 
+  PopupType: 12
+  InterruptsMovement: 1
+  Title: "Le novit\xE0 musicali di Monteverdi"
+  TitleKey: 
+  SubTitle: 
+  SubTitleKey: 
+  QuestionText: Trascina l'immagine corretta nello slot mancante
+  AudioClip: {fileID: 8300000, guid: 661d5d88de4e6f54a9d442e3dc8207c0, type: 3}
+  Image: {fileID: 21300000, guid: 76c623d646267314ea2759cb28b24af3, type: 3}
+  DraggableSlotsData:
+  - Position: {x: -197.5, y: 139}
+    Scale: {x: 1, y: 1, z: 1}
+  - Position: {x: 19, y: 139}
+    Scale: {x: 1, y: 1, z: 1}
+  - Position: {x: 195, y: -206}
+    Scale: {x: 0, y: 0, z: 0}
+  DraggablesData:
+  - Sprite: {fileID: 21300000, guid: 8728f8fb9a351bc4f8317f4eb89ff338, type: 3}
+    CorrectSlot: 0
+  - Sprite: {fileID: 21300000, guid: a02a8f6f269995d4ca47a549a60acbac, type: 3}
+    CorrectSlot: 1
+  - Sprite: {fileID: 21300000, guid: c8a4f4b47332e8f4c84fe3c77c296cbe, type: 3}
+    CorrectSlot: 2
