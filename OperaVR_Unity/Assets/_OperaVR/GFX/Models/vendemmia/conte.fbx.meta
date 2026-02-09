@@ -24,7 +24,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -80,8 +80,620 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: DUCA_CHARACTER_01:Root_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:HipPart1_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:HipPart1_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Spine1Part1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Spine1Part2_M
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Neck_M
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Shoulder_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Shoulder_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:ShoulderPart1_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:ShoulderPart1_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Toes_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Toes_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:Chest_M
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:ThumbFinger1_R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:ThumbFinger2_R
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:ThumbFinger2_R_end
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:MiddleFinger1_R
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:MiddleFinger2_R
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:MiddleFinger2_R_end
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:ThumbFinger1_L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:ThumbFinger2_L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:ThumbFinger2_L_end
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:MiddleFinger1_L
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:MiddleFinger2_L
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: DUCA_CHARACTER_01:MiddleFinger2_L_end
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: conte(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:DUCA_CORPO
+      parentName: conte(Clone)
+      position: {x: 0.75885105, y: 0.4175331, z: 16.360905}
+      rotation: {x: -0.000000037748947, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:duca_rig
+      parentName: conte(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:DeformationSystem
+      parentName: DUCA_CHARACTER_01:duca_rig
+      position: {x: -0, y: 0.00000003814688, z: 0.0000012207031}
+      rotation: {x: 6.617445e-23, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:Root_M
+      parentName: DUCA_CHARACTER_01:DeformationSystem
+      position: {x: -1.4210854e-16, y: 0.99317825, z: -0.017906418}
+      rotation: {x: 0.46390367, y: -0.53366035, z: -0.46390373, w: 0.53366035}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: DUCA_CHARACTER_01:Hip_L
+      parentName: DUCA_CHARACTER_01:Root_M
+      position: {x: 0.020178737, y: -0.008309139, z: 0.0828299}
+      rotation: {x: 0.9921459, y: -0.09366235, z: 0.02409401, w: -0.07933093}
+      scale: {x: 1.0000035, y: 1.0000002, z: 1.0000027}
+    - name: DUCA_CHARACTER_01:HipPart1_L
+      parentName: DUCA_CHARACTER_01:Hip_L
+      position: {x: 0.15873887, y: 0.00000004315465, z: -0.0000009694603}
+      rotation: {x: 0.000000009933828, y: -0.000000011153212, z: -0.00000003930484,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:HipPart2_L
+      parentName: DUCA_CHARACTER_01:HipPart1_L
+      position: {x: 0.15873902, y: 0.000000048724033, z: -0.0000009667788}
+      rotation: {x: 0.000000044333543, y: 0.000000033601747, z: -0.00000006018484,
+        w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: DUCA_CHARACTER_01:Knee_L
+      parentName: DUCA_CHARACTER_01:HipPart2_L
+      position: {x: 0.15873918, y: -0.0000011458561, z: -0.0000007512986}
+      rotation: {x: 0.00000033935103, y: -0.000000023473572, z: 0.019398382, w: 0.9998118}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:Ankle_L
+      parentName: DUCA_CHARACTER_01:Knee_L
+      position: {x: 0.42359355, y: -0.0000015124498, z: -0.0000023718817}
+      rotation: {x: -0.087205194, y: -0.01666864, z: -0.043648377, w: 0.9950941}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000001}
+    - name: DUCA_CHARACTER_01:Toes_L
+      parentName: DUCA_CHARACTER_01:Ankle_L
+      position: {x: 0.06795016, y: -0.13527484, z: -0.00000036424618}
+      rotation: {x: 0.0044428883, y: 0.004138756, z: -0.6812376, w: 0.73203725}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: DUCA_CHARACTER_01:ToesEnd_L
+      parentName: DUCA_CHARACTER_01:Toes_L
+      position: {x: 0.08797606, y: 0.00000007425345, z: 0.00000008974223}
+      rotation: {x: -0.000000001877922, y: -0.0000007383596, z: -0.00000006001421,
+        w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: DUCA_CHARACTER_01:ToesEnd_L_end
+      parentName: DUCA_CHARACTER_01:ToesEnd_L
+      position: {x: -0, y: 0.0879766, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:Hip_R
+      parentName: DUCA_CHARACTER_01:Root_M
+      position: {x: 0.020178728, y: -0.008309126, z: -0.0828299}
+      rotation: {x: 0.09366202, y: 0.9921459, z: -0.079330556, w: -0.02409703}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: DUCA_CHARACTER_01:HipPart1_R
+      parentName: DUCA_CHARACTER_01:Hip_R
+      position: {x: -0.15873957, y: -0.00000021261056, z: 0.000000027130657}
+      rotation: {x: 0.000000021507155, y: -0.000000055063747, z: -0.0000000022698885,
+        w: 1}
+      scale: {x: 1, y: 1, z: 0.9999998}
+    - name: DUCA_CHARACTER_01:HipPart2_R
+      parentName: DUCA_CHARACTER_01:HipPart1_R
+      position: {x: -0.15873957, y: -0.00000020025634, z: 0.00000011985733}
+      rotation: {x: 0.0000000086396446, y: -4.768332e-10, z: -0.00000003390216, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: DUCA_CHARACTER_01:Knee_R
+      parentName: DUCA_CHARACTER_01:HipPart2_R
+      position: {x: -0.15873973, y: 0.0000009903137, z: -0.00000016020141}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: DUCA_CHARACTER_01:Ankle_R
+      parentName: DUCA_CHARACTER_01:Knee_R
+      position: {x: -0.42359495, y: 0.0000011225671, z: -0.00000019158624}
+      rotation: {x: -0.087205105, y: -0.016668534, z: -0.043648418, w: 0.9950941}
+      scale: {x: 0.99999976, y: 0.9999999, z: 1}
+    - name: DUCA_CHARACTER_01:Toes_R
+      parentName: DUCA_CHARACTER_01:Ankle_R
+      position: {x: -0.067950435, y: 0.13527487, z: -0.000000058323216}
+      rotation: {x: 0.004443928, y: 0.004135446, z: -0.6812376, w: 0.73203725}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: DUCA_CHARACTER_01:ToesEnd_R
+      parentName: DUCA_CHARACTER_01:Toes_R
+      position: {x: -0.08797605, y: -0.000000019731413, z: 0.0000001732782}
+      rotation: {x: 0.000000053464923, y: 0.0000010109416, z: -0.0000000037157357,
+        w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: DUCA_CHARACTER_01:ToesEnd_R_end
+      parentName: DUCA_CHARACTER_01:ToesEnd_R
+      position: {x: -0, y: 0.0879766, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:RootPart1_M
+      parentName: DUCA_CHARACTER_01:Root_M
+      position: {x: -0.05915337, y: 0.0000013963324, z: 0.00000000258579}
+      rotation: {x: 0.000000040690626, y: 6.979394e-10, z: -0.0000003255525, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:RootPart2_M
+      parentName: DUCA_CHARACTER_01:RootPart1_M
+      position: {x: -0.05915354, y: 0.00000014899396, z: 0.0000000025856868}
+      rotation: {x: 2.0410157e-15, y: -9.2223057e-10, z: 0.000000077011116, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:Spine1_M
+      parentName: DUCA_CHARACTER_01:RootPart2_M
+      position: {x: -0.05915293, y: 0.00000007316042, z: 0.0000000025856604}
+      rotation: {x: -0.0000000011390745, y: 0.000000001683572, z: -0.027103314, w: 0.99963266}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
+    - name: DUCA_CHARACTER_01:Spine1Part1_M
+      parentName: DUCA_CHARACTER_01:Spine1_M
+      position: {x: -0.048029494, y: 0.0000006812292, z: 0.0000000020963529}
+      rotation: {x: -0.0000000011842864, y: 0.0000000016520788, z: -0.000000040828812,
+        w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: DUCA_CHARACTER_01:Spine1Part2_M
+      parentName: DUCA_CHARACTER_01:Spine1Part1_M
+      position: {x: -0.048029646, y: 0.0000006903242, z: 0.0000000020963598}
+      rotation: {x: -0.0000000011842926, y: 0.0000000018049372, z: -0.00000014104498,
+        w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: DUCA_CHARACTER_01:Chest_M
+      parentName: DUCA_CHARACTER_01:Spine1Part2_M
+      position: {x: -0.048030768, y: -0.0000016776282, z: 0.0000000020964135}
+      rotation: {x: -0.000000004676951, y: 0.000000012169444, z: -0.111940876, w: 0.99371487}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: DUCA_CHARACTER_01:Neck_M
+      parentName: DUCA_CHARACTER_01:Chest_M
+      position: {x: -0.11799257, y: 0.0000004480014, z: 0.0000000022285886}
+      rotation: {x: -0.000000008125469, y: -0.0000000016731083, z: -0.10798427, w: 0.9941526}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: DUCA_CHARACTER_01:NeckPart1_M
+      parentName: DUCA_CHARACTER_01:Neck_M
+      position: {x: -0.027066214, y: 0.00000019463295, z: 4.294408e-10}
+      rotation: {x: -0.00000000789729, y: -0.0000000025407447, z: 0.0000002686, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:NeckPart2_M
+      parentName: DUCA_CHARACTER_01:NeckPart1_M
+      position: {x: -0.027066357, y: 0.00000015608774, z: 4.2944392e-10}
+      rotation: {x: -0.00000000789733, y: -0.0000000046699764, z: -0.0000019428473,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:Head_M
+      parentName: DUCA_CHARACTER_01:NeckPart2_M
+      position: {x: -0.027065217, y: -0.0000008281019, z: 4.294391e-10}
+      rotation: {x: -0.0000000034680472, y: -0.0000000070064434, z: 0.17644806, w: 0.98431}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: DUCA_CHARACTER_01:HeadEnd_M
+      parentName: DUCA_CHARACTER_01:Head_M
+      position: {x: -0.15174778, y: -0.00000007075905, z: 0.0000000030903158}
+      rotation: {x: -0.0000000046499062, y: -0.0000000062845813, z: 0.000000022829235,
+        w: 1}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: DUCA_CHARACTER_01:HeadEnd_M_end
+      parentName: DUCA_CHARACTER_01:HeadEnd_M
+      position: {x: -0, y: 0.09764984, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:Jaw_M
+      parentName: DUCA_CHARACTER_01:Head_M
+      position: {x: 0.019243559, y: 0.039070006, z: -7.5523515e-10}
+      rotation: {x: -0.0000000014164393, y: -0.000000006768298, z: 0.893222, w: -0.44961607}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: DUCA_CHARACTER_01:JawEnd_M
+      parentName: DUCA_CHARACTER_01:Jaw_M
+      position: {x: -0.03707012, y: 0.0000007807891, z: -7.266152e-10}
+      rotation: {x: -0.00000000540874, y: 0.0000000043083355, z: -0.00000012508258,
+        w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:JawEnd_M_end
+      parentName: DUCA_CHARACTER_01:JawEnd_M
+      position: {x: -0, y: 0.037071068, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:Scapula_L
+      parentName: DUCA_CHARACTER_01:Chest_M
+      position: {x: -0.08710134, y: 0.026437726, z: 0.09149316}
+      rotation: {x: 0.8366927, y: 0.058046483, z: 0.5432789, w: -0.037737418}
+      scale: {x: 0.99999183, y: 0.9999998, z: 1}
+    - name: DUCA_CHARACTER_01:Shoulder_L
+      parentName: DUCA_CHARACTER_01:Scapula_L
+      position: {x: 0.16044177, y: 0.0000017522653, z: 0.00000026991611}
+      rotation: {x: -0.81917286, y: 0.1134378, z: 0.15961097, w: 0.53908455}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: DUCA_CHARACTER_01:ShoulderPart1_L
+      parentName: DUCA_CHARACTER_01:Shoulder_L
+      position: {x: 0.1049588, y: -0.000000023428065, z: -0.0000015480397}
+      rotation: {x: 0.0000002587741, y: 0.00000094243507, z: 0.00000008366711, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:ShoulderPart2_L
+      parentName: DUCA_CHARACTER_01:ShoulderPart1_L
+      position: {x: 0.10495896, y: -0.00000003829863, z: -0.0000013467842}
+      rotation: {x: 0.000000021396442, y: 0.0000000018631816, z: 0.00000008951257,
+        w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: DUCA_CHARACTER_01:Elbow_L
+      parentName: DUCA_CHARACTER_01:ShoulderPart2_L
+      position: {x: 0.10495884, y: 0.000000162684, z: 0.000000073482234}
+      rotation: {x: -0.00000016819457, y: 0.000000017535298, z: -0.01013175, w: 0.9999487}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: DUCA_CHARACTER_01:ElbowPart1_L
+      parentName: DUCA_CHARACTER_01:Elbow_L
+      position: {x: 0.10154842, y: -0.00000027522213, z: -0.0000007819408}
+      rotation: {x: -0.000000001945276, y: 7.581759e-10, z: -0.0000000031153364, w: 1}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.9999999}
+    - name: DUCA_CHARACTER_01:ElbowPart2_L
+      parentName: DUCA_CHARACTER_01:ElbowPart1_L
+      position: {x: 0.10154846, y: -0.0000015152278, z: 0.0000013431535}
+      rotation: {x: 0.00000003814726, y: -0.000000014420027, z: 0.00000004301671,
+        w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: DUCA_CHARACTER_01:Wrist_L
+      parentName: DUCA_CHARACTER_01:ElbowPart2_L
+      position: {x: 0.10154867, y: -0.00000075505295, z: 0.0000003428191}
+      rotation: {x: 0.83148366, y: 0.044487026, z: 0.06757586, w: 0.5496266}
+      scale: {x: 0.9999999, y: 1.0000002, z: 1.0000001}
+    - name: DUCA_CHARACTER_01:MiddleFinger1_L
+      parentName: DUCA_CHARACTER_01:Wrist_L
+      position: {x: 0.07238589, y: -0.0000021254964, z: 0.000000852677}
+      rotation: {x: -0.00033497807, y: -0.08155924, z: 0.002891956, w: 0.9966643}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: DUCA_CHARACTER_01:MiddleFinger2_L
+      parentName: DUCA_CHARACTER_01:MiddleFinger1_L
+      position: {x: 0.17303325, y: -0.00000042418424, z: 0.0000011501531}
+      rotation: {x: 0.000002245898, y: 0.00000014901156, z: -0.7040155, w: 0.7101847}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: DUCA_CHARACTER_01:MiddleFinger2_L_end
+      parentName: DUCA_CHARACTER_01:MiddleFinger2_L
+      position: {x: -0, y: 0.17303222, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:ThumbFinger1_L
+      parentName: DUCA_CHARACTER_01:Wrist_L
+      position: {x: 0.03137213, y: 0.0005094607, z: 0.04254691}
+      rotation: {x: -0.55012697, y: 0.16260898, z: -0.29077435, w: 0.76574737}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: DUCA_CHARACTER_01:ThumbFinger2_L
+      parentName: DUCA_CHARACTER_01:ThumbFinger1_L
+      position: {x: 0.07628108, y: 0.000000050686424, z: 0.000001634335}
+      rotation: {x: 0.000009775156, y: 0.0000004954633, z: -0.7040128, w: 0.7101874}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: DUCA_CHARACTER_01:ThumbFinger2_L_end
+      parentName: DUCA_CHARACTER_01:ThumbFinger2_L
+      position: {x: -0, y: 0.076280646, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:Scapula_R
+      parentName: DUCA_CHARACTER_01:Chest_M
+      position: {x: -0.08710134, y: 0.026437722, z: -0.091493234}
+      rotation: {x: 0.05804746, y: -0.8366926, z: 0.03773808, w: 0.54327893}
+      scale: {x: 1.0000001, y: 0.9999997, z: 1}
+    - name: DUCA_CHARACTER_01:Shoulder_R
+      parentName: DUCA_CHARACTER_01:Scapula_R
+      position: {x: -0.16044039, y: -0.0000019046175, z: -0.000000506438}
+      rotation: {x: -0.81917393, y: 0.113437764, z: 0.15960863, w: 0.5390835}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: DUCA_CHARACTER_01:ShoulderPart1_R
+      parentName: DUCA_CHARACTER_01:Shoulder_R
+      position: {x: -0.10495826, y: -0.0000006417119, z: 0.00000092186286}
+      rotation: {x: -0.00000014445929, y: 0.000000046687767, z: 0.000000046107523,
+        w: 1}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+    - name: DUCA_CHARACTER_01:ShoulderPart2_R
+      parentName: DUCA_CHARACTER_01:ShoulderPart1_R
+      position: {x: -0.10495818, y: -0.00000049042575, z: 0.0000009737353}
+      rotation: {x: 0.00000004611354, y: 6.3030503e-10, z: -0.000000045301242, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 0.9999999}
+    - name: DUCA_CHARACTER_01:Elbow_R
+      parentName: DUCA_CHARACTER_01:ShoulderPart2_R
+      position: {x: -0.104958065, y: -0.0000007197058, z: -0.00000044653066}
+      rotation: {x: 0.0000000057455027, y: -0.00000042967451, z: -0.010131573, w: 0.9999487}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: DUCA_CHARACTER_01:ElbowPart1_R
+      parentName: DUCA_CHARACTER_01:Elbow_R
+      position: {x: -0.10154769, y: -0.000000074197594, z: 0.00000057195405}
+      rotation: {x: 0.00000002574206, y: -0.000000033529915, z: 0.0000000024473465,
+        w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: DUCA_CHARACTER_01:ElbowPart2_R
+      parentName: DUCA_CHARACTER_01:ElbowPart1_R
+      position: {x: -0.10154768, y: 0.0000008866527, z: -0.0000016655723}
+      rotation: {x: -0.00000011650664, y: 0.00000037424448, z: 0.000000049312607,
+        w: 1}
+      scale: {x: 1, y: 0.9999998, z: 0.99999994}
+    - name: DUCA_CHARACTER_01:Wrist_R
+      parentName: DUCA_CHARACTER_01:ElbowPart2_R
+      position: {x: -0.10154784, y: 0.0000005506132, z: -0.000000562872}
+      rotation: {x: 0.83148414, y: 0.044485703, z: 0.067574404, w: 0.54962605}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000004}
+    - name: DUCA_CHARACTER_01:MiddleFinger1_R
+      parentName: DUCA_CHARACTER_01:Wrist_R
+      position: {x: -0.07238555, y: 0.0000020727982, z: -0.0000002444244}
+      rotation: {x: -0.0003353953, y: -0.08156063, z: 0.002891996, w: 0.9966641}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: DUCA_CHARACTER_01:MiddleFinger2_R
+      parentName: DUCA_CHARACTER_01:MiddleFinger1_R
+      position: {x: -0.17303228, y: 0.00000027443073, z: 0.0000002083194}
+      rotation: {x: 0.0000011731609, y: 0.00000033527613, z: 0.70401365, w: 0.71018654}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: DUCA_CHARACTER_01:MiddleFinger2_R_end
+      parentName: DUCA_CHARACTER_01:MiddleFinger2_R
+      position: {x: -0, y: 0.17303222, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DUCA_CHARACTER_01:ThumbFinger1_R
+      parentName: DUCA_CHARACTER_01:Wrist_R
+      position: {x: -0.03137206, y: -0.00050951523, z: -0.042546313}
+      rotation: {x: -0.5501289, y: 0.16260795, z: -0.2907736, w: 0.7657465}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000001}
+    - name: DUCA_CHARACTER_01:ThumbFinger2_R
+      parentName: DUCA_CHARACTER_01:ThumbFinger1_R
+      position: {x: -0.076280616, y: -0.00000032673003, z: -0.0000013065272}
+      rotation: {x: -0.000011473891, y: -0.00000055879343, z: 0.7040165, w: 0.7101837}
+      scale: {x: 1, y: 0.99999994, z: 0.99999976}
+    - name: DUCA_CHARACTER_01:ThumbFinger2_R_end
+      parentName: DUCA_CHARACTER_01:ThumbFinger2_R
+      position: {x: -0, y: 0.07628072, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Vestito
+      parentName: conte(Clone)
+      position: {x: 0.75885105, y: 0.4175331, z: 16.360905}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -92,13 +704,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
