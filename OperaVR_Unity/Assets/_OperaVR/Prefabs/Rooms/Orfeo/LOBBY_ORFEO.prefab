@@ -54013,7 +54013,7 @@ GameObject:
   - component: {fileID: 7839762223352925927}
   - component: {fileID: 7839762223352925944}
   m_Layer: 0
-  m_Name: Audio Source 6
+  m_Name: Audio Source ambient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54047,7 +54047,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: a585213f71f278947bdd3c3c442d5550, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -60542,7 +60542,7 @@ GameObject:
   - component: {fileID: 7839762223380427624}
   - component: {fileID: 7839762223380427625}
   m_Layer: 0
-  m_Name: Audio Source 3
+  m_Name: Audio Source ambient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60576,7 +60576,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 303ae8730b0ef104384a3934859ca3d4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -74658,7 +74658,7 @@ GameObject:
   - component: {fileID: 7839762223445465912}
   - component: {fileID: 7839762223445465913}
   m_Layer: 0
-  m_Name: Audio Source 5 (1)
+  m_Name: Audio Source music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102394,77 +102394,6 @@ Transform:
   m_Father: {fileID: 7839762225155052656}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7839762223565111447
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7839762223565111400}
-  - component: {fileID: 7839762223565111401}
-  m_Layer: 0
-  m_Name: Point of Interest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7839762223565111400
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7839762223565111447}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -105.06001, y: 2.02, z: 19.95}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7839762223628258112}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7839762223565111401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7839762223565111447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679647456a363450ab8d072b2a91f5a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: Lobby
-  description: "Qui ci sar\xE0 la Lobby realizzata da ABA Verona."
-  titleFontOverride:
-    overrideFont: 0
-    font: {fileID: 0}
-    material: {fileID: 0}
-  descriptionFontOverride:
-    overrideFont: 0
-    font: {fileID: 0}
-    material: {fileID: 0}
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0.4}
-  foregroundColor: {r: 1, g: 1, b: 1, a: 1}
-  sprite: {fileID: 0}
-  spriteSize: 0.75
-  spriteRectSize: {x: 0, y: 0}
-  textDisplayRadius: 4.9251895
-  markerDisplayRadius: 10.412929
-  onTextDisplayedEvent:
-    id: 0
-    unityEventIsSynced: 0
-    unityEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    animatorEvent:
-      events: []
-    questEvent:
-      events: []
 --- !u!1 &7839762223565915861
 GameObject:
   m_ObjectHideFlags: 0
@@ -104104,7 +104033,7 @@ GameObject:
   - component: {fileID: 7839762223573019325}
   - component: {fileID: 7839762223573019326}
   m_Layer: 0
-  m_Name: Audio Source 1 (1)
+  m_Name: Audio Source music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116971,7 +116900,6 @@ Transform:
   - {fileID: 7839762224192330312}
   - {fileID: 7839762225030708699}
   - {fileID: 7839762225083188744}
-  - {fileID: 7839762223565111400}
   - {fileID: 7839762224485619608}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -117465,7 +117393,7 @@ GameObject:
   - component: {fileID: 7839762223631436264}
   - component: {fileID: 7839762223631436265}
   m_Layer: 0
-  m_Name: Audio Source 2 (1)
+  m_Name: Audio Source music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169501,7 +169429,7 @@ GameObject:
   - component: {fileID: 7839762223869804991}
   - component: {fileID: 7839762223869804976}
   m_Layer: 0
-  m_Name: Audio Source 2
+  m_Name: Audio Source ambient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169535,7 +169463,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 133c86ff2092e304882f680d32fd464e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -194978,7 +194906,7 @@ GameObject:
   - component: {fileID: 7839762223980861628}
   - component: {fileID: 7839762223980861629}
   m_Layer: 0
-  m_Name: Audio Source 6 (1)
+  m_Name: Audio Source music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258639,7 +258567,7 @@ GameObject:
   - component: {fileID: 7839762224265992412}
   - component: {fileID: 7839762224265992413}
   m_Layer: 0
-  m_Name: Audio Source 4
+  m_Name: Audio Source ambient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258673,7 +258601,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 5d6037ca1ba630b48b329358cbc52898, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -288358,7 +288286,7 @@ GameObject:
   - component: {fileID: 7839762224394602671}
   - component: {fileID: 7839762224394602656}
   m_Layer: 0
-  m_Name: Audio Source 5
+  m_Name: Audio Source ambient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288392,7 +288320,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: c2b214067f4c07d4fafecf08149ca6b0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -308908,7 +308836,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7839762223628258112}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7839762224485619611
 MeshFilter:
@@ -433616,7 +433544,7 @@ GameObject:
   - component: {fileID: 7839762225032597923}
   - component: {fileID: 7839762225032597924}
   m_Layer: 0
-  m_Name: Audio Source 1
+  m_Name: Audio Source ambient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433650,7 +433578,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 5f63d2cf1f7df744f854a5a4863cfd6c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -453031,7 +452959,7 @@ GameObject:
   - component: {fileID: 7839762225113973056}
   - component: {fileID: 7839762225113973057}
   m_Layer: 0
-  m_Name: Audio Source 3 (1)
+  m_Name: Audio Source music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454742,7 +454670,7 @@ GameObject:
   - component: {fileID: 7839762225121075628}
   - component: {fileID: 7839762225121075629}
   m_Layer: 0
-  m_Name: Audio Source 4 (1)
+  m_Name: Audio Source music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
