@@ -28,6 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2048340301}
   - {fileID: 1456498486}
   m_Father: {fileID: 4761196009979478170}
   m_RootOrder: 3
@@ -62,10 +63,9 @@ Transform:
   m_LocalPosition: {x: 6.69, y: -0.6, z: -1.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2048340301}
+  m_Children: []
   m_Father: {fileID: 1114950632}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 16.497, y: -180, z: 0}
 --- !u!114 &1456498489
 MonoBehaviour:
@@ -181,12 +181,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048340300}
-  m_LocalRotation: {x: 0.27474257, y: -0.2527793, z: 0.1657189, w: 0.9127741}
-  m_LocalPosition: {x: 0, y: 0.40695032, z: 1.6347339}
+  m_LocalRotation: {x: -0.12773992, y: -0.8639163, z: 0.40285063, w: -0.27393913}
+  m_LocalPosition: {x: 6.6900005, y: -0.6739998, z: -2.9429994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1456498486}
+  m_Father: {fileID: 1114950632}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -215.187, z: 0}
 --- !u!108 &2048340303
@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 8391951486065424420, guid: c735f6fb48317e04d8ba6dd8c1a76bfb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -245.67
+      value: -69.35
       objectReference: {fileID: 0}
     - target: {fileID: 8391951486148683617, guid: c735f6fb48317e04d8ba6dd8c1a76bfb,
         type: 3}
@@ -588,6 +588,16 @@ PrefabInstance:
     - target: {fileID: 8391951486148683618, guid: c735f6fb48317e04d8ba6dd8c1a76bfb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391951487296890149, guid: c735f6fb48317e04d8ba6dd8c1a76bfb,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391951487296890149, guid: c735f6fb48317e04d8ba6dd8c1a76bfb,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
