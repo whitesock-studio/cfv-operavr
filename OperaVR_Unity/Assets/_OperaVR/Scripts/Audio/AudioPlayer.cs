@@ -27,6 +27,7 @@ namespace OperaVR
                 else
                 {
                     listenerObject = new GameObject("Dummy audio");
+                    listenerObject.AddComponent<AudioListener>();
                 }
 
                 _audioSource = listenerObject.GetComponent<AudioSource>();

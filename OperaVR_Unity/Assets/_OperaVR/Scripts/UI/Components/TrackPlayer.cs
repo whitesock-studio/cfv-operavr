@@ -20,10 +20,39 @@ namespace OperaVR
         [SerializeField]
         private GameObject _pauseImage;
 
+        private AudioListener _listener;
+        private AudioListener Listener
+        {
+            get
+            {
+                if (_listener != null)
+                {
+                    return _listener;
+                }
+                
+                GameObject listenerObject;
+                _listener = FindFirstObjectByType<AudioListener>();
+                if (_listener != null)
+                {
+                    listenerObject = _listener.gameObject;
+                }
+                else
+                {
+                    listenerObject = new GameObject("Dummy audio");
+                    listenerObject.AddComponent<AudioListener>();
+                }
+
+                _listener = listenerObject.GetComponent<AudioListener>();
+
+                return _listener;
+            }
+        }
+        
         private void Awake()
         {
             _playPauseButton.onClick.AddListener(ButtonClicked);
             _slider.OnNormalizedTimeRequest += SetTime;
+            _audioSource.spatialBlend = 0;
         }
 
         private void Update()
@@ -32,9 +61,12 @@ namespace OperaVR
             {
                 return;
             }
+            
             _slider.SetNormalizedValue(_audioSource.time / _audioSource.clip.length);
             _playImage.SetActive(!_audioSource.isPlaying);
             _pauseImage.SetActive(_audioSource.isPlaying);
+
+            _audioSource.transform.position = Listener.transform.position;
         }
 
         public void LoadClip(AudioClip clip)
