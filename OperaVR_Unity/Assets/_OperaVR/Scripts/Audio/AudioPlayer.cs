@@ -11,6 +11,9 @@ namespace OperaVR
         [SerializeField]
         private AudioClip _clip;
 
+        [SerializeField]
+        private float volume = 0.5f;
+
         public void Play()
         {
             if (_audioSource == null)
@@ -38,7 +41,12 @@ namespace OperaVR
             {
                 _audioSource.clip = _clip;  
             }
-            _audioSource?.Play();
+            if (_audioSource == null)
+            {
+                return;
+            }
+            _audioSource.volume = volume;
+            _audioSource.Play();
         }
     }
 }
