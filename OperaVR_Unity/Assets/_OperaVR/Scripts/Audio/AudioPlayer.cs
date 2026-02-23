@@ -1,4 +1,3 @@
-using SpatialSys.UnitySDK;
 using UnityEngine;
 
 namespace OperaVR

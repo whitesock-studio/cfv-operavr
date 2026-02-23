@@ -18,5 +18,12 @@ namespace OperaVR
             SpatialBridge.userWorldDataStoreService.SetVariable(key, value).
                 SetCompletedEvent(callbackPostSet);
         }
+        
+        public static void HasVariable(string key, 
+            Action<DataStoreHasVariableRequest> callbackPostSet)
+        {
+            SpatialBridge.userWorldDataStoreService.HasVariable(key).
+                SetCompletedEvent(callbackPostSet);
+        }
     }
 }
