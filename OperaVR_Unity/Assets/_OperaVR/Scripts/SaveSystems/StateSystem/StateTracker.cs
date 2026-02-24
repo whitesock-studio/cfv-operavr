@@ -6,6 +6,16 @@ namespace OperaVR
     {
         protected override string GetVariableKey(string sceneKey) => base.GetVariableKey(sceneKey) + "_IsActive";
         
+        private void OnEnable()
+        {
+            QuickSave();
+        }
+
+        private void OnDisable()
+        {
+            QuickSave();
+        }
+
         public override void Save(string sceneKey)
         {
             WorldData.SaveVariable(GetVariableKey(sceneKey), gameObject.activeSelf, 

@@ -4,10 +4,31 @@ namespace OperaVR
 {
     public abstract class AStateTracker : MonoBehaviour
     {
-        protected string Id;
+        public string Id = string.Empty;
         protected virtual string GetVariableKey(string sceneKey) => sceneKey + "_State_" + Id;
         
         public abstract void Save(string sceneKey);
         public abstract void Load(string sceneKey);
+
+        protected bool TryGetSceneKey(out string sceneKey)
+        {
+            if (!StateSystem.Instance)
+            {
+                sceneKey = string.Empty;
+                return false;
+            }
+
+            sceneKey = StateSystem.Instance.Settings.SceneKey;
+            return true;
+        }
+        
+        protected void QuickSave()
+        {
+            if (!TryGetSceneKey(out var sceneKey))
+            {
+                return;
+            }
+            Save(sceneKey);
+        }
     }
 }

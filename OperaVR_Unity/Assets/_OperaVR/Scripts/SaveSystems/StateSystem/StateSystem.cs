@@ -5,8 +5,11 @@ namespace OperaVR
 {
     public class StateSystem : MonoBehaviour
     {
+        public static StateSystem Instance;
+        
         [SerializeField]
         private SaveSystemsSettings _settings;
+        public SaveSystemsSettings Settings => _settings;
 
         private float _nextSaveTime;
         
@@ -14,6 +17,14 @@ namespace OperaVR
 
         private void Awake()
         {
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+            
             _nextSaveTime = Time.time + _settings.StartDelay;
         }
 
@@ -25,6 +36,11 @@ namespace OperaVR
 
         private void Update()
         {
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.L))
+            {
+                WorldData.ClearAllVariables();
+            }
+            
             if (Time.time < _nextSaveTime)
             {
                 return;
@@ -33,7 +49,7 @@ namespace OperaVR
             _nextSaveTime = Time.time + _settings.TimeBetweenSaves;
             SaveTrackers();
         }
-
+        
         public void LoadTrackers(float delay)
         {
             StartCoroutine(LoadCoroutine(delay));

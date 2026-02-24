@@ -25,5 +25,10 @@ namespace OperaVR
             SpatialBridge.userWorldDataStoreService.HasVariable(key).
                 SetCompletedEvent(callbackPostSet);
         }
+
+        public static void ClearAllVariables()
+        {
+            SpatialBridge.userWorldDataStoreService.ClearAllVariables();
+        }
     }
 }
