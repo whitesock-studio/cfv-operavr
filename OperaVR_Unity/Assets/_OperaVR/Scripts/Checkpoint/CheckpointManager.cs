@@ -35,7 +35,7 @@ namespace OperaVR
 
             Instance = this;
 
-            _nextSaveTime = _startDelay;
+            _nextSaveTime = Time.time + _startDelay;
         }
 
         private void Start()
