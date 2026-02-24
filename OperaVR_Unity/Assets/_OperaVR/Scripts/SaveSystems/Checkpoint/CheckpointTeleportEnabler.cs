@@ -8,12 +8,12 @@ namespace OperaVR
         private bool _setForCustomScene = true;
         
         [SerializeField, Tooltip("Only matters when _setForCustomScene is true")]
-        private string _sceneKey = "SceneKey";
+        private SaveSystemsSettings _settings;
         
         public void SetTeleportEnabled(bool value)
         {
             var key = _setForCustomScene
-                ? CheckpointManager.Instance.GetDoesTeleportKey(_sceneKey)
+                ? CheckpointManager.Instance.GetDoesTeleportKey(_settings.SceneKey)
                 : CheckpointManager.Instance.GetDoesTeleportKey();
             
             WorldData.SaveVariable(key, value, 

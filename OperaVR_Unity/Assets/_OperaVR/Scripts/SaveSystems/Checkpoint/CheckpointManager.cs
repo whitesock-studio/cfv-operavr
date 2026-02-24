@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Linq;
 using SpatialSys.UnitySDK;
 using UnityEngine;
 
@@ -10,20 +9,16 @@ namespace OperaVR
         public static CheckpointManager Instance;
 
         [SerializeField]
-        private string _key = "SceneKey";
-        private string DefaultPositionKey => _key + "_Position";
-        private string DefaultDoesTeleportKey => _key + "_DoesTeleport";
+        private SaveSystemsSettings _settings;
+        private string DefaultPositionKey => _settings.SceneKey + "_Position";
+        private string DefaultDoesTeleportKey => _settings.SceneKey + "_DoesTeleport";
 
         public string GetPositionKey() => DefaultPositionKey;
         public string GetDoesTeleportKey() => DefaultDoesTeleportKey;
         public string GetPositionKey(string sceneKey) => sceneKey + "_Position";
         public string GetDoesTeleportKey(string sceneKey) => sceneKey + "_DoesTeleport";
-            
-        [SerializeField]
-        private float _timeBetweenSaves = 3f;
 
-        private float _nextSaveTime = 0f;
-        private float _startDelay = 10f;
+        private float _nextSaveTime;
         
         private void Awake()
         {
@@ -35,7 +30,7 @@ namespace OperaVR
 
             Instance = this;
 
-            _nextSaveTime = Time.time + _startDelay;
+            _nextSaveTime = Time.time + _settings.StartDelay;
         }
 
         private void Start()
@@ -102,7 +97,7 @@ namespace OperaVR
                 return;
             }
 
-            _nextSaveTime = Time.time + _timeBetweenSaves;
+            _nextSaveTime = Time.time + _settings.TimeBetweenSaves;
             var localActor = SpatialBridge.actorService.localActor;
             Debug.LogError("Saving " + GetPositionKey() + ", position = " + localActor.avatar.position);
             WorldData.SaveVariable(GetPositionKey(), localActor.avatar.position, 
