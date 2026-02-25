@@ -20,6 +20,7 @@ namespace OperaVR
         public bool HasReachedDestination => Vector3.Distance(_avatar.position, _destination) <= 1f;
 
         private IAvatar _avatar;
+        public IAvatar Avatar => _avatar;
         private Vector3 _destination;
 
         private void OnDrawGizmos()
@@ -92,7 +93,7 @@ namespace OperaVR
                 return;
             }
 
-            _avatar.visibleRemotely = false;
+            //_avatar.visibleRemotely = false;
             _avatar.position = transform.position;
             var forwardPoint = Quaternion.AngleAxis(_startingAngle, Vector3.up) * Vector3.forward * .15f;
             var lookingPoint = transform.position + forwardPoint;
