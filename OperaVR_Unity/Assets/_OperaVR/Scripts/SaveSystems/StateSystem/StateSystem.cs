@@ -39,6 +39,8 @@ namespace OperaVR
             if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.L))
             {
                 WorldData.ClearAllVariables();
+                _nextSaveTime = Time.time + _settings.StartDelay;
+                return;
             }
             
             if (Time.time < _nextSaveTime)

@@ -92,6 +92,12 @@ namespace OperaVR
         
         private void Update()
         {
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.L))
+            {
+                _nextSaveTime = Time.time + _settings.StartDelay;
+                return;
+            }
+            
             if (Time.time < _nextSaveTime)
             {
                 return;
