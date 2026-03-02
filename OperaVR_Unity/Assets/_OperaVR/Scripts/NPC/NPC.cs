@@ -8,7 +8,7 @@ namespace OperaVR
     {
         [SerializeField]
         private string _name;
-
+        
         [SerializeField]
         private string _assetId = "digi_avatar";
 
@@ -88,12 +88,18 @@ namespace OperaVR
         private void OnAvatarSpawned(SpatialAsyncOperation op, SpawnAvatarRequest request)
         {
             _avatar = request.avatar;
+            InitAvatar();
+        }
+        
+        private void InitAvatar()
+        {
             if (_avatar == null)
             {
                 return;
             }
 
-            //_avatar.visibleRemotely = false;
+            _avatar.visibleLocally = true;
+            _avatar.visibleRemotely = false;
             _avatar.position = transform.position;
             var forwardPoint = Quaternion.AngleAxis(_startingAngle, Vector3.up) * Vector3.forward * .15f;
             var lookingPoint = transform.position + forwardPoint;
