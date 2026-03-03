@@ -10,19 +10,18 @@ namespace OperaVR
         private string _name;
         
         [SerializeField]
-        private string _assetId = "digi_avatar";
+        private GameObject _prefab;
 
         [SerializeField, Range(0, 359f)]
         private float _startingAngle;
 
-        public bool HasAvatar => _avatar != null;
-
-        public bool HasReachedDestination => Vector3.Distance(_avatar.position, _destination) <= 1f;
-
-        private IAvatar _avatar;
-        public IAvatar Avatar => _avatar;
-        private Vector3 _destination;
-
+        private NPCCharacter _character;
+        public NPCCharacter Character => _character;
+        
+        public bool HasReachedDestination => _character.HasReachedDestination;
+        
+        public bool HasCharacter => _character != null;
+        
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;
@@ -41,20 +40,20 @@ namespace OperaVR
             }
 
             yield return new WaitForSeconds(.5f);
-
-            var request = SpatialBridge.spaceContentService.SpawnAvatar(
-                AssetType.EmbeddedAsset, _assetId, transform.position, transform.rotation, _name);
-            request.completed += (op) => OnAvatarSpawned(op, request);
+            
+            var npcObject = Instantiate(_prefab, transform.position, transform.rotation);
+            _character = npcObject.GetComponent<NPCCharacter>();
+            InitCharacter();
         }
 
         private void FixedUpdate()
         {
-            if (!HasAvatar)
+            if (!HasCharacter)
             {
                 return;
             }
-            transform.position = _avatar.position;
-            transform.rotation = _avatar.rotation;
+            transform.position = _character.transform.position;
+            transform.rotation = _character.transform.rotation;
         }
 
         public void Sit(bool isSit)
@@ -64,46 +63,37 @@ namespace OperaVR
                 StartCoroutine(DelayedSit());       
                 return;
             }
-            _avatar.Stand();
+            _character.SetEmote(0);
         }
         
         private IEnumerator DelayedSit()
         {
             yield return new WaitForSeconds(1);
-            _avatar.Sit(transform);      
+            _character.SetEmote(1);      
         }
         
         public void SetSpeeds(float runningSpeed, float walkingSpeed)
         {
-            _avatar.runSpeed = runningSpeed;
-            _avatar.walkSpeed = walkingSpeed;
+            _character.Speed = runningSpeed;
+            _character.Speed = walkingSpeed;
         }
 
         public void SetDestination(Vector3 destination)
         {
-            _destination = destination;
-            _avatar.SetDestination(destination, false);
-        }
-
-        private void OnAvatarSpawned(SpatialAsyncOperation op, SpawnAvatarRequest request)
-        {
-            _avatar = request.avatar;
-            InitAvatar();
+            _character.SetDestination(destination);
         }
         
-        private void InitAvatar()
+        private void InitCharacter()
         {
-            if (_avatar == null)
+            if (_character == null)
             {
                 return;
             }
-
-            _avatar.visibleLocally = true;
-            _avatar.visibleRemotely = false;
-            _avatar.position = transform.position;
+            
             var forwardPoint = Quaternion.AngleAxis(_startingAngle, Vector3.up) * Vector3.forward * .15f;
             var lookingPoint = transform.position + forwardPoint;
-            _avatar.SetDestination(lookingPoint);
+            _character.SetDestination(lookingPoint);
+            _character.SetName(_name);
         }
     }
 }

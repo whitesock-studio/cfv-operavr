@@ -55,7 +55,7 @@ namespace OperaVR
             {
                 yield break;
             }
-            while (!_npc.HasAvatar)
+            while (!_npc.HasCharacter)
             {
                 yield return null;
             }

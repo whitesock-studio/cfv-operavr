@@ -23,14 +23,14 @@ namespace OperaVR
 
             IEnumerator SaveCor()
             {
-                while (!_npc.HasAvatar)
+                while (!_npc.HasCharacter)
                 {
                     yield return null;
                 }
 
                 yield return new WaitForSeconds(.1f); 
                 var key = GetVariableKey(sceneKey);
-                WorldData.SaveVariable(key, _npc.Avatar.position, _ => { });
+                WorldData.SaveVariable(key, _npc.Character.transform.position, _ => { });
             }
         }
 
@@ -52,14 +52,14 @@ namespace OperaVR
 
             IEnumerator GetVariableCallback(DataStoreGetVariableRequest request)
             {
-                while (!_npc.HasAvatar)
+                while (!_npc.HasCharacter)
                 {
                     yield return null;
                 }
 
                 yield return new WaitForSeconds(.3f); 
 
-                _npc.Avatar.position = request.vector3Value;
+                _npc.Character.transform.position = request.vector3Value;
             }
         }
     }

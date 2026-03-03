@@ -9,42 +9,53 @@ namespace OperaVR
         {
             if (Input.GetKeyDown(KeyCode.H))
             {
-                ToggleRemoteVisibility();
+                SetRemoteAvatarState(true);
             }
             if (Input.GetKeyDown(KeyCode.J))
             {
-                ToggleLocalVisibility();
-            }
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                ToggleLocalVisibilityOtherAvatars();
+                SetRemoteAvatarState(false);
             }
         }
-
-        public void ToggleRemoteVisibility()
+        
+        public void SetRemoteAvatarState(bool visible)
         {
-            Debug.LogError("Toggle remote vis");
-            // Change visibility on my avatar to everyone's client
-            SpatialBridge.actorService.localActor.avatar.visibleRemotely = !SpatialBridge.actorService.localActor.avatar.visibleRemotely;
-        }
-
-        public void ToggleLocalVisibility()
-        {
-            Debug.LogError("Toggle local vis");
-            // Change visibility of my avatar only on my client
-            SpatialBridge.actorService.localActor.avatar.visibleLocally = !SpatialBridge.actorService.localActor.avatar.visibleLocally;
-        }
-
-        public void ToggleLocalVisibilityOtherAvatars()
-        {
-            Debug.LogError("Toggle other local vis");
+            var allAvatars = SpatialBridge.spaceContentService.avatars;
             // Change visibility of other avatars on my client
-            foreach (var actor in SpatialBridge.actorService.actors.Values)
+            foreach (var pair in allAvatars)
             {
-                if (actor != SpatialBridge.actorService.localActor)
+                var readOnlyAvatar = pair.Value;
+                if (readOnlyAvatar.spaceObject == SpatialBridge.actorService.localActor.avatar.spaceObject)
                 {
-                    actor.avatar.visibleLocally = !actor.avatar.visibleLocally;
+                    Debug.LogError("FOUND LOCAL ACTOR AVATAR");
+                    continue;
                 }
+
+                if (readOnlyAvatar.spaceObject.isMine)
+                {
+                    Debug.LogError("FOUND AVATAR MINE");
+                    continue;
+                }
+
+                Debug.LogError("FOUND AVATAR NOT MINE");
+                if (!readOnlyAvatar.spaceObject.canTakeOwnership)
+                {
+                    Debug.LogError("CANT PASS OWNERSHIP");
+                    continue;
+                }
+                var previousOwner = readOnlyAvatar.spaceObject.ownerActorNumber;
+                SpatialBridge.spaceContentService.TakeOwnership(readOnlyAvatar.spaceObject.objectID);
+                
+                Debug.LogError("OWNERSHIP PASSED, editing");
+                var editableAvatar = pair.Value as IAvatar;
+                editableAvatar.visibleRemotely = visible;
+                
+                if (!readOnlyAvatar.spaceObject.canTakeOwnership)
+                {
+                    continue;
+                }
+                
+                SpatialBridge.spaceContentService.TransferOwnership(
+                    readOnlyAvatar.spaceObject.objectID, previousOwner);
             }
         }
     }
