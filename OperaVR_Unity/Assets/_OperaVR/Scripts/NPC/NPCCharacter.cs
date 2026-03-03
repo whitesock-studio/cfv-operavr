@@ -18,6 +18,9 @@ namespace OperaVR
 
         [SerializeField]
         private TMP_Text _nameText;
+
+        [SerializeField]
+        private float _stopDistance = .5f;
         
         private Vector3 _destination;
         private bool _isMoving;
@@ -33,18 +36,28 @@ namespace OperaVR
         {
             var movement = _destination - transform.position;
             var distanceToDestination = movement.magnitude;
+
+            if (distanceToDestination < _stopDistance)
+            {
+                return;
+            }
+            
             var direction = movement.normalized;
+            var directionNoZ = direction;
+            directionNoZ.y = 0;
+            directionNoZ.Normalize();
             var frameSpeed = Speed * Time.deltaTime;
             
             if (distanceToDestination < frameSpeed)
             {
                 transform.position = _destination;
+                transform.rotation = Quaternion.LookRotation(directionNoZ);
                 _isMoving = false;
                 return;
             }
 
             transform.position += direction * frameSpeed;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), 
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(directionNoZ), 
                 Time.deltaTime * 10f);
         }
 
