@@ -78,13 +78,13 @@ namespace OperaVR
 
         private void TeleportToLastCheckpoint()
         {
-            Debug.LogError("Loading " + GetPositionKey());
+            //Debug.LogError("Loading " + GetPositionKey());
             WorldData.TryGetVariable(GetPositionKey(), OnPositionVariableResponse);
         }
 
         private void OnPositionVariableResponse(DataStoreGetVariableRequest response)
         {
-            Debug.LogError("Loading " + GetPositionKey() + ", response = " + response.vector3Value);
+            //Debug.LogError("Loading " + GetPositionKey() + ", response = " + response.vector3Value);
 
             var localAvatar = SpatialBridge.actorService.localActor.avatar;
             localAvatar.position = response.vector3Value;
