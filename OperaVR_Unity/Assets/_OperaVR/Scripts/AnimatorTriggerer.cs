@@ -1,4 +1,4 @@
-using System;
+using System.Globalization;
 using UnityEngine;
 
 namespace OperaVR
@@ -56,6 +56,28 @@ namespace OperaVR
                animator.SetTrigger(parts[1]);
                return;
            }
+        }
+        
+        public void SetSpeed(string nameAndKey)
+        {
+            var parts = nameAndKey.Split(':');
+
+            foreach (var child in _children)
+            {
+                if (child.name != parts[0])
+                {
+                    continue;
+                }
+
+                if (!child.gameObject.TryGetComponent<Animator>(out var animator))
+                {
+                    continue;
+                }
+               
+                animator.SetFloat("Speed", float.Parse(parts[1], 
+                    NumberStyles.Float, CultureInfo.InvariantCulture));
+                return;
+            }
         }
     }
 }
