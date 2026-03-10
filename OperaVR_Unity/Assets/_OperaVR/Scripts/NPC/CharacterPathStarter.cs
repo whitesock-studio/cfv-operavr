@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace OperaVR
@@ -47,7 +48,7 @@ namespace OperaVR
             }
 
             _character.position += direction * frameSpeed;
-            _character.rotation = Quaternion.Lerp(transform.rotation, 
+            _character.rotation = Quaternion.Lerp(_character.rotation, 
                 Quaternion.LookRotation(directionNoZ), Time.deltaTime * 10f);
         }
 
@@ -57,12 +58,30 @@ namespace OperaVR
             if (_currentPathIndex >= _path.Points.Length)
             {
                 _currentPathIndex = _path.Loops ? 0 : -1;
+                if (_currentPathIndex == -1)
+                {
+                    StartCoroutine(SetSpeedCoroutine(
+                        _character.GetComponent<Animator>(), 0f));
+                }
             }
         }
 
         public void StartPath()
         {
             _currentPathIndex = 0;
+        }
+        
+        private IEnumerator SetSpeedCoroutine(Animator animator, float targetSpeed)
+        {
+            var startingSpeed = animator.GetFloat("Speed");
+            var changeSpeedTime = .5f;
+            var t = 0f;
+            while (t < changeSpeedTime)
+            {
+                t += Time.deltaTime;
+                animator.SetFloat("Speed", Mathf.Lerp(startingSpeed, targetSpeed, t / changeSpeedTime));
+                yield return null;
+            }
         }
     }
 }
