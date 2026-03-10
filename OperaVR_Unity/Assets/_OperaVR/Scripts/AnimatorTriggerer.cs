@@ -84,7 +84,7 @@ namespace OperaVR
         private IEnumerator SetSpeedCoroutine(Animator animator, float targetSpeed)
         {
             var startingSpeed = animator.GetFloat("Speed");
-            var changeSpeedTime = .5f;
+            var changeSpeedTime = .3f;
             var t = 0f;
             while (t < changeSpeedTime)
             {

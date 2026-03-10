@@ -11,6 +11,9 @@ namespace OperaVR
         [SerializeField]
         private Path _path;
 
+        [SerializeField, Range(0f, 1f)]
+        private float _animationSpeed = 1f;
+        
         [SerializeField]
         private float _movementSpeed = 3f;
         
@@ -69,12 +72,14 @@ namespace OperaVR
         public void StartPath()
         {
             _currentPathIndex = 0;
+            StartCoroutine(SetSpeedCoroutine(
+                _character.GetComponent<Animator>(), _animationSpeed));
         }
         
         private IEnumerator SetSpeedCoroutine(Animator animator, float targetSpeed)
         {
             var startingSpeed = animator.GetFloat("Speed");
-            var changeSpeedTime = .5f;
+            var changeSpeedTime = .3f;
             var t = 0f;
             while (t < changeSpeedTime)
             {
