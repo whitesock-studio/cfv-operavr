@@ -17,6 +17,9 @@ namespace OperaVR
         public bool HasReachedDestination => Vector3.Distance(transform.position, _destination) <= 1f;
 
         [SerializeField]
+        private GameObject _nameTag;
+        
+        [SerializeField]
         private TMP_Text _nameText;
 
         [SerializeField]
@@ -64,6 +67,7 @@ namespace OperaVR
         public void SetName(string name)
         {
             _nameText.text = name;
+            _nameTag.SetActive(!string.IsNullOrEmpty(name));
         }
         
         public void SetDestination(Vector3 destination)
