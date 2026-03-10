@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +7,11 @@ namespace OperaVR
 {
     public class TrackPlayer : MonoBehaviour
     {
+        public Action<TrackPlayer> OnPlay;
+        public Action<TrackPlayer> OnPause;
+        public Action<TrackPlayer> OnUnpause;
+        public Action<TrackPlayer> OnStop;
+        
         [SerializeField]
         private AudioSource _audioSource;
 
@@ -47,6 +54,8 @@ namespace OperaVR
                 return _listener;
             }
         }
+
+        public bool IsPlaying => _audioSource.isPlaying;
         
         private void Awake()
         {
@@ -85,21 +94,25 @@ namespace OperaVR
         {
             _audioSource.time = 0;
             _audioSource.Play();
+            OnPlay?.Invoke(this);
         }
 
         public void Stop()
         {
             _audioSource.Stop();
+            OnStop?.Invoke(this);
         }
 
         public void Pause()
         {
             _audioSource.Pause();
+            OnPause?.Invoke(this);
         }
 
         public void Unpause()
         {
             _audioSource.UnPause();
+            OnUnpause?.Invoke(this);
         }
 
         public void SetTime(float normalizedTime)
