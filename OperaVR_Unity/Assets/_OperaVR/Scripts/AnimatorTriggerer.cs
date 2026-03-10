@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Globalization;
 using UnityEngine;
 
@@ -73,10 +74,23 @@ namespace OperaVR
                 {
                     continue;
                 }
-               
-                animator.SetFloat("Speed", float.Parse(parts[1], 
-                    NumberStyles.Float, CultureInfo.InvariantCulture));
+
+                StartCoroutine(SetSpeedCoroutine(animator, float.Parse(parts[1],
+                    NumberStyles.Float, CultureInfo.InvariantCulture)));
                 return;
+            }
+        }
+
+        private IEnumerator SetSpeedCoroutine(Animator animator, float targetSpeed)
+        {
+            var startingSpeed = animator.GetFloat("Speed");
+            var changeSpeedTime = .5f;
+            var t = 0f;
+            while (t < changeSpeedTime)
+            {
+                t += Time.deltaTime;
+                animator.SetFloat("Speed", Mathf.Lerp(startingSpeed, targetSpeed, t / changeSpeedTime));
+                yield return null;
             }
         }
     }
