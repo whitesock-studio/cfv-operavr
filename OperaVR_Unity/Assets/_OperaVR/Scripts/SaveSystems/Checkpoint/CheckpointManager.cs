@@ -91,6 +91,7 @@ namespace OperaVR
             if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.L))
             {
                 _nextSaveTime = Time.time + _settings.StartDelay;
+                Debug.Log("Variables CLEAR");
                 return;
             }
             
@@ -101,9 +102,12 @@ namespace OperaVR
 
             _nextSaveTime = Time.time + _settings.TimeBetweenSaves;
             var localActor = SpatialBridge.actorService.localActor;
-            Debug.LogError("Saving " + GetPositionKey() + ", position = " + localActor.avatar.position);
+            //Debug.Log("Saving " + GetPositionKey() + ", position = " + localActor.avatar.position);
             WorldData.SaveVariable(GetPositionKey(), localActor.avatar.position, 
-                _ => Debug.Log($"Auto position save"));
+                _ =>
+                {
+                    //Debug.Log($"Auto position save");
+                });
         }
     }
 }
