@@ -1,4 +1,5 @@
 using System.Collections;
+using SpatialSys.UnitySDK;
 using UnityEngine;
 
 namespace OperaVR
@@ -40,6 +41,14 @@ namespace OperaVR
             {
                 WorldData.ClearAllVariables();
                 _nextSaveTime = Time.time + _settings.StartDelay;
+                
+                foreach (var quest in SpatialBridge.questService.quests.Values)
+                {
+                    if (quest.status != QuestStatus.None)
+                    {
+                        quest.Reset();
+                    }
+                }
                 return;
             }
             
