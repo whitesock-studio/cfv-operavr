@@ -19,6 +19,9 @@ namespace OperaVR
         
         [SerializeField]
         private float _changeSpeedTime = .3f;
+
+        [SerializeField]
+        private bool _getRotationFromLastPoint;
         
         private int _currentPathIndex = -1;
         
@@ -61,13 +64,18 @@ namespace OperaVR
         private void Progress()
         {
             _currentPathIndex++;
-            if (_currentPathIndex >= _path.Points.Length)
+            if (_currentPathIndex < _path.Points.Length)
             {
-                _currentPathIndex = _path.Loops ? 0 : -1;
-                if (_currentPathIndex == -1)
+                return;
+            }
+            _currentPathIndex = _path.Loops ? 0 : -1;
+            if (_currentPathIndex == -1)
+            {
+                StartCoroutine(SetSpeedCoroutine(
+                    _character.GetComponent<Animator>(), 0f));
+                if (_getRotationFromLastPoint)
                 {
-                    StartCoroutine(SetSpeedCoroutine(
-                        _character.GetComponent<Animator>(), 0f));
+                    _character.rotation = Quaternion.LookRotation(_path.Points[^1].forward, Vector3.up);
                 }
             }
         }
