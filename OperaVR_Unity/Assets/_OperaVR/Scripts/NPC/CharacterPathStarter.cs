@@ -17,6 +17,9 @@ namespace OperaVR
         [SerializeField]
         private float _movementSpeed = 3f;
         
+        [SerializeField]
+        private float _changeSpeedTime = .3f;
+        
         private int _currentPathIndex = -1;
         
         private const float STOP_DISTANCE = 0.1f;
@@ -79,14 +82,14 @@ namespace OperaVR
         private IEnumerator SetSpeedCoroutine(Animator animator, float targetSpeed)
         {
             var startingSpeed = animator.GetFloat("Speed");
-            var changeSpeedTime = .3f;
             var t = 0f;
-            while (t < changeSpeedTime)
+            while (t < _changeSpeedTime)
             {
                 t += Time.deltaTime;
-                animator.SetFloat("Speed", Mathf.Lerp(startingSpeed, targetSpeed, t / changeSpeedTime));
+                animator.SetFloat("Speed", Mathf.Lerp(startingSpeed, targetSpeed, t / _changeSpeedTime));
                 yield return null;
             }
+            animator.SetFloat("Speed", targetSpeed);
         }
     }
 }
