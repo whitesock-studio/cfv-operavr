@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace OperaVR
 {
+    [RequireComponent(typeof(NpcSpawnerTracker))]
     public class NPC : MonoBehaviour
     {
         [SerializeField]
@@ -15,6 +16,8 @@ namespace OperaVR
         [SerializeField, Range(0, 359f)]
         private float _startingAngle;
 
+        private NpcSpawnerTracker _npcSpawnerTracker;
+        
         private NPCCharacter _character;
         public NPCCharacter Character => _character;
         
@@ -30,6 +33,11 @@ namespace OperaVR
             var lookingPoint = transform.position + forwardPoint;
             Gizmos.DrawLine(transform.position, lookingPoint);
             Gizmos.DrawWireCube(lookingPoint + Vector3.up * .3f, new Vector3(.3f, .6f, .3f));
+        }
+
+        private void Awake()
+        {
+            _npcSpawnerTracker = GetComponent<NpcSpawnerTracker>();
         }
 
         private IEnumerator Start()
@@ -73,7 +81,9 @@ namespace OperaVR
             {
                 return;
             }
-            
+
+            var npcTracker = _character.GetComponent<NpcTracker>();
+            npcTracker.Id = _npcSpawnerTracker.Id;
             var forwardPoint = Quaternion.AngleAxis(_startingAngle, Vector3.up) * Vector3.forward * .15f;
             var lookingPoint = transform.position + forwardPoint;
             _character.SetDestination(lookingPoint);
