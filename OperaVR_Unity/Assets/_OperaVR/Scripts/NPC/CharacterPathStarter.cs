@@ -17,6 +17,15 @@ namespace OperaVR
         [SerializeField]
         private float _movementSpeed = 3f;
         
+        [SerializeField]
+        private float _changeSpeedTime = .3f;
+
+        [SerializeField]
+        private float _finalRotationTime = .3f;
+
+        [SerializeField]
+        private bool _getRotationFromLastPoint;
+        
         private int _currentPathIndex = -1;
         
         private const float STOP_DISTANCE = 0.1f;
@@ -58,15 +67,34 @@ namespace OperaVR
         private void Progress()
         {
             _currentPathIndex++;
-            if (_currentPathIndex >= _path.Points.Length)
+            if (_currentPathIndex < _path.Points.Length)
             {
-                _currentPathIndex = _path.Loops ? 0 : -1;
-                if (_currentPathIndex == -1)
+                return;
+            }
+            _currentPathIndex = _path.Loops ? 0 : -1;
+            if (_currentPathIndex == -1)
+            {
+                StartCoroutine(SetSpeedCoroutine(
+                    _character.GetComponent<Animator>(), 0f));
+                if (_getRotationFromLastPoint)
                 {
-                    StartCoroutine(SetSpeedCoroutine(
-                        _character.GetComponent<Animator>(), 0f));
+                    StartCoroutine(LastRotation());
                 }
             }
+        }
+
+        private IEnumerator LastRotation()
+        {
+            var startingRotation = _character.rotation;
+            var targetRotation = Quaternion.LookRotation(_path.Points[^1].forward, Vector3.up);
+            var t = 0f;
+            while (t < _finalRotationTime)
+            {
+                t += Time.deltaTime;
+                _character.rotation = Quaternion.Lerp(startingRotation, targetRotation, t / _finalRotationTime);
+                yield return null;
+            }
+            _character.rotation = targetRotation;
         }
 
         public void StartPath()
@@ -79,14 +107,14 @@ namespace OperaVR
         private IEnumerator SetSpeedCoroutine(Animator animator, float targetSpeed)
         {
             var startingSpeed = animator.GetFloat("Speed");
-            var changeSpeedTime = .3f;
             var t = 0f;
-            while (t < changeSpeedTime)
+            while (t < _changeSpeedTime)
             {
                 t += Time.deltaTime;
-                animator.SetFloat("Speed", Mathf.Lerp(startingSpeed, targetSpeed, t / changeSpeedTime));
+                animator.SetFloat("Speed", Mathf.Lerp(startingSpeed, targetSpeed, t / _changeSpeedTime));
                 yield return null;
             }
+            animator.SetFloat("Speed", targetSpeed);
         }
     }
 }
