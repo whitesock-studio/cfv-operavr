@@ -55,22 +55,6 @@ namespace OperaVR
             transform.position = _character.transform.position;
             transform.rotation = _character.transform.rotation;
         }
-
-        public void Sit(bool isSit)
-        {
-            if (isSit)
-            {
-                StartCoroutine(DelayedSit());       
-                return;
-            }
-            _character.SetEmote(0);
-        }
-        
-        private IEnumerator DelayedSit()
-        {
-            yield return new WaitForSeconds(1);
-            _character.SetEmote(1);      
-        }
         
         public void SetSpeeds(float runningSpeed, float walkingSpeed)
         {

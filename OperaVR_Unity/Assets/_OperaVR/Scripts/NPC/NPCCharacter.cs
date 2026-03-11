@@ -14,7 +14,7 @@ namespace OperaVR
             set => _speed = value;
         }
         
-        public bool HasReachedDestination => Vector3.Distance(transform.position, _destination) <= 1f;
+        public bool HasReachedDestination => Vector3.Distance(transform.position, _destination) <= _stopDistance;
 
         [SerializeField]
         private GameObject _nameTag;
@@ -40,7 +40,7 @@ namespace OperaVR
             var movement = _destination - transform.position;
             var distanceToDestination = movement.magnitude;
 
-            if (distanceToDestination < _stopDistance)
+            if (HasReachedDestination)
             {
                 return;
             }

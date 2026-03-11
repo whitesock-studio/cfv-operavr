@@ -22,23 +22,26 @@ namespace OperaVR
         [SerializeField]
         private bool _activateOnStart;
 
+        [SerializeField]
+        private int _emoteAtEnd;
+        
+        [SerializeField]
+        private bool _getRotationFromLastPoint;
+ 
         [Header("Triggered when the path has started\n(only for loop == false paths)")]
         public UnityEvent OnStarted;
         //public float OnStartedDelay = 0;
 
         [Header("Triggered when the path is complete\n(only for loop == false paths)")]
         public UnityEvent OnComplete;
-        public float OnCompleteDelay = 0;
+        public float OnCompleteDelay;
 
         [Header("Triggered every time the path loops\n(only for loop == true paths)")]
         public UnityEvent OnLoop;
-        public float OnLoopDelay = 0;
-
-        [SerializeField]
-        private bool _useSitAnimationOnEnd = true;
+        public float OnLoopDelay;
         
         private bool _isOn;
-        private int _currentIndex = 0;
+        private int _currentIndex;
 
         public void Activate()
         {
@@ -75,7 +78,6 @@ namespace OperaVR
         {
             _isOn = true;
             _currentIndex = 0;
-            _npc.Sit(false);
             _npc.SetDestination(_path.Points[_currentIndex].position);
             _npc.SetSpeeds(RunningSpeed, WalkingSpeed);
             OnStarted?.Invoke();
@@ -90,12 +92,13 @@ namespace OperaVR
             }
 
             _currentIndex++;
-            
+
             if (_currentIndex < _path.Points.Length)
             {
                 _npc.SetDestination(_path.Points[_currentIndex].position);
                 return;
             }
+
             if (_path.Loops)
             {
                 _currentIndex %= _path.Points.Length;
@@ -104,11 +107,13 @@ namespace OperaVR
                 return;
             }
 
-            StartCoroutine(InvokeDelayed(OnComplete, OnCompleteDelay));
-            if (_useSitAnimationOnEnd)
+            if (_getRotationFromLastPoint)
             {
-                _npc.Sit(true);
+                _npc.Character.transform.rotation = Quaternion.LookRotation(_path.Points[^1].forward, Vector3.up);
             }
+            _npc.Character.SetEmote(_emoteAtEnd);
+            
+            StartCoroutine(InvokeDelayed(OnComplete, OnCompleteDelay));
             _isOn = false;
         }
 
