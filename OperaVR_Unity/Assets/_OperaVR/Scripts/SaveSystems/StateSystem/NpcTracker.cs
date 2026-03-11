@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace OperaVR
 {
-    [RequireComponent(typeof(NPC))]
+    [RequireComponent(typeof(NPCCharacter))]
     public class NpcTracker : AStateTracker
     {
-        private NPC _npc;
+        private NPCCharacter _npc;
         
         protected override string GetVariableKey(string sceneKey) => base.GetVariableKey(sceneKey) + "_Npc";
         
         private void Awake()
         {
-            _npc = GetComponent<NPC>();
+            _npc = GetComponent<NPCCharacter>();
         }
 
         public override void Save(string sceneKey)
@@ -23,14 +23,9 @@ namespace OperaVR
 
             IEnumerator SaveCor()
             {
-                while (!_npc.HasCharacter)
-                {
-                    yield return null;
-                }
-
                 yield return new WaitForSeconds(.1f); 
                 var key = GetVariableKey(sceneKey);
-                WorldData.SaveVariable(key, _npc.Character.transform.position, _ => { });
+                WorldData.SaveVariable(key, _npc.transform.position, _ => { });
             }
         }
 
@@ -52,14 +47,9 @@ namespace OperaVR
 
             IEnumerator GetVariableCallback(DataStoreGetVariableRequest request)
             {
-                while (!_npc.HasCharacter)
-                {
-                    yield return null;
-                }
-
                 yield return new WaitForSeconds(.3f); 
 
-                _npc.Character.transform.position = request.vector3Value;
+                _npc.transform.position = request.vector3Value;
             }
         }
     }
