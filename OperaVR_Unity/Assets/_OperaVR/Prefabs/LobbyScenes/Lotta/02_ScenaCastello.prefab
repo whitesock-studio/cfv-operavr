@@ -54,14 +54,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43108211}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.581, y: 0, z: -0.752}
+  m_LocalRotation: {x: -0, y: -0.0032139772, z: -0, w: 0.9999949}
+  m_LocalPosition: {x: 0.58099365, y: 0, z: -0.752}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1606960074}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.368, z: 0}
 --- !u!1 &44674792
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +284,8 @@ MonoBehaviour:
   _animationSpeed: 0.1
   _movementSpeed: 0.2
   _changeSpeedTime: 0.1
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &330756999
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +353,8 @@ MonoBehaviour:
   _animationSpeed: 0.1
   _movementSpeed: 0.2
   _changeSpeedTime: 0.1
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 1
 --- !u!1 &365381144
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,6 +608,8 @@ MonoBehaviour:
   _animationSpeed: 0.1
   _movementSpeed: 0.1
   _changeSpeedTime: 0.1
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &529199763
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,14 +695,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546799107}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.167, y: 0, z: -6.193}
+  m_LocalRotation: {x: -0, y: 0.3019653, z: -0, w: 0.9533189}
+  m_LocalPosition: {x: -12.4, y: 0, z: -6.213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1792653894}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 35.151, z: 0}
 --- !u!1 &560366359
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +770,8 @@ MonoBehaviour:
   _animationSpeed: 0.1
   _movementSpeed: 0.2
   _changeSpeedTime: 0.1
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &568506765
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +839,8 @@ MonoBehaviour:
   _animationSpeed: 0.1
   _movementSpeed: 0.2
   _changeSpeedTime: 0.1
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &590757537
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,14 +926,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665585710}
-  m_LocalRotation: {x: -0, y: -0.9990755, z: -0, w: 0.0429906}
+  m_LocalRotation: {x: -0, y: -0.77924496, z: -0, w: 0.6267195}
   m_LocalPosition: {x: 0.375, y: 0, z: 0.541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 330757000}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -102.383, z: 0}
 --- !u!1 &715733427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,6 +1166,8 @@ MonoBehaviour:
   _animationSpeed: 1
   _movementSpeed: 4
   _changeSpeedTime: 0.3
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &922231619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,6 +1328,8 @@ MonoBehaviour:
   _animationSpeed: 0.1
   _movementSpeed: 0.2
   _changeSpeedTime: 0.1
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 1
 --- !u!1 &1042848780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,6 +1552,8 @@ MonoBehaviour:
   _animationSpeed: 0.1
   _movementSpeed: 0.2
   _changeSpeedTime: 0.1
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 1
 --- !u!1 &1161157231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,14 +1608,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168277216}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.075, y: 0, z: -0.578}
+  m_LocalRotation: {x: -0, y: -0.62764424, z: -0, w: 0.7785003}
+  m_LocalPosition: {x: 0.582, y: 0, z: -0.578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 994429358}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -77.753, z: 0}
 --- !u!1 &1264872208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,6 +1691,8 @@ MonoBehaviour:
   _animationSpeed: 1
   _movementSpeed: 4
   _changeSpeedTime: 0.3
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &1271953886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,6 +1915,8 @@ MonoBehaviour:
   _animationSpeed: 0.1
   _movementSpeed: 0.2
   _changeSpeedTime: 0.1
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 1
 --- !u!1 &1429823706
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,6 +2077,8 @@ MonoBehaviour:
   _animationSpeed: 0.1
   _movementSpeed: 0.2
   _changeSpeedTime: 0.1
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &1602021015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,6 +2208,8 @@ MonoBehaviour:
   _animationSpeed: 0.1
   _movementSpeed: 0.1
   _changeSpeedTime: 0.1
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &1648851661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,14 +2233,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648851661}
-  m_LocalRotation: {x: -0, y: -0.9990755, z: -0, w: 0.0429906}
+  m_LocalRotation: {x: -0, y: -0.9296919, z: -0, w: 0.36833826}
   m_LocalPosition: {x: 0.42, y: 0, z: 0.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1426605523}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -136.774, z: 0}
 --- !u!1 &1678246202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,6 +2510,8 @@ MonoBehaviour:
   _animationSpeed: 1
   _movementSpeed: 4
   _changeSpeedTime: 0.3
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 1
 --- !u!1 &1813180766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,14 +2690,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107049035}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.577, y: 0, z: -1.057}
+  m_LocalRotation: {x: -0, y: -0.7475953, z: -0, w: 0.6641546}
+  m_LocalPosition: {x: 0.58, y: 0, z: -1.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1159683007}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -96.765, z: 0}
 --- !u!1 &2107889352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,6 +2966,8 @@ MonoBehaviour:
   _animationSpeed: 0.3
   _movementSpeed: 1.25
   _changeSpeedTime: 0.3
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &756583910655213798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3175,6 +3203,8 @@ MonoBehaviour:
   _animationSpeed: 1
   _movementSpeed: 4
   _changeSpeedTime: 0.3
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 1
 --- !u!1 &1930308081036607799
 GameObject:
   m_ObjectHideFlags: 0
@@ -3198,14 +3228,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930308081036607799}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.3633861, z: -0, w: 0.93163866}
   m_LocalPosition: {x: -1.38, y: 0, z: -1.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 638516484481089284}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 42.617, z: 0}
 --- !u!1 &2227113927061104612
 GameObject:
   m_ObjectHideFlags: 0
@@ -4083,6 +4113,8 @@ MonoBehaviour:
   _animationSpeed: 0.3
   _movementSpeed: 1.5
   _changeSpeedTime: 0.3
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &4687349573142303904
 GameObject:
   m_ObjectHideFlags: 0
@@ -4853,6 +4885,8 @@ MonoBehaviour:
   _animationSpeed: 0.3
   _movementSpeed: 1.5
   _changeSpeedTime: 0.3
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &7118617190584545239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,6 +5474,8 @@ MonoBehaviour:
   _animationSpeed: 0.4
   _movementSpeed: 1.25
   _changeSpeedTime: 0.3
+  _finalRotationTime: 0.3
+  _getRotationFromLastPoint: 0
 --- !u!1 &8936503454804779020
 GameObject:
   m_ObjectHideFlags: 0
