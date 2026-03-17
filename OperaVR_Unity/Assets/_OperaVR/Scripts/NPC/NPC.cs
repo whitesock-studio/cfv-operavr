@@ -82,12 +82,17 @@ namespace OperaVR
                 return;
             }
 
-            var npcTracker = _character.GetComponent<NpcTracker>();
-            var animationTracker = _character.GetComponent<AnimationTracker>();
-            npcTracker.Id = _npcSpawnerTracker.Id;
-            animationTracker.Id = _npcSpawnerTracker.Id;
             _character.SetName(_name);
-            npcTracker.Load(StateSystem.Instance.Settings.SceneKey);
+            
+            var npcTracker = _character.GetComponent<NpcTracker>();
+            npcTracker.Id = _npcSpawnerTracker.Id;
+            
+            var animationTracker = _character.GetComponent<AnimationTracker>();
+            animationTracker.Id = _npcSpawnerTracker.Id;
+            
+            var sceneKey = StateSystem.Instance.Settings.SceneKey;
+            npcTracker.Load(sceneKey);
+            animationTracker.Load(sceneKey);
         }
     }
 }
