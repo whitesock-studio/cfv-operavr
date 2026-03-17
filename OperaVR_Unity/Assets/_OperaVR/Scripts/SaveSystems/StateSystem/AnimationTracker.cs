@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using SpatialSys.UnitySDK;
 using UnityEngine;
 
@@ -11,13 +12,17 @@ namespace OperaVR
         
         protected override string GetVariableKey(string sceneKey) => base.GetVariableKey(sceneKey) + "_Anim";
 
+        private Dictionary<string, object> _prevValues = new();
+        
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            _prevValues = new Dictionary<string, object>();
         }
 
-        public override void Save(string sceneKey)
+        private void Update()
         {
+            var sceneKey = StateSystem.Instance.Settings.SceneKey;
             foreach (var parameter in _animator.parameters)
             {
                 var paramName = parameter.name;
@@ -25,19 +30,49 @@ namespace OperaVR
                 switch (parameter.type)
                 {
                     case AnimatorControllerParameterType.Bool:
-                        WorldData.SaveVariable(key, _animator.GetBool(paramName), _ => { });
+                        var boolValue = _animator.GetBool(paramName);
+                        if (_prevValues.TryGetValue(key, out var currBool) && (bool)currBool != boolValue)
+                        {
+                            WorldData.SaveVariable(key, boolValue, _ => { });
+                        }
+                        if (!_prevValues.TryAdd(key, boolValue))
+                        {
+                            _prevValues[key] = boolValue;
+                        }
                         break;
                     case AnimatorControllerParameterType.Float:
-                        WorldData.SaveVariable(key, _animator.GetFloat(paramName), _ => { });
+                        var floatValue = _animator.GetFloat(paramName);
+                        if (_prevValues.TryGetValue(key, out var currFloat) && 
+                            Math.Abs((float)currFloat - floatValue) > .01f)
+                        {
+                            WorldData.SaveVariable(key, floatValue, _ => { });
+                        }
+                        if (!_prevValues.TryAdd(key, floatValue))
+                        {
+                            _prevValues[key] = floatValue;
+                        }
                         break;
                     case AnimatorControllerParameterType.Int:
-                        WorldData.SaveVariable(key, _animator.GetInteger(paramName), _ => { });
+                        var intValue = _animator.GetInteger(paramName);
+                        if (_prevValues.TryGetValue(key, out var currInt) && (int)currInt != intValue)
+                        {
+                            WorldData.SaveVariable(key, intValue, _ => { });
+                        }
+                        if (!_prevValues.TryAdd(key, intValue))
+                        {
+                            _prevValues[key] = intValue;
+                        }
                         break;
                     default:
                     case AnimatorControllerParameterType.Trigger:
                         break;
                 }
             }
+        }
+
+        public override void Save(string sceneKey)
+        {
+            //done in Update
         }
 
         public override void Load(string sceneKey)

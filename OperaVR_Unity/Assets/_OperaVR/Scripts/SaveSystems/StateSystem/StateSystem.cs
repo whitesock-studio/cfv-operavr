@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using SpatialSys.UnitySDK;
 using UnityEngine;
 
@@ -91,6 +92,8 @@ namespace OperaVR
         public IEnumerator SaveTrackers()
         {
             Debug.Log("----- Start Save -----");
+            _stateTrackers = FindObjectsOfType<AStateTracker>(true);
+            
             var trackersPerFrame = 5;
             var t = 0;
             foreach (var tracker in _stateTrackers)
