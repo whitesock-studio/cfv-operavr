@@ -50,6 +50,8 @@ namespace OperaVR
                 yield return new WaitForSeconds(.3f); 
 
                 _npc.transform.position = request.vector3Value;
+                _npc.SetDestination(request.vector3Value);
+                _npc.Stop();
             }
         }
     }

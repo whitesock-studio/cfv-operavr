@@ -84,9 +84,6 @@ namespace OperaVR
 
             var npcTracker = _character.GetComponent<NpcTracker>();
             npcTracker.Id = _npcSpawnerTracker.Id;
-            var forwardPoint = Quaternion.AngleAxis(_startingAngle, Vector3.up) * Vector3.forward * .15f;
-            var lookingPoint = transform.position + forwardPoint;
-            _character.SetDestination(lookingPoint);
             _character.SetName(_name);
             npcTracker.Load(StateSystem.Instance.Settings.SceneKey);
         }

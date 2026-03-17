@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -26,7 +25,12 @@ namespace OperaVR
         private float _stopDistance = .5f;
         
         private Vector3 _destination;
-        private bool _isMoving;
+        private bool m_isMoving;
+        private bool IsMoving
+        {
+            get => m_isMoving;
+            set => m_isMoving = value;
+        }
 
         private Animator _animator;
 
@@ -37,11 +41,17 @@ namespace OperaVR
 
         private void Update()
         {
+            if (!IsMoving)
+            {
+                return;
+            }
+            
             var movement = _destination - transform.position;
             var distanceToDestination = movement.magnitude;
 
             if (HasReachedDestination)
             {
+                Stop();
                 return;
             }
             
@@ -55,7 +65,7 @@ namespace OperaVR
             {
                 transform.position = _destination;
                 transform.rotation = Quaternion.LookRotation(directionNoZ);
-                _isMoving = false;
+                Stop();
                 return;
             }
 
@@ -72,8 +82,13 @@ namespace OperaVR
         
         public void SetDestination(Vector3 destination)
         {
-            _isMoving = true;
+            IsMoving = true;
             _destination = destination;
+        }
+
+        public void Stop()
+        {
+            IsMoving = false;
         }
         
         public void SetEmote(int emoteKey)
