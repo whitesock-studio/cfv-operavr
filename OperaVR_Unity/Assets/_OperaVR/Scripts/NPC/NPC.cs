@@ -88,6 +88,7 @@ namespace OperaVR
             var lookingPoint = transform.position + forwardPoint;
             _character.SetDestination(lookingPoint);
             _character.SetName(_name);
+            npcTracker.Load(StateSystem.Instance.Settings.SceneKey);
         }
     }
 }
