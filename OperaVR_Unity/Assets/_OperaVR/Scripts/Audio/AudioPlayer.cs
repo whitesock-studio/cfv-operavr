@@ -37,11 +37,16 @@ namespace OperaVR
                     _audioSource.spatialBlend = 0;
                 }
             }
+            if (_audioSource == null)
+            {
+                return;
+            }
             if (_clip != null)
             {
                 _audioSource.clip = _clip;  
             }
-            if (_audioSource == null)
+            
+            if (!MultiAudioManager.Instance.TryPlay(_clip))
             {
                 return;
             }
