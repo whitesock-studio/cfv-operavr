@@ -5,6 +5,7 @@ namespace OperaVR
     public abstract class AStateTracker : MonoBehaviour
     {
         public string Id = string.Empty;
+        public abstract bool IsDirty { get; }
         protected virtual string GetVariableKey(string sceneKey) => sceneKey + "_State_" + Id;
         
         public abstract void Save(string sceneKey);

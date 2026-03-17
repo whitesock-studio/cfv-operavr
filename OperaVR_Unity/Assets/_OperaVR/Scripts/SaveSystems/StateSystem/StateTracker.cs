@@ -4,20 +4,26 @@ namespace OperaVR
 {
     public class StateTracker : AStateTracker
     {
+        private bool _isDirty;
+        public override bool IsDirty => _isDirty;
+        
         protected override string GetVariableKey(string sceneKey) => base.GetVariableKey(sceneKey) + "_IsActive";
         
         private void OnEnable()
         {
             QuickSave();
+            _isDirty = true;
         }
 
         private void OnDisable()
         {
             QuickSave();
+            _isDirty = true;
         }
-
+        
         public override void Save(string sceneKey)
         {
+            _isDirty = false;
             WorldData.SaveVariable(GetVariableKey(sceneKey), gameObject.activeSelf, 
                 _ => { });
         }

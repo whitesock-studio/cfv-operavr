@@ -9,7 +9,9 @@ namespace OperaVR
     public class AnimationTracker : AStateTracker
     {
         private Animator _animator;
-        
+
+        private bool _isDirty;
+        public override bool IsDirty => _isDirty;
         protected override string GetVariableKey(string sceneKey) => base.GetVariableKey(sceneKey) + "_Anim";
 
         private Dictionary<string, object> _prevValues = new();
@@ -31,9 +33,10 @@ namespace OperaVR
                 {
                     case AnimatorControllerParameterType.Bool:
                         var boolValue = _animator.GetBool(paramName);
-                        if (_prevValues.TryGetValue(key, out var currBool) && (bool)currBool != boolValue)
+                        if (_prevValues.TryGetValue(key, out var currBool) && 
+                            (bool)currBool != boolValue)
                         {
-                            WorldData.SaveVariable(key, boolValue, _ => { });
+                            _isDirty = true;
                         }
                         if (!_prevValues.TryAdd(key, boolValue))
                         {
@@ -45,7 +48,7 @@ namespace OperaVR
                         if (_prevValues.TryGetValue(key, out var currFloat) && 
                             Math.Abs((float)currFloat - floatValue) > .01f)
                         {
-                            WorldData.SaveVariable(key, floatValue, _ => { });
+                            _isDirty = true;
                         }
                         if (!_prevValues.TryAdd(key, floatValue))
                         {
@@ -54,9 +57,10 @@ namespace OperaVR
                         break;
                     case AnimatorControllerParameterType.Int:
                         var intValue = _animator.GetInteger(paramName);
-                        if (_prevValues.TryGetValue(key, out var currInt) && (int)currInt != intValue)
+                        if (_prevValues.TryGetValue(key, out var currInt) && 
+                            (int)currInt != intValue)
                         {
-                            WorldData.SaveVariable(key, intValue, _ => { });
+                            _isDirty = true;
                         }
                         if (!_prevValues.TryAdd(key, intValue))
                         {
@@ -72,7 +76,27 @@ namespace OperaVR
 
         public override void Save(string sceneKey)
         {
-            //done in Update
+            _isDirty = false;
+            foreach (var parameter in _animator.parameters)
+            {
+                var paramName = parameter.name;
+                var key = GetVariableKey(sceneKey) + "_" + paramName;
+                switch (parameter.type)
+                {
+                    case AnimatorControllerParameterType.Bool:
+                        WorldData.SaveVariable(key, _animator.GetBool(paramName), _ => { });
+                        break;
+                    case AnimatorControllerParameterType.Float:
+                        WorldData.SaveVariable(key, _animator.GetFloat(paramName), _ => { });
+                        break;
+                    case AnimatorControllerParameterType.Int:
+                        WorldData.SaveVariable(key, _animator.GetInteger(paramName), _ => { });
+                        break;
+                    default:
+                    case AnimatorControllerParameterType.Trigger:
+                        break;
+                }
+            }
         }
 
         public override void Load(string sceneKey)

@@ -8,41 +8,33 @@ namespace OperaVR
     public class NpcTracker : AStateTracker
     {
         private NPCCharacter _npc;
-        private Vector3 _previousPosition;
-        private float _lastSaveTime;
-        
+        private Vector3 _lastSavedPosition;
+
+        private bool _isDirty;
+        public override bool IsDirty => _isDirty;
         protected override string GetVariableKey(string sceneKey) => base.GetVariableKey(sceneKey) + "_Npc";
         
         private void Awake()
         {
             _npc = GetComponent<NPCCharacter>();
-            _previousPosition = _npc.transform.position;
+            _lastSavedPosition = _npc.transform.position;
         }
 
         private void Update()
         {
-            if (Vector3.Distance(_npc.transform.position, _previousPosition) < .5f)
+            if (Vector3.Distance(_npc.transform.position, _lastSavedPosition) < .5f)
             {
                 return;
-            }
-            if (Time.time - _lastSaveTime > StateSystem.Instance.Settings.TimeBetweenSaves)
-            {
-                Save(StateSystem.Instance.Settings.SceneKey);
-                _previousPosition = transform.position;
-            }
+            } 
+            _isDirty = true;
         }
 
         public override void Save(string sceneKey)
         {
-            StartCoroutine(SaveCor());
-            return;
-
-            IEnumerator SaveCor()
-            {
-                yield return new WaitForSeconds(.1f); 
-                var key = GetVariableKey(sceneKey);
-                WorldData.SaveVariable(key, _npc.transform.position, _ => { });
-            }
+            _isDirty = false;
+            _lastSavedPosition = _npc.transform.position;
+            var key = GetVariableKey(sceneKey);
+            WorldData.SaveVariable(key, _npc.transform.position, _ => { });
         }
 
         public override void Load(string sceneKey)

@@ -17,6 +17,8 @@ namespace OperaVR
         
         private AStateTracker[] _stateTrackers;
 
+        private const int TRACKERS_SAVED_PER_FRAME = 2;
+
         private void Awake()
         {
             if (Instance != null)
@@ -94,13 +96,16 @@ namespace OperaVR
             Debug.Log("----- Start Save -----");
             _stateTrackers = FindObjectsOfType<AStateTracker>(true);
             
-            var trackersPerFrame = 5;
             var t = 0;
             foreach (var tracker in _stateTrackers)
             {
-                tracker.Save(_settings.SceneKey);
-                t++;
-                if (t >= trackersPerFrame)
+                if (tracker.IsDirty)
+                {
+                    tracker.Save(_settings.SceneKey);
+                    Debug.Log($"----- {tracker.name} : Saved");
+                    t++;
+                }
+                if (t >= TRACKERS_SAVED_PER_FRAME)
                 {
                     t = 0;
                     yield return null;
