@@ -38,6 +38,11 @@ namespace OperaVR
 
         public bool TryPlay(AudioClip clip)
         {
+            if (clip == null)
+            {
+                return false;
+            }
+            
             CurrentClipsPlaying ??= new List<float>();
 
             if (CurrentClipsPlaying.Count >= MAX_CLIPS_PLAYING)
