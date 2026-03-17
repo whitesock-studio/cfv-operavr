@@ -33,9 +33,9 @@ namespace OperaVR
                 if (_audioSource == null)
                 {
                     _audioSource = listenerObject.AddComponent<AudioSource>();
-                    _audioSource.playOnAwake = false;
-                    _audioSource.spatialBlend = 0;
                 }
+                _audioSource.playOnAwake = false;
+                _audioSource.spatialBlend = 0;
             }
             if (_audioSource == null)
             {
@@ -46,7 +46,7 @@ namespace OperaVR
                 _audioSource.clip = _clip;  
             }
             
-            if (!MultiAudioManager.Instance.TryPlay(_clip))
+            if (!MultiAudioManager.Instance.TryPlay(_audioSource.clip))
             {
                 return;
             }
