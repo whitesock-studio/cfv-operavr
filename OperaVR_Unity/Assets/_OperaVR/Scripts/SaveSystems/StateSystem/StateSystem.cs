@@ -31,7 +31,6 @@ namespace OperaVR
 
         private void Start()
         {
-            _stateTrackers = FindObjectsOfType<AStateTracker>(true);
             LoadTrackers(.5f);
         }
 
@@ -58,7 +57,8 @@ namespace OperaVR
             }
 
             _nextSaveTime = Time.time + _settings.TimeBetweenSaves;
-            SaveTrackers();
+            
+            StartCoroutine(SaveTrackers());
         }
         
         public void LoadTrackers(float delay)
@@ -69,18 +69,42 @@ namespace OperaVR
         private IEnumerator LoadCoroutine(float delay)
         {
             yield return new WaitForSeconds(delay);
+         
+            Debug.Log("----- Start Load -----");
+            _stateTrackers = FindObjectsOfType<AStateTracker>(true);
+            
+            var trackersPerFrame = 5;
+            var t = 0;
             foreach (var tracker in _stateTrackers)
             {
                 tracker.Load(_settings.SceneKey);
+                t++;
+                if (t >= trackersPerFrame)
+                {
+                    t = 0;
+                    yield return null;
+                }
             }
+            Debug.Log("----- Load Completed -----");
         }
 
-        public void SaveTrackers()
+        public IEnumerator SaveTrackers()
         {
+            Debug.Log("----- Start Save -----");
+            var trackersPerFrame = 5;
+            var t = 0;
             foreach (var tracker in _stateTrackers)
             {
                 tracker.Save(_settings.SceneKey);
+                t++;
+                if (t >= trackersPerFrame)
+                {
+                    t = 0;
+                    yield return null;
+                }
             }
+            Debug.Log("----- Save Completed -----");
+            _nextSaveTime = Time.time + _settings.TimeBetweenSaves;
         }
     }
 }

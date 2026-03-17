@@ -40,15 +40,8 @@ namespace OperaVR
             _npcSpawnerTracker = GetComponent<NpcSpawnerTracker>();
         }
 
-        private IEnumerator Start()
+        private void Start()
         {
-            while (!SpatialBridge.actorService.localActor.avatar.isBodyLoaded)
-            {
-                yield return null;
-            }
-
-            yield return new WaitForSeconds(.5f);
-            
             var npcObject = Instantiate(_prefab, transform.position, transform.rotation);
             _character = npcObject.GetComponent<NPCCharacter>();
             InitCharacter();
@@ -89,10 +82,6 @@ namespace OperaVR
             
             var animationTracker = _character.GetComponent<AnimationTracker>();
             animationTracker.Id = _npcSpawnerTracker.Id;
-            
-            var sceneKey = StateSystem.Instance.Settings.SceneKey;
-            npcTracker.Load(sceneKey);
-            animationTracker.Load(sceneKey);
         }
     }
 }
