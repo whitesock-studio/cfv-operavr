@@ -1,22 +1,11 @@
-using SpatialSys.UnitySDK;
-using System.Collections;
 using UnityEngine;
 
 namespace OperaVR
 {
-    [RequireComponent(typeof(NpcSpawnerTracker))]
     public class NPC : MonoBehaviour
     {
         [SerializeField]
         private string _name;
-        
-        [SerializeField]
-        private GameObject _prefab;
-
-        [SerializeField, Range(0, 359f)]
-        private float _startingAngle;
-
-        private NpcSpawnerTracker _npcSpawnerTracker;
         
         private NPCCharacter _character;
         public NPCCharacter Character => _character;
@@ -29,24 +18,26 @@ namespace OperaVR
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireCube(transform.position + Vector3.up, new Vector3(.3f, 2f, .3f));
-            var forwardPoint = Quaternion.AngleAxis(_startingAngle, Vector3.up) * Vector3.forward;
-            var lookingPoint = transform.position + forwardPoint;
-            Gizmos.DrawLine(transform.position, lookingPoint);
-            Gizmos.DrawWireCube(lookingPoint + Vector3.up * .3f, new Vector3(.3f, .6f, .3f));
         }
 
         private void Awake()
         {
-            _npcSpawnerTracker = GetComponent<NpcSpawnerTracker>();
-        }
+            var characters = GetComponentsInChildren<NPCCharacter>(true);
+            for (var i = characters.Length - 1; i >= 0; i--)
+            {
+                var character = characters[i];
+                if (_character == null && character.gameObject.activeSelf)
+                {
+                    _character = character;
+                    continue;
+                }
+                Destroy(character.gameObject);
+            }
 
-        private void Start()
-        {
-            var npcObject = Instantiate(_prefab, transform.position, transform.rotation);
-            _character = npcObject.GetComponent<NPCCharacter>();
-            InitCharacter();
+            _character.transform.SetParent(null);
+            _character.SetName(_name);
         }
-
+        
         private void FixedUpdate()
         {
             if (!HasCharacter)
@@ -66,22 +57,6 @@ namespace OperaVR
         public void SetDestination(Vector3 destination)
         {
             _character.SetDestination(destination);
-        }
-        
-        private void InitCharacter()
-        {
-            if (_character == null)
-            {
-                return;
-            }
-
-            _character.SetName(_name);
-            
-            var npcTracker = _character.GetComponent<NpcTracker>();
-            npcTracker.Id = _npcSpawnerTracker.Id;
-            
-            var animationTracker = _character.GetComponent<AnimationTracker>();
-            animationTracker.Id = _npcSpawnerTracker.Id;
         }
     }
 }

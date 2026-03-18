@@ -34,7 +34,7 @@ namespace OperaVR
 
         private void Start()
         {
-            LoadTrackers(.5f);
+            LoadTrackers(1f);
         }
 
         private void Update()
@@ -81,8 +81,9 @@ namespace OperaVR
             foreach (var tracker in _stateTrackers)
             {
                 tracker.Load(_settings.SceneKey);
+                Debug.Log($"----- {tracker.name} : Loaded");
                 t++;
-                if (t >= trackersPerFrame)
+                if (t >= TRACKERS_SAVED_PER_FRAME)
                 {
                     t = 0;
                     yield return null;

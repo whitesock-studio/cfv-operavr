@@ -1,4 +1,5 @@
 using SpatialSys.UnitySDK;
+using UnityEngine;
 
 namespace OperaVR
 {
@@ -8,16 +9,14 @@ namespace OperaVR
         public override bool IsDirty => _isDirty;
         
         protected override string GetVariableKey(string sceneKey) => base.GetVariableKey(sceneKey) + "_IsActive";
-        
+
         private void OnEnable()
         {
-            QuickSave();
             _isDirty = true;
         }
 
         private void OnDisable()
         {
-            QuickSave();
             _isDirty = true;
         }
         

@@ -26,6 +26,7 @@ namespace OperaVR
                         stateTracker.Id = GUID.Generate().ToString();
                         EditorUtility.SetDirty(stateTracker);
                     }
+
                     usedIds.Add(stateTracker.Id);
                     continue;
                 }
