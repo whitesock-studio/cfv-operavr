@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using SpatialSys.UnitySDK;
@@ -80,14 +81,22 @@ namespace OperaVR
             var t = 0;
             foreach (var tracker in _stateTrackers)
             {
-                tracker.Load(_settings.SceneKey);
-                Debug.Log($"----- {tracker.name} : Loaded");
-                t++;
-                if (t >= TRACKERS_SAVED_PER_FRAME)
+                Debug.Log($"LOADING: {tracker.gameObject.name}");
+                try
                 {
-                    t = 0;
-                    yield return new WaitForSeconds(.1f);            
+                    tracker.Load(_settings.SceneKey);
+                    Debug.Log($"----- {tracker.name} : Loaded");
+                    t++;
+                    if (t >= TRACKERS_SAVED_PER_FRAME)
+                    {
+                        t = 0;
+                    }
                 }
+                catch (Exception e)
+                {
+                    Debug.LogError($"LOAD FAILURE: {e}");
+                }
+                yield return new WaitForSeconds(.1f);            
             }
             Debug.Log("----- Load Completed -----");
         }

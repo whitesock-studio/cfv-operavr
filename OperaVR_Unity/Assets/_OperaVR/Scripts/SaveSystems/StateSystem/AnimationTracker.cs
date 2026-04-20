@@ -127,12 +127,15 @@ namespace OperaVR
                 switch (type)
                 {
                     case AnimatorControllerParameterType.Float:
+                        Debug.LogWarning($"ANIMATOR f: Setting animator param: {paramName}, {request.floatValue}");
                         _animator.SetFloat(paramName, request.floatValue);
                         break;
                     case AnimatorControllerParameterType.Int:
+                        Debug.LogWarning($"ANIMATOR i: Setting animator param: {paramName}, {request.intValue}");
                         _animator.SetInteger(paramName, request.intValue);
                         break;
                     case AnimatorControllerParameterType.Bool:
+                        Debug.LogWarning($"ANIMATOR b: Setting animator param: {paramName}, {request.boolValue}");
                         _animator.SetBool(paramName, request.boolValue);
                         break;
                     default:
