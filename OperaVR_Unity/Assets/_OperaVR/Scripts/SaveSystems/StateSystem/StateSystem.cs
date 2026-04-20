@@ -86,7 +86,7 @@ namespace OperaVR
                 if (t >= TRACKERS_SAVED_PER_FRAME)
                 {
                     t = 0;
-                    yield return null;
+                    yield return new WaitForSeconds(.1f);            
                 }
             }
             Debug.Log("----- Load Completed -----");
