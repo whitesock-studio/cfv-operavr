@@ -77,6 +77,10 @@ namespace OperaVR
         public override void Save(string sceneKey)
         {
             _isDirty = false;
+            if (_animator == null)
+            {
+                return;
+            }
             foreach (var parameter in _animator.parameters)
             {
                 var paramName = parameter.name;
