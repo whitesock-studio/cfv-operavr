@@ -72,6 +72,9 @@ namespace OperaVR
 
         private IEnumerator LoadCoroutine(float delay)
         {
+            var loadingScreen = FindFirstObjectByType<LoadingScreen>();
+            loadingScreen.StartLoading();
+            
             yield return new WaitForSeconds(delay);
          
             Debug.Log("----- Start Load -----");
@@ -96,9 +99,11 @@ namespace OperaVR
                 {
                     Debug.LogError($"LOAD FAILURE: {e}");
                 }
-                yield return new WaitForSeconds(.1f);            
+                yield return null;            
             }
             Debug.Log("----- Load Completed -----");
+            
+            loadingScreen.StopLoading();
         }
 
         public IEnumerator SaveTrackers()

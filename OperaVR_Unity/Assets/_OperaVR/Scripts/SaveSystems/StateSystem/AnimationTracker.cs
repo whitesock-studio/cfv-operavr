@@ -101,6 +101,10 @@ namespace OperaVR
 
         public override void Load(string sceneKey)
         {
+            if (_animator == null)
+            {
+                return;
+            }
             foreach (var parameter in _animator.parameters)
             {
                 var paramName = parameter.name;
