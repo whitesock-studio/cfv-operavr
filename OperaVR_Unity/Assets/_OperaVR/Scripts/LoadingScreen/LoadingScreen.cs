@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using SpatialSys.UnitySDK;
 using UnityEngine;
@@ -25,6 +26,7 @@ namespace OperaVR
         
         private float _alpha = 0f;
         private Coroutine _fadeCoroutine;
+        private Camera _mainCamera;
         
         private const string COLOR_KEY = "_BaseColor";
 
@@ -38,12 +40,16 @@ namespace OperaVR
             _metaQuestGroup.SetActive(false);
         }
 
+        private void Start()
+        {
+            _mainCamera = FindFirstObjectByType<Camera>();
+        }
+
         private void Update()
         {
-            if (_invertedSphere.gameObject.activeInHierarchy)
+            if (_mainCamera && _invertedSphere.gameObject.activeInHierarchy)
             {
-                var mainCamera = Camera.main;
-                _invertedSphere.transform.position = mainCamera.transform.position;
+                _invertedSphere.transform.position = _mainCamera.transform.position;
             }
         }
 
