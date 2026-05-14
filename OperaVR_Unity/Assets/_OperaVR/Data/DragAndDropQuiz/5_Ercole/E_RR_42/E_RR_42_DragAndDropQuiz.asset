@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed0c642008a9c44597ebb15c40434dc, type: 3}
+  m_Name: E_RR_42_DragAndDropQuiz
+  m_EditorClassIdentifier: 
+  PopupType: 12
+  InterruptsMovement: 1
+  Title: Rete intertestuale in musica
+  TitleKey: 
+  SubTitle: 
+  SubTitleKey: 
+  QuestionText: Trascina l'immagine corretta nello slot mancante
+  AudioClip: {fileID: 0}
+  Image: {fileID: 21300000, guid: 93836c6fdbb1ee04a9cecb6e880f095e, type: 3}
+  DraggableSlotsData:
+  - Position: {x: -345, y: 63}
+  - Position: {x: -345, y: -190}
+  - Position: {x: 100, y: 63}
+  DraggablesData:
+  - Sprite: {fileID: 21300000, guid: cf8ea16acaa5eaa41b0a515624a7a854, type: 3}
+    CorrectSlot: 2
+  - Sprite: {fileID: 21300000, guid: e8042de2e7fc22246b367e9289ba127a, type: 3}
+    CorrectSlot: 1
+  - Sprite: {fileID: 21300000, guid: 5f7962747f3730e4cbb65d56a7a4e319, type: 3}
+    CorrectSlot: 0
