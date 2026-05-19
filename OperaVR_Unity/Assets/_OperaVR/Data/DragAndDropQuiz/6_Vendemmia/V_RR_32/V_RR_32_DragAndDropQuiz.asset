@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed0c642008a9c44597ebb15c40434dc, type: 3}
+  m_Name: V_RR_32_DragAndDropQuiz
+  m_EditorClassIdentifier: 
+  PopupType: 12
+  InterruptsMovement: 1
+  Title: Carica emozionale nel canto
+  TitleKey: 
+  SubTitle: 
+  SubTitleKey: 
+  QuestionText: Trascina l'immagine corretta nello slot mancante
+  AudioClip: {fileID: 0}
+  Image: {fileID: 21300000, guid: e7f500fc0c9804c48873c651c9ce54e3, type: 3}
+  DraggableSlotsData:
+  - Position: {x: -256, y: 150}
+  - Position: {x: -511, y: -8}
+  - Position: {x: 55, y: -9}
+  - Position: {x: -240, y: -178}
+  DraggablesData:
+  - Sprite: {fileID: 21300000, guid: 68ccabac8f64db146b9aff10ee16ac1d, type: 3}
+    CorrectSlot: 1
+  - Sprite: {fileID: 21300000, guid: e5d723efaf17ebf439df038b2f20d9f1, type: 3}
+    CorrectSlot: 2
+  - Sprite: {fileID: 21300000, guid: e16540218fd7f294a9e07376d37ffc50, type: 3}
+    CorrectSlot: 0
+  - Sprite: {fileID: 21300000, guid: e858af1b04efce8458eb952a071412d1, type: 3}
+    CorrectSlot: 3
