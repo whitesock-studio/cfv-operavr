@@ -2559,7 +2559,7 @@ GameObject:
   - component: {fileID: 383826990908140552}
   - component: {fileID: 7776055733979912393}
   - component: {fileID: 2920197372467597326}
-  - component: {fileID: 6083006244380309795}
+  - component: {fileID: 4883989908395283148}
   m_Layer: 0
   m_Name: PALCO
   m_TagString: Untagged
@@ -2632,8 +2632,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6083006244380309795
-BoxCollider:
+--- !u!64 &4883989908395283148
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2642,9 +2642,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 14.111552, y: 1.8055227, z: 6.2838583}
-  m_Center: {x: 0, y: -0.5974537, z: -0.36189818}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6149027077581443407, guid: 715135a0cf103134faaf337f96162d39, type: 3}
 --- !u!1 &1747853847348938408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2656,6 +2657,7 @@ GameObject:
   - component: {fileID: 3363794609929924222}
   - component: {fileID: 9153842195984031902}
   - component: {fileID: 7458241998574492769}
+  - component: {fileID: 8349803565330526458}
   m_Layer: 0
   m_Name: QUINTA_03
   m_TagString: Untagged
@@ -2728,6 +2730,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8349803565330526458
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747853847348938408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.673554, y: 9.141517, z: 0.00049590936}
+  m_Center: {x: 7.006622, y: 4.813188, z: -3.406808}
 --- !u!1 &1856052781323242626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4500,7 +4515,7 @@ GameObject:
   - component: {fileID: 7725235734523670150}
   - component: {fileID: 3815238045425430509}
   - component: {fileID: 7381635486216955778}
-  - component: {fileID: 4541511122848393577}
+  - component: {fileID: 6748204493486803968}
   m_Layer: 0
   m_Name: BOCCASCENA
   m_TagString: Untagged
@@ -4573,8 +4588,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4541511122848393577
-BoxCollider:
+--- !u!64 &6748204493486803968
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4583,9 +4598,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 13.218221, y: 9.141852, z: 0.0004458569}
-  m_Center: {x: 7.0009046, y: 4.8129735, z: -1.0000471}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8460643895144633882, guid: 715135a0cf103134faaf337f96162d39, type: 3}
 --- !u!1 &3969297658918345190
 GameObject:
   m_ObjectHideFlags: 0
@@ -7174,6 +7190,7 @@ GameObject:
   - component: {fileID: 7805437855729510412}
   - component: {fileID: 6868264821949275882}
   - component: {fileID: 1137710625194517226}
+  - component: {fileID: 868761760071340460}
   m_Layer: 0
   m_Name: QUINTA_02
   m_TagString: Untagged
@@ -7246,6 +7263,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &868761760071340460
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7340100786588088259}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -579233088099302301, guid: 715135a0cf103134faaf337f96162d39, type: 3}
 --- !u!1 &7375817393219047840
 GameObject:
   m_ObjectHideFlags: 0

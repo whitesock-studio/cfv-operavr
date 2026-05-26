@@ -3648,6 +3648,7 @@ Transform:
   - {fileID: 8124068118941578568}
   - {fileID: 7159081720129675230}
   - {fileID: 5446651385182934903}
+  - {fileID: 2072206319171734773}
   m_Father: {fileID: 3355435437030181580}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9198,7 +9199,6 @@ GameObject:
   - component: {fileID: 6055110862628058199}
   - component: {fileID: 7156526341554078917}
   - component: {fileID: 5380957317829472623}
-  - component: {fileID: 9156610282618030397}
   m_Layer: 0
   m_Name: ZUCCA:RUOTA_03
   m_TagString: Untagged
@@ -9271,20 +9271,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &9156610282618030397
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780410434777122667}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3322714100403692403, guid: 99c5ad0e91a150a43bf0a7a706b3575a, type: 3}
 --- !u!1 &1784337191630385163
 GameObject:
   m_ObjectHideFlags: 0
@@ -16628,6 +16614,103 @@ Transform:
   m_Father: {fileID: 7748344117984933315}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3150484295923086105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2072206319171734773}
+  - component: {fileID: 9114833430971873691}
+  - component: {fileID: 1484254256701144483}
+  - component: {fileID: 7124394583715012801}
+  m_Layer: 0
+  m_Name: Soffitto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2072206319171734773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150484295923086105}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.0523, y: 5.53, z: -0.73}
+  m_LocalScale: {x: 16.310953, y: 0.5, z: 9.561955}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7709378403863980499}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &9114833430971873691
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150484295923086105}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1484254256701144483
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150484295923086105}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7124394583715012801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150484295923086105}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3160116591219913468
 GameObject:
   m_ObjectHideFlags: 0
@@ -18951,7 +19034,6 @@ GameObject:
   - component: {fileID: 7804900630077169752}
   - component: {fileID: 3671995861692206702}
   - component: {fileID: 5479317923492175783}
-  - component: {fileID: 6539681376089960964}
   m_Layer: 0
   m_Name: ZUCCA:RUOTA_01
   m_TagString: Untagged
@@ -19024,20 +19106,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6539681376089960964
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3577377729668903276}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8036441987717300875, guid: 99c5ad0e91a150a43bf0a7a706b3575a, type: 3}
 --- !u!1 &3579598740126704264
 GameObject:
   m_ObjectHideFlags: 0
@@ -28060,7 +28128,6 @@ GameObject:
   - component: {fileID: 3674709195544930119}
   - component: {fileID: 8312479721169504662}
   - component: {fileID: 9014556578206357807}
-  - component: {fileID: 6729241134859937536}
   m_Layer: 0
   m_Name: ZUCCA:RUOTA_04
   m_TagString: Untagged
@@ -28133,20 +28200,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6729241134859937536
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5465554969486667246}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 800785802265062954, guid: 99c5ad0e91a150a43bf0a7a706b3575a, type: 3}
 --- !u!1 &5495621567908180950
 GameObject:
   m_ObjectHideFlags: 0
@@ -36382,8 +36435,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7218457088821683208}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.603497, y: 0, z: 0}
-  m_LocalScale: {x: 12, y: 12, z: 12}
+  m_LocalPosition: {x: -2.6035, y: 0, z: 7.227e-12}
+  m_LocalScale: {x: 28.665, y: 28.665, z: 28.665}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3355435437030181580}
@@ -38631,7 +38684,6 @@ GameObject:
   - component: {fileID: 4245058102748379050}
   - component: {fileID: 3128895625612306562}
   - component: {fileID: 1447542157852380358}
-  - component: {fileID: 3181632638799177001}
   m_Layer: 0
   m_Name: ZUCCA:RUOTA_02
   m_TagString: Untagged
@@ -38704,20 +38756,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3181632638799177001
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7712299660812655647}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6213577397677831761, guid: 99c5ad0e91a150a43bf0a7a706b3575a, type: 3}
 --- !u!1 &7732302619744026492
 GameObject:
   m_ObjectHideFlags: 0
