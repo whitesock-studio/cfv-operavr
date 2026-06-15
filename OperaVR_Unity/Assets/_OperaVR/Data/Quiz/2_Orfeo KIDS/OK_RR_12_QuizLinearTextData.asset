@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PopupType: 10
   InterruptsMovement: 1
-  Title: RR_12 - Text Quiz
+  Title: 'Musica ed Emozioni: Cosa provi?'
   TitleKey: 
   SubTitle: Seleziona la risposta corretta
   SubTitleKey: hotspot/linear_quiz_text/subtitle
   Type: 0
   ProfilingData: {fileID: 0}
   Questions:
-  - Image: {fileID: 21300000, guid: 4e4e7d69e20dd52418f85cd87eb39397, type: 3}
+  - Image: {fileID: 21300000, guid: efc7d21dd85919b469ac6cbfaa80f8f8, type: 3}
     Content:
       Type: 0
-      Text: This is the question
+      Text: Quando senti un suono soffice, quale colore si adatta meglio?
       AudioClip: {fileID: 0}
       Image: {fileID: 0}
     CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
@@ -34,27 +34,87 @@ MonoBehaviour:
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
-        AudioClip: {fileID: 0}
-        Image: {fileID: 0}
-    - IsCorrect: 1
-      PointsGiven: 0
-      Content:
-        Type: 0
-        Text: GIUSTA
+        Text: Rosso scuro
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: Verde neon
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Blu chiaro
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
   - Image: {fileID: 0}
     Content:
       Type: 0
-      Text: 
+      Text: 'Il cornetto ha spesso un suono brillante. Quale emozione potrebbe corrispondere? '
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Gioia '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Sonnolenza '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Rabbia
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: 'Il chitarrone ha un suono profondo e basso. Quale gesto si adatta meglio? '
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Mani che si muovono lentamente verso il basso '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Salti veloci '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Sbracciarsi freneticamente '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: Quale colore sceglieresti TU per un frammento musicale veloce ed energico?
       AudioClip: {fileID: 0}
       Image: {fileID: 0}
     CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
@@ -64,41 +124,201 @@ MonoBehaviour:
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: Grigio
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 1
       PointsGiven: 0
       Content:
         Type: 0
-        Text: GIUSTA
+        Text: Giallo
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: 'Blu pallido '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: 'Il lirone ha un suono caldo e armonioso. Che sensazione trasmette? '
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Pungente
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Calma '
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: 'Spaventoso '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: Se una melodia sembra misteriosa, quale colore le si addice?
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Viola scuro '
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: 'Rosa '
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: Arancione acceso
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: "Quale strumento suona pi\xF9 \"calmo\" per TE?"
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Cornetto
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Tamburi fatti di gelatina
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Viola da gamba '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: "Quale strumento suona pi\xF9 \"calmo\" per TE?"
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Pennellate lunghe e fluide '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Piccoli punti nitidi '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Zig-zag veloci '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: Quale suono potrebbe significare "speranza"?
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Battiti pesanti '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Note ascendenti '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Beep casuali '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: "Dopo aver ascoltato tutti e quattro gli strumenti barocchi, quale ti
+        \xE8 sembrato il pi\xF9 caldo?"
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Lirone '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Cornetto '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Chitarrone '
         AudioClip: {fileID: 0}
         Image: {fileID: 0}

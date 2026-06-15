@@ -14,17 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PopupType: 10
   InterruptsMovement: 1
-  Title: RR_06 - Text Quiz
+  Title: 'Il Viaggio di Orfeo: Quiz su Suoni, Colori ed Emozioni'
   TitleKey: 
   SubTitle: Seleziona la risposta corretta
-  SubTitleKey: hotspot/linear_quiz_text/subtitle
+  SubTitleKey: 
   Type: 0
   ProfilingData: {fileID: 0}
   Questions:
-  - Image: {fileID: 21300000, guid: 4e4e7d69e20dd52418f85cd87eb39397, type: 3}
+  - Image: {fileID: 21300000, guid: e5a7bb6236c14d64e8900d1d6e1d969b, type: 3}
     Content:
       Type: 0
-      Text: This is the question
+      Text: 'Quale suono si adatta al momento in cui Orfeo ed Euridice sono felici
+        insieme? '
       AudioClip: {fileID: 0}
       Image: {fileID: 0}
     CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
@@ -34,27 +35,27 @@ MonoBehaviour:
       PointsGiven: 0
       Content:
         Type: 0
-        Text: GIUSTA
+        Text: Arpa dolce
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: Tamburo forte
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: Beep di un robot
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
   - Image: {fileID: 0}
     Content:
       Type: 0
-      Text: 
+      Text: 'Quale colore rappresenta meglio il momento del serpente? '
       AudioClip: {fileID: 0}
       Image: {fileID: 0}
     CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
@@ -64,41 +65,260 @@ MonoBehaviour:
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: 'Giallo brillante '
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 1
       PointsGiven: 0
       Content:
         Type: 0
-        Text: GIUSTA
+        Text: Rosso acuto
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: Blu calmo
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: 'Quale gesto si adatta a un momento di sorpresa? '
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Mani che si sollevano '
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: 'Mani dietro la schiena '
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: 'Lento cenno del capo '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: 'Quale suono metteresti TU nell''Oltretomba? '
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Un profondo "oooooh" '
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: SBAGLIATA
+        Text: 'Un debole sussurro '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Il suono di una gelatina che oscilla '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: Quale colore si abbina a un momento di calma?
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Blu
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Arancione
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Nero '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: 'Orfeo inizia il suo viaggio. Quale suono esprime determinazione? '
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Un ritmo costante '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Un campanellino '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Applausi casuali '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: 'Quale gesto potrebbe mostrare coraggio? '
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Petto aperto, spalle indietro
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Nascondersi dietro le mani
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Battere un piede a terra '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: "Quando Orfeo entra nell'Oltretomba, quale colore \xE8 pi\xF9 adatto? "
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Rosa chiaro '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Viola scuro
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Verde neon
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: 'Quale suono potrebbe mostrare speranza? '
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Un tono ascendente '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Un debole eco '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Un giocattolo cigolante '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: 'Quale emozione si adatta al momento dell'' "ultimo sguardo"? '
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Questa \xE8 la risposta giusta, complimenti!"
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Gioia '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Tristezza '
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: 'Confusione '
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
