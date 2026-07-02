@@ -30,6 +30,7 @@ namespace OperaVR
     public class ProfilingRange
     {
         public int Value;
+        [Header("When lower or equal")]
         public ProfileData Data;
     }
 }
