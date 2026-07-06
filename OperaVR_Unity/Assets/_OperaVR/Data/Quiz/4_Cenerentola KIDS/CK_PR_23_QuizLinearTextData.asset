@@ -14,106 +14,165 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PopupType: 10
   InterruptsMovement: 1
-  Title: Intreccio di musica e testo
+  Title: Mezzanotte & Magia
   TitleKey: 
-  SubTitle: Forza espressiva del brano Possente spirto e formidabil nume
+  SubTitle: "Contrasti \u2022 Dinamica \u2022 Timbro"
   SubTitleKey: 
   Type: 0
   ProfilingData: {fileID: 0}
   Questions:
-  - Image: {fileID: 21300000, guid: 22739ac440a5617468edf31b5b0c29c7, type: 3}
+  - Image: {fileID: 0}
     Content:
       Type: 0
-      Text: "Lo stile metrico in cui Orfeo si esprime non \xE8 casuale. Nell\u2019aria
-        \"Possente Spirto e formidabil nume\" Orfeo si esprime:"
+      Text: 'Contrasto (Ballo vs. Mezzanotte): Quale coppia mostra meglio il contrasto
+        musicale?'
       AudioClip: {fileID: 0}
       Image: {fileID: 0}
-    CorrectChoiceDescription: Corretto!
+    CorrectChoiceDescription: "Corretto! Le scene magiche scintillano (celesta/arpa),
+      la mezzanotte \xE8 pi\xF9 scura/pesante (archi gravi, campane)."
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Celesta brillante & archi leggeri vs. archi gravi e campane tubolari
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: "Ottoni forti vs. ottoni ancora pi\xF9 forti"
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Flauto vs. ottavino (stessa melodia, stessa sensazione)
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Triangolo vs. tamburello (stesso pattern ripetuto)
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: 'Dinamica (rintocchi di mezzanotte): quale andamento dinamico descrive
+        la paura che cresce?'
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: "Corretto! Un colpo forte segna il rintocco; l\u2019urgenza
+      cresce con crescendo e accenti."
+    MaxChoices: 1
+    Choices:
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Colpo improvviso forte seguito da un crescendo mentre inizia la corsa
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Sempre piano e calmo
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Forte/piano a caso senza schema
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Solo diminuendo fino al silenzio
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
+    Content:
+      Type: 0
+      Text: "Timbro (Magia): Quale colore sonoro segnala pi\xF9 chiaramente magia/trasformazione?"
+      AudioClip: {fileID: 0}
+      Image: {fileID: 0}
+    CorrectChoiceDescription: Corretto! Celesta e arpa creano un colore scintillante
+      e magico in Cenerentola.
     MaxChoices: 1
     Choices:
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: In endecasillabi a rima incrociata
-        AudioClip: {fileID: 0}
-        Image: {fileID: 0}
-    - IsCorrect: 1
-      PointsGiven: 0
-      Content:
-        Type: 0
-        Text: In endecasillabi a rima incatenata
+        Text: Tuba + gran cassa in marcia
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: In sestine liriche
+        Text: Tromboni con sordina
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
-  - Image: {fileID: 21300000, guid: 22739ac440a5617468edf31b5b0c29c7, type: 3}
+    - IsCorrect: 0
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Bordone di viola sola
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+    - IsCorrect: 1
+      PointsGiven: 0
+      Content:
+        Type: 0
+        Text: Celesta con arpa scintillante
+        AudioClip: {fileID: 0}
+        Image: {fileID: 0}
+  - Image: {fileID: 0}
     Content:
       Type: 0
-      Text: Il brano solistico Possente Spirto e formidabil nume si distingue anche
-        per una enorme dilatazione dell'andamento del canto. Per quale ragione Orfeo
-        fa questo?
+      Text: "Musica\u2013Movimento (Mezzanotte): Quale azione scenica si abbina meglio
+        ai rintocchi + polso pi\xF9 veloce?"
       AudioClip: {fileID: 0}
       Image: {fileID: 0}
-    CorrectChoiceDescription: Corretto!
+    CorrectChoiceDescription: "Corretto! I rintocchi avvertono; il polso accelera
+      \u2192 i personaggi si bloccano e poi scappano."
     MaxChoices: 1
     Choices:
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: Evidenziare la bellezza del testo poetico
+        Text: Inchino lento
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 1
       PointsGiven: 0
       Content:
         Type: 0
-        Text: Effettuare una sorta di incantamento nei confronti di Caronte
+        Text: "Congelamento, sguardo all\u2019orologio, uscita/corsa veloce"
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: Soffermarsi su alcune particolari modulazioni
-        AudioClip: {fileID: 0}
-        Image: {fileID: 0}
-  - Image: {fileID: 21300000, guid: 22739ac440a5617468edf31b5b0c29c7, type: 3}
-    Content:
-      Type: 0
-      Text: "Celeberrimo \xE8 il ritornello strumentale che accompagna il canto di
-        Orfeo nel brano a solo Possente spirto e formidabil nume. Seleziona quale
-        tra le seguenti affermazioni \xE8 corretta:"
-      AudioClip: {fileID: 0}
-      Image: {fileID: 0}
-    CorrectChoiceDescription: Corretto!
-    MaxChoices: 1
-    Choices:
-    - IsCorrect: 0
-      PointsGiven: 0
-      Content:
-        Type: 0
-        Text: Compare tra la prima e la seconda terzina
+        Text: Lunghi giri di valzer dolci
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
     - IsCorrect: 0
       PointsGiven: 0
       Content:
         Type: 0
-        Text: "\xC8 affidato prima ai cornetti, poi all\u2019arpa doppia e poi ai
-          violini"
-        AudioClip: {fileID: 0}
-        Image: {fileID: 0}
-    - IsCorrect: 1
-      PointsGiven: 0
-      Content:
-        Type: 0
-        Text: Separa le terzine fra loro
+        Text: Tableau immobile senza movimento
         AudioClip: {fileID: 0}
         Image: {fileID: 0}
