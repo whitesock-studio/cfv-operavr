@@ -6,7 +6,7 @@ namespace OperaVR
     {
         public string Id = string.Empty;
         public abstract bool IsDirty { get; }
-        protected virtual string GetVariableKey(string sceneKey) => sceneKey + "_State_" + Id;
+        protected virtual string GetVariableKey(string sceneKey) => sceneKey + "_State_" + Id.Substring(0, 12);
         
         public abstract void Save(string sceneKey);
         public abstract void Load(string sceneKey);
